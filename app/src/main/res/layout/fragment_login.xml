@@ -4,74 +4,81 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragment.Login">
+    tools:context=".Login">
 
     <ImageView
         android:id="@+id/imageViewLogo"
-        android:layout_width="200dp"
+        android:layout_width="211dp"
         android:layout_height="200dp"
+        android:layout_marginLeft="100dp"
         android:layout_marginTop="84dp"
+        android:contentDescription="Logo"
         android:src="@drawable/ppp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="Logo" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/textUserName"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="320dp"
         android:layout_marginEnd="100dp"
+        android:background="@drawable/textview_background"
         android:ems="10"
+        android:hint="@string/username"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewLogo"
-        android:autofillHints="Please key in you username" />
+        android:gravity="center"
+        android:padding="13dp" />
 
     <EditText
         android:id="@+id/textPassword"
+        android:gravity="center"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="385dp"
+        android:layout_marginEnd="100dp"
+        android:background="@drawable/textview_background"
         android:ems="10"
+        android:hint="@string/password"
         android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textUserName"
-        android:autofillHints="Please key in your password" />
+        android:padding="13dp" />
 
     <Button
         android:id="@+id/buttonLogin"
         android:layout_width="217dp"
         android:layout_height="48dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="480dp"
+        android:layout_marginEnd="100dp"
+        android:background="@drawable/ownbutton"
+        android:padding="10dp"
         android:text="@string/login"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textPassword" />
+        android:textColor="#000000" />
 
     <Button
         android:id="@+id/buttonSignUp"
         android:layout_width="217dp"
         android:layout_height="48dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="545dp"
+        android:layout_marginEnd="100dp"
+        android:background="@drawable/ownbutton"
+        android:padding="10dp"
         android:text="@string/signUp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
+        android:textColor="#000000" />
 
     <Button
         android:id="@+id/buttonCancel"
         android:layout_width="217dp"
         android:layout_height="48dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="610dp"
+        android:layout_marginEnd="100dp"
+        android:background="@drawable/ownbutton"
+        android:padding="10dp"
         android:text="@string/cancel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSignUp" />
-
+        android:textColor="#000000" />
 </FrameLayout>
