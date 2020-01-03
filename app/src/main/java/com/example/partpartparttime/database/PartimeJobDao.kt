@@ -23,23 +23,23 @@ import androidx.room.Query
 import androidx.room.Update
 
 @Dao
-interface PartimeDatabaseDao {
+interface PartimeJobDao {
 
     @Insert
-    fun insert(night: User)
+    fun insert(partimeJob: PartimeJob)
 
     @Update
-    fun update(night: User)
+    fun update(partimeJob: PartimeJob)
 
-    @Query("SELECT * from daily_sleep_quality_table WHERE nightId = :key")
-    fun get(key: Long): User?
-
-    @Query("DELETE FROM daily_sleep_quality_table")
-    fun clear()
-
-    @Query("SELECT * FROM daily_sleep_quality_table ORDER BY nightId DESC LIMIT 1")
-    fun getTonight(): User?
-
-    @Query("SELECT * FROM daily_sleep_quality_table ORDER BY nightId DESC")
-    fun getAllNights(): LiveData<List<User>>
+//    @Query("SELECT * from daily_sleep_quality_table WHERE nightId = :key")
+//    fun get(key: Long): User?
+//
+//    @Query("DELETE FROM daily_sleep_quality_table")
+//    fun clear()
+//
+//    @Query("SELECT * FROM daily_sleep_quality_table ORDER BY nightId DESC LIMIT 1")
+//    fun getTonight(): User?
+//
+//    @Query("SELECT * FROM daily_sleep_quality_table ORDER BY nightId DESC")
+//    fun getAllNights(): LiveData<List<User>>
 }

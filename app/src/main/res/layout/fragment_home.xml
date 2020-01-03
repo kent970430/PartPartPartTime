@@ -10,7 +10,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="85dp"
+        android:layout_marginLeft="75dp"
         android:layout_marginTop="84dp"
         android:text="@string/partpartpartTime"
         android:textColor="#242729"
@@ -18,6 +18,7 @@
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/text_home"
         android:layout_width="245dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="45dp"
@@ -28,15 +29,62 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/buttonLogin"
+        android:id="@+id/buttonEvent"
         android:layout_width="150dp"
         android:layout_height="110dp"
         android:layout_marginStart="45dp"
         android:layout_marginTop="300dp"
         android:layout_marginEnd="100dp"
-        android:background="@drawable/ownbutton"
+        android:background="@drawable/homebutton"
         android:padding="10dp"
-        android:text="@string/login"
+        android:text="@string/events"
         android:textColor="#000000" />
 
+    <Button
+        android:id="@+id/buttonTraining"
+        android:layout_width="150dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginEnd="100dp"
+        android:background="@drawable/homebutton"
+        android:padding="10dp"
+        android:text="@string/training"
+        android:textColor="#000000" />
+
+    <Button
+        android:id="@+id/buttonJob"
+        android:layout_width="150dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="430dp"
+        android:layout_marginEnd="100dp"
+        android:background="@drawable/homebutton"
+        android:padding="10dp"
+        android:text="@string/ptj"
+        android:textColor="#000000" />
+
+    <Button
+        android:id="@+id/buttonProfile"
+        android:layout_width="150dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="430dp"
+        android:layout_marginEnd="100dp"
+        android:background="@drawable/homebutton"
+        android:padding="10dp"
+        android:text="@string/profile"
+        android:textColor="#000000" />
+
+    <Button
+        android:id="@+id/buttonLogout"
+        android:layout_width="150dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="560dp"
+        android:layout_marginEnd="100dp"
+        android:background="@drawable/homebutton"
+        android:padding="10dp"
+        android:text="@string/logout"
+        android:textColor="#000000" />
 </FrameLayout>
