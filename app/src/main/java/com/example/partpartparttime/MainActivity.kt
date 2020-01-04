@@ -1,3 +1,4 @@
+
 package com.example.partpartparttime
 
 import android.os.Bundle
@@ -13,12 +14,19 @@ import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
-import kotlinx.android.synthetic.main.fragment_events.*
-import javax.sql.DataSource
+//import com.example.partpartparttime.databinding.ActivityMainBinding
+import com.example.partpartparttime.models.EventRecyclerAdapter
+
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
+    private lateinit var eventAdapter: EventRecyclerAdapter
+//    private lateinit var binding: ActivityMainBinding
+
+    companion object {
+        var loggedUser = ""
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +52,9 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+//        initRecycleView()
+//        addDEventData()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

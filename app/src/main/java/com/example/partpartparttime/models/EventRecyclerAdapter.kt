@@ -41,8 +41,8 @@ class EventRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
         val eventAuthor = itemView.event_author
 
         fun bind(eventPost: EventPost){
-            eventTitle.setText(eventPost.title)
-            eventAuthor.setText(eventPost.nameee)
+            eventTitle.text = eventPost.title
+            eventAuthor.text = eventPost.nameee
 
             val requestOptionss = RequestOptions()
                 .placeholder(R.drawable.ic_launcher_background)

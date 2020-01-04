@@ -22,38 +22,56 @@ import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 import java.util.*
 
-@Entity(tableName = "applicant_table"
+@Entity(
+    tableName = "applicant_table"
 )
 data class Applicant(
-        @PrimaryKey(autoGenerate = true)
-        @ColumnInfo(name = "userID")
-        var userID: Int = "A".toInt() + 1001,
+    @PrimaryKey(autoGenerate = true)
+    var num: Long = 0L,
 
-        @ColumnInfo(name = "training_idd")
-        var training_idd: Int,
+    @ColumnInfo(name = "userName")
+    var userName: String = "",
 
-        @ColumnInfo(name = "firstName")
-        var firstName: String,
+    @ColumnInfo(name = "password")
+    var password: String = "",
 
-        @ColumnInfo(name = "lastName")
-        var lastName: String,
+    @ColumnInfo(name = "userID")
+    var userID: String = "",
 
-        @ColumnInfo(name = "age")
-        var age: Int,
+//    @ColumnInfo(name = "training_idd")
+//    var training_idd: Int,
 
-        @ColumnInfo(name = "address")
-        var address: String,
+    @ColumnInfo(name = "firstName")
+    var firstName: String = "",
 
-        @ColumnInfo(name = "contact")
-        var contact: String,
+    @ColumnInfo(name = "lastName")
+    var lastName: String= "",
 
-        @ColumnInfo(name = "email")
-        var email: String,
+    @ColumnInfo(name = "age")
+    var age: Int=0,
 
-        @ColumnInfo(name = "profilePic")
-        var profilePic: String,
+    @ColumnInfo(name = "address")
+    var address: String= "",
 
-        @ColumnInfo(name = "resume")
-        var resume: String
+    @ColumnInfo(name = "contact")
+    var contact: String= "",
+
+    @ColumnInfo(name = "email")
+    var email: String= "",
+
+    @ColumnInfo(name = "experince")
+    var experince: String= "",
+
+    @ColumnInfo(name = "skill")
+    var skill: String= "",
+
+    @ColumnInfo(name = "education")
+    var education: String= "",
+
+//    @ColumnInfo(typeAffinity = ColumnInfo.BLOB)
+//    var data: ByteArray? = null,
+
+    @ColumnInfo(name = "resume")
+    var resume: String= ""
 )
 

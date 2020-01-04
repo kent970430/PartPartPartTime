@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.example.partpartparttime.R
 import com.example.partpartparttime.models.EventRecyclerAdapter
@@ -27,9 +26,10 @@ class events : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_events, container, false)
         initRecycleView()
         addEventData()
+        return inflater.inflate(R.layout.fragment_events, container, false)
+
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

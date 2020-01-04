@@ -6,16 +6,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.events.events">
 
-    <Switch
-        android:id="@+id/switchh"
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
+        android:layout_marginLeft="150dp"
         android:layout_marginTop="84dp"
-        android:layout_marginEnd="100dp"
-        android:text="@string/eventtt"
+        android:text="@string/events"
         android:textColor="#242729"
-        android:textSize="50px"
+        android:textSize="80px"
         android:textStyle="bold"/>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -23,7 +22,8 @@
         android:layout_width="match_parent"
         android:layout_height="511dp"
         android:layout_marginTop="140dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="0">
 
     </androidx.recyclerview.widget.RecyclerView>
 </FrameLayout>
