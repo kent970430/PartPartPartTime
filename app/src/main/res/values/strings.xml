@@ -36,6 +36,14 @@
 
     <string name="edit">Edit</string>
     <string name="save">Save</string>
+    <string name="back">Back</string>
+
+    <string name="rating">Rating</string>
+    <string name="nameee">Name</string>
+    <string name="description">Description</string>
+    <string name="description1">Description 1</string>
+    <string name="description2">Description 2</string>
+    <string name="descriptio3">Description 3</string>
 
     <string name="login_success">Successfully Login!</string>
     <string name="login_failed">Invalid username or password!</string>
