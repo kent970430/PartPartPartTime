@@ -24,7 +24,6 @@ import javax.sql.DataSource
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
-    private lateinit var eventAdapter: EventRecyclerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,8 +49,6 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-
-//        initRecycleView()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -63,21 +60,5 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
-    }
-
-    private fun addDEventData(){
-        val data = Source.createDataSet()
-        eventAdapter.submitList(data)
-
-    }
-
-    private fun initRecycleView(){
-        event_recycleview.apply{
-            layoutManager = LinearLayoutManager(this@MainActivity)
-            val spacee = Spacing(30)
-            addItemDecoration(spacee)
-            eventAdapter = EventRecyclerAdapter()
-            adapter = eventAdapter
-        }
     }
 }
