@@ -55,5 +55,7 @@ fun formatApplicants(applicants: List<Applicant>, resources: Resources): Spanned
 //    }
 //}
 
-class TextItemViewHolder(val textView: TextView): RecyclerView.ViewHolder(textView)
+class TextItemViewHolder(val textView: TextView): RecyclerView.ViewHolder(textView){
+
+}
 
