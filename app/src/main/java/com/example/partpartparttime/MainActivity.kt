@@ -21,7 +21,6 @@ import com.example.partpartparttime.models.EventRecyclerAdapter
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
-    private lateinit var eventAdapter: EventRecyclerAdapter
 //    private lateinit var binding: ActivityMainBinding
 
     companion object {
