@@ -24,9 +24,9 @@ class HomeFragment : Fragment() {
         homeViewModel =
             ViewModelProviders.of(this).get(HomeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_home, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
+//        val textView: TextView = root.findViewById(R.id.text_home)
         homeViewModel.text.observe(this, Observer {
-            textView.text = it
+//            textView.text = it
         })
 
         val application = requireNotNull(this.activity).application
@@ -40,7 +40,7 @@ class HomeFragment : Fragment() {
 //        val dataSource7 = PartimeDatabase.getInstance(application).trainingDao
 //        val dataSource8 = PartimeDatabase.getInstance(application).trainingOrganizationDao
 
-        dataSource.insert(User("",0,0,0,""))
+//        dataSource.insert(User("",0,0,0,""))
 //        dataSource1.insert(Applicant(0,0,"","",0,"","","","",""))
 //        dataSource2.insert(Company(0,0,"","","","",0))
 //        dataSource3.insert(Event(0,0))

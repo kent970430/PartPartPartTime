@@ -44,14 +44,14 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
+                R.id.nav_home, R.id.nav_gallery,R.id.events,
                 R.id.nav_tools, R.id.login,R.id.register
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        initRecycleView()
+//        initRecycleView()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
