@@ -11,7 +11,7 @@
         android:id="@+id/buttonSave"
         android:layout_width="130dp"
         android:layout_height="51dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="20dp"
         android:background="@drawable/homebutton"
         android:padding="10dp"
         android:text="@string/save"
@@ -23,12 +23,13 @@
         android:id="@+id/buttonEdit"
         android:layout_width="130dp"
         android:layout_height="51dp"
-        android:layout_marginTop="177dp"
+        android:layout_marginTop="109dp"
         android:background="@drawable/homebutton"
         android:padding="10dp"
         android:text="@string/edit"
         android:textColor="#000000"
         app:layout_constraintEnd_toStartOf="@+id/buttonSave"
+        app:layout_constraintHorizontal_bias="0.581"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textDescription3" />
 
@@ -56,15 +57,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textDescription2" />
 
-    <TextView
-        android:id="@+id/textRating"
-        android:layout_width="289dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="44dp"
-        android:hint="Company Rating"
-        android:gravity="center"
+    <Button
+        android:id="@+id/buttonRating"
+        android:layout_width="290dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/homebutton"
+        android:padding="10dp"
+        android:text="View Rating"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.27"
+        app:layout_constraintHorizontal_bias="0.261"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textDescription3" />
 
@@ -72,7 +75,7 @@
         android:id="@+id/buttonLogOut"
         android:layout_width="290dp"
         android:layout_height="55dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="177dp"
         android:background="@drawable/homebutton"
         android:padding="10dp"
         android:text="@string/logout"
@@ -80,7 +83,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.261"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textRating" />
+        app:layout_constraintTop_toBottomOf="@+id/textDescription3" />
 
     <EditText
         android:id="@+id/textDescription1"
