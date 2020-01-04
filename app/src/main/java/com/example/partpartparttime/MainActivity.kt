@@ -13,11 +13,6 @@ import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
-import android.widget.LinearLayout
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.partpartparttime.models.EventRecyclerAdapter
-import com.example.partpartparttime.models.Source
-import com.example.partpartparttime.models.Spacing
 import kotlinx.android.synthetic.main.fragment_events.*
 import javax.sql.DataSource
 
