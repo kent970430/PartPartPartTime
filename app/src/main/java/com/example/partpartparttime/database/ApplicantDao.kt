@@ -31,6 +31,15 @@ interface ApplicantDao {
     @Update
     fun update(applicant: Applicant)
 
+//    @Query("SELECT * from applicant_table")
+//    fun getAll()
+
+    @Query("SELECT * from applicant_table WHERE userName = :key")
+    fun getApplicant(key: String): Applicant?
+
+    @Query("SELECT * FROM applicant_table ORDER BY num DESC")
+    fun getAllApplicants(): LiveData<List<Applicant>>
+
 //    @Query("SELECT * from daily_sleep_quality_table WHERE nightId = :key")
 //    fun get(key: Long): User?
 //

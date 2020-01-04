@@ -13,11 +13,14 @@ import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
+import android.view.View
 import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
+//import com.example.partpartparttime.databinding.ActivityMainBinding
 import com.example.partpartparttime.models.EventRecyclerAdapter
 import com.example.partpartparttime.models.Source
 import com.example.partpartparttime.models.Spacing
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.fragment_events.*
 import javax.sql.DataSource
 
@@ -25,6 +28,11 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var eventAdapter: EventRecyclerAdapter
+//    private lateinit var binding: ActivityMainBinding
+
+    companion object {
+        var loggedUser = ""
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,6 +60,7 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
 
 //        initRecycleView()
+//        addDEventData()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
