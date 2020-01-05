@@ -28,6 +28,12 @@ data class Event(
         @ColumnInfo(name = "eventID")
         var eventID: Int = "E".toInt() + 1001,
 
+        @ColumnInfo(name = "event_description")
+        var event_description: String = "",
+
+        @ColumnInfo(name = "eventImage")
+        var eventImage: String = "",
+
         @ColumnInfo(name = "notic_idd")
         var notic_idd: Int
 )

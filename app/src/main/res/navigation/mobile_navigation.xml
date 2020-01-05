@@ -55,7 +55,7 @@
     </fragment>
     <fragment
         android:id="@+id/events"
-        android:name="com.example.partpartparttime.ui.events.events"
+        android:name="com.example.partpartparttime.ui.events.list_events"
         android:label="@string/menu_event"
         tools:layout="@layout/fragment_events" />
     <fragment
