@@ -6,8 +6,6 @@ import androidx.lifecycle.ViewModel
 
 class LoginViewModel : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is gallery Fragment"
-    }
-    val text: LiveData<String> = _text
+    var nav_header_title:String = ""
+    var nav_header_subtitle:String = ""
 }

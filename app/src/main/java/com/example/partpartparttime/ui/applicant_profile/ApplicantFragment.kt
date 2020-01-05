@@ -49,6 +49,11 @@ class ApplicantFragment : Fragment() {
             val email: TextView = binding.root.findViewById(R.id.textEmaill)
             email.setText(appl.email)
 
+            val headName: TextView = this.getActivity()!!.findViewById(R.id.head_name)
+            headName.setText(MainActivity.name)
+            val headEmail: TextView = this.getActivity()!!.findViewById(R.id.head_email)
+            headEmail.setText(appl.email)
+
         }
 
         binding.buttonLogOut.setOnClickListener { view ->

@@ -48,6 +48,11 @@ class CompanyFragment : Fragment() {
             val email: TextView = binding.root.findViewById(R.id.textEmaill)
             email.setText(comp.email)
 
+            val headName: TextView = this.getActivity()!!.findViewById(R.id.head_name)
+            headName.setText(MainActivity.name)
+            val headEmail: TextView = this.getActivity()!!.findViewById(R.id.head_email)
+            headEmail.setText(comp.email)
+
         }
 
         binding.buttonLogOut.setOnClickListener { view ->
@@ -56,11 +61,15 @@ class CompanyFragment : Fragment() {
 
             loggedUser = ""
             name = ""
+            val headName: TextView = this.getActivity()!!.findViewById(R.id.head_name)
+            headName.setText("")
+            val headEmail: TextView = this.getActivity()!!.findViewById(R.id.head_email)
+            headEmail.setText("")
 
             Log.i("Result", "Successfully logged out")
 
 
-            view.findNavController().navigate(R.id.action_applicantFragment_to_nav_home)
+            view.findNavController().navigate(R.id.action_companyFragment_to_nav_home)
         }
 
         binding.buttonEdit.setOnClickListener { view ->

@@ -2,6 +2,7 @@ package com.example.partpartparttime.ui.login
 
 import android.app.Activity
 import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -9,11 +10,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
+import android.widget.TextView
 import android.widget.Toast
 import com.example.partpartparttime.R
 import com.example.partpartparttime.database.PartimeDatabase
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
+import com.example.partpartparttime.MainActivity
 import com.example.partpartparttime.MainActivity.Companion.loggedUser
 import com.example.partpartparttime.MainActivity.Companion.name
 import com.example.partpartparttime.database.Applicant
@@ -23,6 +27,8 @@ import kotlinx.android.synthetic.main.fragment_login_applicant.*
 class LoginApplicant : Fragment() {
     private var username:String = ""
     private var password:String = ""
+    lateinit var sharedPreferences: SharedPreferences
+    lateinit var loginViewModel: LoginViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,6 +42,10 @@ class LoginApplicant : Fragment() {
         //Database
         val application = requireNotNull(this.activity).application
         val dataSource = PartimeDatabase.getInstance(application).applicantDao
+
+        //sharePreferences
+//        loginViewModel = ViewModelProviders.of(this).get(LoginViewModel::class.java)
+//        sharedPreferences = this.getActivity()!!.getPreferences(Context.MODE_PRIVATE)
 
         binding.buttonLogin.setOnClickListener{view ->
 
@@ -56,8 +66,16 @@ class LoginApplicant : Fragment() {
 
                     loggedUser = appl.userID
                     name = appl.firstName+appl.lastName
+//                    loginViewModel.nav_header_title = name
+//                    loginViewModel.nav_header_subtitle = appl.email
 
                     Log.i("Result","Successfully logged in")
+
+//                    with(sharedPreferences.edit()){
+//                        putString(getString(R.string.nav_header_title), loginViewModel.nav_header_title)
+//                        putString(getString(R.string.nav_header_subtitle), loginViewModel.nav_header_subtitle)
+//                        commit()
+//                    }
 
                     view.findNavController().
                         navigate(R.id.action_login_to_applicantFragment)
