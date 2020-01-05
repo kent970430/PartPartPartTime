@@ -15,6 +15,7 @@ import com.example.partpartparttime.database.PartimeDatabase
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import com.example.partpartparttime.MainActivity.Companion.loggedUser
+import com.example.partpartparttime.MainActivity.Companion.name
 import com.example.partpartparttime.database.Applicant
 import com.example.partpartparttime.databinding.FragmentLoginApplicantBinding
 import kotlinx.android.synthetic.main.fragment_login_applicant.*
@@ -54,11 +55,13 @@ class LoginApplicant : Fragment() {
                     Toast.makeText(activity, R.string.login_success, Toast.LENGTH_SHORT).show()
 
                     loggedUser = appl.userID
+                    name = appl.firstName+appl.lastName
 
                     Log.i("Result","Successfully logged in")
 
                     view.findNavController().
                         navigate(R.id.action_login_to_applicantFragment)
+
                 }
 
                 else{
@@ -69,9 +72,18 @@ class LoginApplicant : Fragment() {
             }
         }
 
+        binding.buttonCancel.setOnClickListener { view ->
+            view.findNavController().navigate(R.id.action_login_applicant_to_nav_home)
+        }
+
+        binding.buttonSignUp.setOnClickListener { view ->
+            view.findNavController().navigate(R.id.action_login_applicant_to_register)
+        }
 
         return binding.root
     }
+
+
 
     fun Fragment.hideKeyboard() {
         view?.let { activity?.hideKeyboard(it) }

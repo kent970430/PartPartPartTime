@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import com.example.partpartparttime.MainActivity
 import com.example.partpartparttime.MainActivity.Companion.loggedUser
+import com.example.partpartparttime.MainActivity.Companion.name
 import com.example.partpartparttime.R
 import com.example.partpartparttime.database.Company
 import com.example.partpartparttime.database.PartimeDatabase
@@ -54,6 +55,7 @@ class CompanyFragment : Fragment() {
             Toast.makeText(activity, R.string.logout_success, Toast.LENGTH_SHORT).show()
 
             loggedUser = ""
+            name = ""
 
             Log.i("Result", "Successfully logged out")
 

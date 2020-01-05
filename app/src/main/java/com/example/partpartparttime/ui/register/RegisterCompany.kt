@@ -72,6 +72,10 @@ class RegisterCompany : Fragment() {
 
             view.findNavController().navigate(R.id.action_registerCompany_to_login_company)
         }
+
+        binding.buttonCancel.setOnClickListener { view ->
+            view.findNavController().navigate(R.id.action_register_company_to_nav_home)
+        }
         return binding.root
     }
 

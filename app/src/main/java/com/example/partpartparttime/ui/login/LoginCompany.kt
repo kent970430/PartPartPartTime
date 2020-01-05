@@ -15,6 +15,7 @@ import com.example.partpartparttime.database.PartimeDatabase
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import com.example.partpartparttime.MainActivity.Companion.loggedUser
+import com.example.partpartparttime.MainActivity.Companion.name
 import com.example.partpartparttime.database.Applicant
 import com.example.partpartparttime.database.Company
 import com.example.partpartparttime.databinding.FragmentLoginApplicantBinding
@@ -56,6 +57,7 @@ class LoginCompany : Fragment() {
                     Toast.makeText(activity, R.string.login_success, Toast.LENGTH_SHORT).show()
 
                     loggedUser = comp.companyID
+                    name = comp.companyName
 
                     Log.i("Result","Successfully logged in")
 
@@ -71,6 +73,13 @@ class LoginCompany : Fragment() {
             }
         }
 
+        binding.buttonCancel.setOnClickListener { view ->
+            view.findNavController().navigate(R.id.action_login_company_to_nav_home)
+        }
+
+        binding.buttonSignUp.setOnClickListener { view ->
+            view.findNavController().navigate(R.id.action_login_company_to_register)
+        }
 
         return binding.root
     }

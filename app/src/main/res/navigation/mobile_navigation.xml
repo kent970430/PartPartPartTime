@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_nav_home_to_register"
             app:destination="@id/register" />
+        <action
+            android:id="@+id/action_nav_home_to_events"
+            app:destination="@id/events" />
     </fragment>
 
     <fragment
@@ -43,6 +46,12 @@
         <action
             android:id="@+id/action_login_to_applicantFragment"
             app:destination="@id/profile_applicant" />
+        <action
+            android:id="@+id/action_login_applicant_to_register"
+            app:destination="@id/register" />
+        <action
+            android:id="@+id/action_login_applicant_to_nav_home"
+            app:destination="@id/nav_home" />
     </fragment>
     <fragment
         android:id="@+id/register_applicant"
@@ -52,6 +61,9 @@
         <action
             android:id="@+id/action_register_applicant_to_login_applicant"
             app:destination="@id/login_applicant" />
+        <action
+            android:id="@+id/action_register_applicant_to_nav_home"
+            app:destination="@id/nav_home" />
     </fragment>
     <fragment
         android:id="@+id/events"
@@ -97,6 +109,12 @@
         <action
             android:id="@+id/action_loginCompany_to_companyFragment"
             app:destination="@id/profile_company" />
+        <action
+            android:id="@+id/action_login_company_to_register"
+            app:destination="@id/register" />
+        <action
+            android:id="@+id/action_login_company_to_nav_home"
+            app:destination="@id/nav_home" />
     </fragment>
     <fragment
         android:id="@+id/register"
@@ -118,5 +136,8 @@
         <action
             android:id="@+id/action_registerCompany_to_login_company"
             app:destination="@id/login_company" />
+        <action
+            android:id="@+id/action_register_company_to_nav_home"
+            app:destination="@id/nav_home" />
     </fragment>
 </navigation>

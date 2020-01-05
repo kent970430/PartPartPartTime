@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         var loggedUser = ""
+        var name = ""
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,8 +45,7 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_gallery,R.id.events,
-                R.id.nav_tools, R.id.login,R.id.register,
+                R.id.nav_home,R.id.events, R.id.login,R.id.register,
                 R.id.profile_applicant,R.id.profile_company
             ), drawerLayout
         )

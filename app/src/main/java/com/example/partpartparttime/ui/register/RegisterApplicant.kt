@@ -74,6 +74,10 @@ class RegisterApplicant : Fragment() {
 
             view.findNavController().navigate(R.id.action_register_applicant_to_login_applicant)
         }
+
+        binding.buttonCancel.setOnClickListener { view ->
+            view.findNavController().navigate(R.id.action_register_applicant_to_nav_home)
+        }
         return binding.root
     }
 
