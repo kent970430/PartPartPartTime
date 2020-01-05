@@ -26,18 +26,6 @@
             android:id="@+id/action_nav_home_to_events"
             app:destination="@id/events" />
     </fragment>
-
-    <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.partpartparttime.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
-
-    <fragment
-        android:id="@+id/nav_tools"
-        android:name="com.example.partpartparttime.ui.tools.ToolsFragment"
-        android:label="@string/menu_tools"
-        tools:layout="@layout/fragment_tools" />
     <fragment
         android:id="@+id/login_applicant"
         android:name="com.example.partpartparttime.ui.login.LoginApplicant"
