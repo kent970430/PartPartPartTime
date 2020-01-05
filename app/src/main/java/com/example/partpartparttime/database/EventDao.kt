@@ -32,7 +32,7 @@ interface EventDao {
     fun update(event: Event)
 
     @Query("SELECT * FROM event_table ORDER BY eventId DESC")
-    fun getAllEvents(key: Int): LiveData<List<Event>>
+    fun getAllEvents(): LiveData<List<Event>>
 
 //    @Query("SELECT * from daily_sleep_quality_table WHERE nightId = :key")
 //    fun get(key: Long): User?

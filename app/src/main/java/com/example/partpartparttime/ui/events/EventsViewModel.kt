@@ -5,15 +5,14 @@ import androidx.lifecycle.*
 import com.example.partpartparttime.database.Event
 import com.example.partpartparttime.database.EventDao
 
-class EventsViewModel(private val eventID: Int,
-                      val database: EventDao,
+class EventsViewModel(val database: EventDao,
                       application: Application
 ): AndroidViewModel(application){
 
     private val _navigateToCompany = MutableLiveData<Int>()
     val navigateToCompany get() =_navigateToCompany
 
-    val eventttt = database.getAllEvents(eventID)
+    val eventttt = database.getAllEvents()
 
     fun onEventClicked(id: Int) {
         _navigateToCompany.value = id

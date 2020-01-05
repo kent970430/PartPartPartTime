@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.partpartparttime.database.Event
-import com.example.partpartparttime.databinding.ListEventsBinding
+import com.example.partpartparttime.databinding.ListEventBinding
 
 class EventRecyclerAdapter(val clickListener: EventListener) :
     ListAdapter<Event, EventRecyclerAdapter.ViewHolder>(EventDiffCallback()){
@@ -21,12 +21,12 @@ class EventRecyclerAdapter(val clickListener: EventListener) :
         )
     }
 
-    class ViewHolder private constructor(val binding: ListEventsBinding) : RecyclerView.ViewHolder(binding.root) {
+    class ViewHolder private constructor(val binding: ListEventBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(
             item: Event,
             clickListener: EventListener
         ) {
-            binding.event=item
+            binding.eventttttt = item
             binding.clickListener = clickListener
             binding.executePendingBindings()
         }
@@ -35,7 +35,7 @@ class EventRecyclerAdapter(val clickListener: EventListener) :
                 val layoutInflater =
                     LayoutInflater.from(parent.context)
                 val binding =
-                    ListEventsBinding.inflate(layoutInflater, parent, false)
+                    ListEventBinding.inflate(layoutInflater, parent, false)
                 return ViewHolder(
                     binding
                 )
