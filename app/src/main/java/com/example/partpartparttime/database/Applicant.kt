@@ -38,9 +38,6 @@ data class Applicant(
     @ColumnInfo(name = "userID")
     var userID: String = "",
 
-//    @ColumnInfo(name = "training_idd")
-//    var training_idd: Int,
-
     @ColumnInfo(name = "firstName")
     var firstName: String = "",
 

@@ -15,7 +15,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
 //import com.example.partpartparttime.databinding.ActivityMainBinding
-import com.example.partpartparttime.models.EventRecyclerAdapter
 
 
 class MainActivity : AppCompatActivity() {
@@ -46,7 +45,8 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.nav_home, R.id.nav_gallery,R.id.events,
-                R.id.nav_tools, R.id.login,R.id.register
+                R.id.nav_tools, R.id.login,R.id.register,
+                R.id.profile_applicant,R.id.profile_company
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

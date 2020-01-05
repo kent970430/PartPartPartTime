@@ -32,6 +32,14 @@
                 android:id="@+id/register"
                 android:icon="@drawable/ic_menu_send"
                 android:title="@string/menu_register" />
+            <item
+                android:id="@+id/profile_applicant"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/menu_profile_applicant" />
+            <item
+                android:id="@+id/profile_company"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/menu_profile_company" />
         </menu>
     </item>
 

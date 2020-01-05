@@ -2,35 +2,35 @@ package com.example.partpartparttime.ui.register
 
 import android.app.Application
 import androidx.lifecycle.*
-import com.example.partpartparttime.database.Applicant
-import com.example.partpartparttime.database.ApplicantDao
-import com.example.partpartparttime.formatApplicants
+import com.example.partpartparttime.database.Company
+import com.example.partpartparttime.database.CompanyDao
+import com.example.partpartparttime.formatCompanys
 import kotlinx.coroutines.*
 
-class RegisterViewModel(val database: ApplicantDao,
-                        application: Application): AndroidViewModel(application) {
+class RegisterCompanyViewModel(val database: CompanyDao,
+                               application: Application): AndroidViewModel(application) {
 
     private var viewModelJob = Job()
 
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
 
-    private var newapplicant = MutableLiveData<Applicant?>()
+    private var newcompany= MutableLiveData<Company?>()
 
     private val _navigateToMain = MutableLiveData<Boolean>()
 
     val navigateToMain: LiveData<Boolean>
         get() = _navigateToMain
 
-    private val applicants = database.getAllApplicants()
+    private val companys = database.getAllCompanys()
 
-    val formatApplicants = Transformations.map(applicants) { applicants ->
-        formatApplicants(applicants, application.resources)
+    val formatCompanys = Transformations.map(companys) { companys ->
+        formatCompanys(companys, application.resources)
     }
 
-    fun insert(applicant: Applicant){
+    fun insert(company: Company){
         uiScope.launch {
             withContext(Dispatchers.IO) {
-                database.insert(applicant)
+                database.insert(company)
 
             }
         }

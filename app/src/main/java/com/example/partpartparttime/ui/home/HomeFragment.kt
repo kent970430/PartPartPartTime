@@ -29,8 +29,8 @@ class HomeFragment : Fragment() {
 //            textView.text = it
         })
 
-        val application = requireNotNull(this.activity).application
-        val dataSource = PartimeDatabase.getInstance(application).userDao
+//        val application = requireNotNull(this.activity).application
+//        val dataSource = PartimeDatabase.getInstance(application).userDao
 //        val dataSource1 = PartimeDatabase.getInstance(application).applicantDao
 //        val dataSource2 = PartimeDatabase.getInstance(application).companyDao
 //        val dataSource3 = PartimeDatabase.getInstance(application).eventDao

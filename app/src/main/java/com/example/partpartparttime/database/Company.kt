@@ -27,24 +27,26 @@ import java.util.*
 )
 data class Company(
         @PrimaryKey(autoGenerate = true)
-        @ColumnInfo(name = "companyID")
-        var companyID: Int = "C".toInt() + 1001,
+        var num: Long = 0L,
 
-        @ColumnInfo(name = "pJob_idd")
-        var pJob_idd: Int,
+        @ColumnInfo(name = "userName")
+        var userName: String = "",
+
+        @ColumnInfo(name = "password")
+        var password: String = "",
+
+        @ColumnInfo(name = "companyID")
+        var companyID: String = "",
 
         @ColumnInfo(name = "companyName")
-        var companyName: String,
+        var companyName: String = "",
 
         @ColumnInfo(name = "address")
-        var address: String,
+        var address: String = "",
 
         @ColumnInfo(name = "contact")
-        var contact: String,
+        var contact: String = "",
 
         @ColumnInfo(name = "email")
-        var email: String,
-
-        @ColumnInfo(name = "event_idd")
-        var event_idd: Int
+        var email: String = ""
 )

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.login.LoginApplicant">
+
+    <ImageView
+        android:id="@+id/imageViewLogo"
+        android:layout_width="211dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="84dp"
+        android:contentDescription="Logo"
+        android:src="@drawable/ppp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/textUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="320dp"
+        android:layout_marginEnd="100dp"
+        android:background="@drawable/textview_background"
+        android:ems="10"
+        android:hint="@string/username"
+        android:inputType="textPersonName"
+        android:gravity="center"
+        android:padding="13dp" />
+
+    <EditText
+        android:id="@+id/textPassword"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="385dp"
+        android:layout_marginEnd="100dp"
+        android:background="@drawable/textview_background"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:padding="13dp" />
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="217dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="480dp"
+        android:layout_marginEnd="100dp"
+        android:background="@drawable/ownbutton"
+        android:padding="10dp"
+        android:text="@string/login"
+        android:textColor="#000000" />
+
+    <Button
+        android:id="@+id/buttonSignUp"
+        android:layout_width="217dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="545dp"
+        android:layout_marginEnd="100dp"
+        android:background="@drawable/ownbutton"
+        android:padding="10dp"
+        android:text="@string/signUp"
+        android:textColor="#000000" />
+
+    <Button
+        android:id="@+id/buttonCancel"
+        android:layout_width="217dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="610dp"
+        android:layout_marginEnd="100dp"
+        android:background="@drawable/ownbutton"
+        android:padding="10dp"
+        android:text="@string/cancel"
+        android:textColor="#000000" />
+</FrameLayout>
+
+</layout>

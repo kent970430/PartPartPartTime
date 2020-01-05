@@ -31,15 +31,10 @@ interface CompanyDao {
     @Update
     fun update(company: Company)
 
-//    @Query("SELECT * from daily_sleep_quality_table WHERE nightId = :key")
-//    fun get(key: Long): User?
-//
-//    @Query("DELETE FROM daily_sleep_quality_table")
-//    fun clear()
-//
-//    @Query("SELECT * FROM daily_sleep_quality_table ORDER BY nightId DESC LIMIT 1")
-//    fun getTonight(): User?
-//
-//    @Query("SELECT * FROM daily_sleep_quality_table ORDER BY nightId DESC")
-//    fun getAllNights(): LiveData<List<User>>
+    @Query("SELECT * from company_table WHERE userName = :key")
+    fun getCompany(key: String): Company?
+
+    @Query("SELECT * FROM company_table ORDER BY num DESC")
+    fun getAllCompanys(): LiveData<List<Company>>
+
 }

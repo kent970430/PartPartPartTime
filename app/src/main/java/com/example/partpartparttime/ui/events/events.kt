@@ -24,8 +24,8 @@ class events : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding:   = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_events, container, false)
+//        val binding:   = DataBindingUtil.inflate(
+//            inflater, R.layout.fragment_events, container, false)
 
         return inflater.inflate(R.layout.fragment_events, container, false)
     }

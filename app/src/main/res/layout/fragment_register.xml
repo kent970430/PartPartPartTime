@@ -1,123 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.register.register">
 
-    <data>
-        <variable
-            name="registerViewModel"
-            type="com.example.partpartparttime.ui.register.RegisterViewModel" />
-    </data>
+    <Button
+        android:id="@+id/buttonApplicant"
+        android:layout_width="217dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginEnd="100dp"
+        android:background="@drawable/ownbutton"
+        android:padding="10dp"
+        android:text="@string/applicant"
+        android:textColor="#000000" />
 
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.register.Register">
+    <Button
+        android:id="@+id/buttonCompany"
+        android:layout_width="217dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="370dp"
+        android:layout_marginEnd="100dp"
+        android:background="@drawable/ownbutton"
+        android:padding="10dp"
+        android:text="@string/company"
+        android:textColor="#000000" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="140dp"
-            android:layout_marginTop="84dp"
-            android:text="@string/register"
-            android:textColor="#242729"
-            android:textSize="80px"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/textFirstName"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="140dp"
-            android:layout_marginEnd="100dp"
-            android:background="@drawable/textview_background"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="@string/firstName"
-            android:inputType="textPersonName"
-            android:padding="13dp" />
-
-        <EditText
-            android:id="@+id/textLastName"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="210dp"
-            android:layout_marginEnd="100dp"
-            android:background="@drawable/textview_background"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="@string/lastName"
-            android:inputType="textPersonName"
-            android:padding="13dp" />
-
-        <EditText
-            android:id="@+id/textEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="280dp"
-            android:layout_marginEnd="100dp"
-            android:background="@drawable/textview_background"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="@string/email"
-            android:padding="13dp" />
-
-        <EditText
-            android:id="@+id/textUserName"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="385dp"
-            android:layout_marginEnd="100dp"
-            android:background="@drawable/textview_background"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="@string/username"
-            android:inputType="textPersonName"
-            android:padding="13dp" />
-
-        <EditText
-            android:id="@+id/textPassword"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="455dp"
-            android:layout_marginEnd="100dp"
-            android:background="@drawable/textview_background"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="@string/password"
-            android:inputType="textPassword"
-            android:padding="13dp" />
-
-        <Button
-            android:id="@+id/buttonSignUp"
-            android:layout_width="217dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="545dp"
-            android:layout_marginEnd="100dp"
-            android:background="@drawable/ownbutton"
-            android:padding="10dp"
-            android:text="@string/signUp"
-            android:textColor="#000000" />
-
-        <Button
-            android:id="@+id/buttonCancel"
-            android:layout_width="217dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="610dp"
-            android:layout_marginEnd="100dp"
-            android:background="@drawable/ownbutton"
-            android:padding="10dp"
-            android:text="@string/cancel"
-            android:textColor="#000000" />
-
-    </FrameLayout>
+</FrameLayout>
 
 </layout>

@@ -12,7 +12,13 @@
     <string name="menu_event">Event</string>
     <string name="menu_tools">Tools</string>
     <string name="menu_login">Login</string>
+    <string name="menu_login_applicant">Applicant Login</string>
+    <string name="menu_login_compnay">Company Login</string>
+    <string name="menu_register_applicant">Applicant Register</string>
+    <string name="menu_register_compnay">Company Register</string>
     <string name="menu_register">Register</string>
+    <string name="menu_profile_applicant">Applicant</string>
+    <string name="menu_profile_company">Company</string>
 
     <string name="login">Login</string>
     <string name="signUp">Sign Up</string>
@@ -24,12 +30,15 @@
     <string name="firstName">First Name</string>
     <string name="lastName">Last Name</string>
     <string name="email">Email</string>
+    <string name="companyName">Company Name</string>
 
     <string name="partpartpartTime">Part Part Part Time</string>
     <string name="events">Events</string>
     <string name="training">Training / Educational</string>
     <string name="ptj">Part Time Job</string>
     <string name="profile">Profile</string>
+    <string name="applicant">Applicant</string>
+    <string name="company">Company</string>
     <string name="logout">Log Out</string>
 
     <string name="eventtt">Coming / Past Events</string>
@@ -43,13 +52,18 @@
     <string name="description">Description</string>
     <string name="description1">Description 1</string>
     <string name="description2">Description 2</string>
-    <string name="descriptio3">Description 3</string>
+    <string name="description3">Description 3</string>
 
     <string name="login_success">Successfully Login!</string>
     <string name="login_failed">Invalid username or password!</string>
 
+    <string name="logout_success">Successfully Log Out!</string>
+
     <string name="applicants">All Applicants</string>
     <string name="user_id">User ID</string>
+
+    <string name="companys">All Companies</string>
+    <string name="company_id">Company ID</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
