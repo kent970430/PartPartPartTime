@@ -48,5 +48,11 @@ data class Company(
         var contact: String = "",
 
         @ColumnInfo(name = "email")
-        var email: String = ""
+        var email: String = "",
+
+        @ColumnInfo(name = "details")
+        var details: String = "",
+
+        @ColumnInfo(name = "Job")
+        var job: String = ""
 )

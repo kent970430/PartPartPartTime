@@ -44,31 +44,22 @@ data class Applicant(
     @ColumnInfo(name = "lastName")
     var lastName: String= "",
 
-    @ColumnInfo(name = "age")
-    var age: Int=0,
-
-    @ColumnInfo(name = "address")
-    var address: String= "",
-
     @ColumnInfo(name = "contact")
     var contact: String= "",
 
     @ColumnInfo(name = "email")
     var email: String= "",
 
-    @ColumnInfo(name = "experince")
+    @ColumnInfo(name = "experience")
     var experince: String= "",
 
     @ColumnInfo(name = "skill")
     var skill: String= "",
 
     @ColumnInfo(name = "education")
-    var education: String= "",
+    var education: String= ""
 
 //    @ColumnInfo(typeAffinity = ColumnInfo.BLOB)
 //    var data: ByteArray? = null,
-
-    @ColumnInfo(name = "resume")
-    var resume: String= ""
 )
 

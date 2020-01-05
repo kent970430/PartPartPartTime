@@ -33,21 +33,49 @@ class ApplicantFragment : Fragment() {
             R.layout.fragment_applicant, container, false
         )
 
-//        val application = requireNotNull(this.activity).application
-//        val dataSource = PartimeDatabase.getInstance(application).applicantDao
+        val application = requireNotNull(this.activity).application
+        val dataSource = PartimeDatabase.getInstance(application).applicantDao
 
-//        textUserName.text = loggedUser
+        var appl: Applicant? = dataSource.getApplicantID(loggedUser)
 
-        binding.buttonLogOut.setOnClickListener{view ->
-//            Log.i("Result", MainActivity.loggedUser)
+        if (appl == null) {
+            Toast.makeText(activity, R.string.login_failed, Toast.LENGTH_SHORT).show()
+            Log.i("Result", "No user found")
+        } else {
+            val name: TextView = binding.root.findViewById(R.id.textName)
+            name.setText(appl.firstName + appl.lastName)
+
+            val email: TextView = binding.root.findViewById(R.id.textEmaill)
+            email.setText(appl.email)
+
+        }
+
+        binding.buttonLogOut.setOnClickListener { view ->
+            //            Log.i("Result", MainActivity.loggedUser)
             Toast.makeText(activity, R.string.logout_success, Toast.LENGTH_SHORT).show()
 
-            MainActivity.loggedUser = ""
+            loggedUser = ""
 
             Log.i("Result", "Successfully logged out")
 
 
             view.findNavController().navigate(R.id.action_applicantFragment_to_nav_home)
+        }
+
+        binding.buttonEdit.setOnClickListener { view ->
+            //            Log.i("Result", MainActivity.loggedUser)
+            Toast.makeText(activity, R.string.logout_success, Toast.LENGTH_SHORT).show()
+
+
+//            view.findNavController().navigate(R.id.action_applicantFragment_to_nav_home)
+        }
+
+        binding.buttonSave.setOnClickListener { view ->
+            //            Log.i("Result", MainActivity.loggedUser)
+            Toast.makeText(activity, R.string.logout_success, Toast.LENGTH_SHORT).show()
+
+
+//            view.findNavController().navigate(R.id.action_applicantFragment_to_nav_home)
         }
         return binding.root
     }

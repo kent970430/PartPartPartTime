@@ -13,7 +13,10 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import com.example.partpartparttime.MainActivity
+import com.example.partpartparttime.MainActivity.Companion.loggedUser
 import com.example.partpartparttime.R
+import com.example.partpartparttime.database.Company
+import com.example.partpartparttime.database.PartimeDatabase
 import com.example.partpartparttime.databinding.FragmentCompanyBinding
 
 class CompanyFragment : Fragment() {
@@ -29,22 +32,49 @@ class CompanyFragment : Fragment() {
             inflater,
             R.layout.fragment_company, container, false
         )
+        val application = requireNotNull(this.activity).application
+        val dataSource = PartimeDatabase.getInstance(application).companyDao
 
-//        val application = requireNotNull(this.activity).application
-//        val dataSource = PartimeDatabase.getInstance(application).applicantDao
+        var comp: Company? = dataSource.getCompanyID(loggedUser)
 
-//        textUserName.text = loggedUser
+        if (comp == null) {
+            Toast.makeText(activity, R.string.login_failed, Toast.LENGTH_SHORT).show()
+            Log.i("Result", "No user found")
+        } else {
+            val name: TextView = binding.root.findViewById(R.id.textName)
+            name.setText(comp.companyName)
 
-        binding.buttonLogOut.setOnClickListener{view ->
-//            Log.i("Result", MainActivity.loggedUser)
+            val email: TextView = binding.root.findViewById(R.id.textEmaill)
+            email.setText(comp.email)
+
+        }
+
+        binding.buttonLogOut.setOnClickListener { view ->
+            //            Log.i("Result", MainActivity.loggedUser)
             Toast.makeText(activity, R.string.logout_success, Toast.LENGTH_SHORT).show()
 
-            MainActivity.loggedUser = ""
+            loggedUser = ""
 
             Log.i("Result", "Successfully logged out")
 
 
-            view.findNavController().navigate(R.id.action_companyFragment_to_nav_home)
+            view.findNavController().navigate(R.id.action_applicantFragment_to_nav_home)
+        }
+
+        binding.buttonEdit.setOnClickListener { view ->
+            //            Log.i("Result", MainActivity.loggedUser)
+            Toast.makeText(activity, R.string.logout_success, Toast.LENGTH_SHORT).show()
+
+
+//            view.findNavController().navigate(R.id.action_applicantFragment_to_nav_home)
+        }
+
+        binding.buttonSave.setOnClickListener { view ->
+            //            Log.i("Result", MainActivity.loggedUser)
+            Toast.makeText(activity, R.string.logout_success, Toast.LENGTH_SHORT).show()
+
+
+//            view.findNavController().navigate(R.id.action_applicantFragment_to_nav_home)
         }
         return binding.root
     }

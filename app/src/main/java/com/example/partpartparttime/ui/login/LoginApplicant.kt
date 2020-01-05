@@ -20,8 +20,6 @@ import com.example.partpartparttime.databinding.FragmentLoginApplicantBinding
 import kotlinx.android.synthetic.main.fragment_login_applicant.*
 
 class LoginApplicant : Fragment() {
-    // TODO: Rename and change types of parameters
-//    private lateinit var loginViewModel: LoginViewModel
     private var username:String = ""
     private var password:String = ""
 
@@ -30,13 +28,6 @@ class LoginApplicant : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-//        loginViewModel =
-//            ViewModelProviders.of(this).get(LoginViewModel::class.java)
-//        val root = inflater.inflate(R.layout.fragment_login_applicant, container, false)
-////        val textView: TextView = root.findViewById(R.id.login)
-//        loginViewModel.text.observe(this, Observer {
-////            textView.text = it
-//        })
 
         val binding: FragmentLoginApplicantBinding = DataBindingUtil.inflate(inflater,
             R.layout.fragment_login_applicant, container, false)
@@ -80,11 +71,6 @@ class LoginApplicant : Fragment() {
 
 
         return binding.root
-    }
-
-    private fun navigateToMainPage(){
-
-
     }
 
     fun Fragment.hideKeyboard() {

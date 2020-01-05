@@ -22,8 +22,6 @@ import com.example.partpartparttime.databinding.FragmentLoginCompanyBinding
 import kotlinx.android.synthetic.main.fragment_login_applicant.*
 
 class LoginCompany : Fragment() {
-    // TODO: Rename and change types of parameters
-//    private lateinit var loginViewModel: LoginViewModel
     private var username:String = ""
     private var password:String = ""
 

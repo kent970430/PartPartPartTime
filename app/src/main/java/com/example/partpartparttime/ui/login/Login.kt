@@ -21,30 +21,15 @@ import com.example.partpartparttime.databinding.FragmentLoginBinding
 import kotlinx.android.synthetic.main.fragment_login_applicant.*
 
 class Login : Fragment() {
-    // TODO: Rename and change types of parameters
-//    private lateinit var loginViewModel: LoginViewModel
-    private var username:String = ""
-    private var password:String = ""
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-//        loginViewModel =
-//            ViewModelProviders.of(this).get(LoginViewModel::class.java)
-//        val root = inflater.inflate(R.layout.fragment_login_applicant, container, false)
-////        val textView: TextView = root.findViewById(R.id.login)
-//        loginViewModel.text.observe(this, Observer {
-////            textView.text = it
-//        })
 
         val binding: FragmentLoginBinding = DataBindingUtil.inflate(inflater,
             R.layout.fragment_login, container, false)
-
-        //Database
-//        val application = requireNotNull(this.activity).application
-//        val dataSource = PartimeDatabase.getInstance(application).applicantDao
 
         binding.buttonApplicant.setOnClickListener{view ->
 
