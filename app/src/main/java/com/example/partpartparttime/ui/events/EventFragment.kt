@@ -1,9 +1,7 @@
-package com.example.potensituitionapp.Main
+package com.example.partpartparttime.ui.events
 
 
 import android.os.Bundle
-import android.os.Handler
-import android.view.KeyEvent
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,36 +9,22 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-
-import com.example.partpartparttime.R
-import com.example.partpartparttime.databinding.FragmentEventBinding
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.partpartparttime.R
 import com.example.partpartparttime.database.PartimeDatabase
-import com.example.partpartparttime.ui.events.EventListener
-import com.example.partpartparttime.ui.events.EventRecyclerAdapter
-import com.example.partpartparttime.ui.events.EventsViewModel
-import com.example.partpartparttime.ui.events.EventsViewModelFactory
-
+import com.example.partpartparttime.databinding.FragmentEventBinding
 
 /**
  * A simple [Fragment] subclass.
  */
-class event : Fragment() {
-
-    private var doubleBackToExitPressedOnce = false
-
-    companion object {
-        fun newInstance(): event = event()
-    }
-
+class EventFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         (activity as AppCompatActivity).supportActionBar?.title = "Main Menu"
 
         val binding: FragmentEventBinding = DataBindingUtil.inflate(inflater,
@@ -57,7 +41,7 @@ class event : Fragment() {
                 this, viewModelFactory).get(EventsViewModel::class.java)
 
         val adapter = EventRecyclerAdapter(EventListener { eventId ->
-            Toast.makeText(context,"${eventId}",Toast.LENGTH_LONG).show()
+            Toast.makeText(context,"${eventId}", Toast.LENGTH_LONG).show()
             eventViewModel.onEventClicked(eventId)
         })
 
@@ -87,4 +71,6 @@ class event : Fragment() {
 
         return binding.root
     }
+
+
 }

@@ -55,9 +55,9 @@
     </fragment>
     <fragment
         android:id="@+id/events"
-        android:name="com.example.partpartparttime.ui.events.list_events"
+        android:name="com.example.partpartparttime.ui.events.EventFragment"
         android:label="@string/menu_event"
-        tools:layout="@layout/fragment_events" />
+        tools:layout="@layout/fragment_event" />
     <fragment
         android:id="@+id/profile_applicant"
         android:name="com.example.partpartparttime.ui.applicant_profile.ApplicantFragment"
@@ -128,4 +128,8 @@
             android:id="@+id/action_register_company_to_nav_home"
             app:destination="@id/nav_home" />
     </fragment>
+    <fragment
+        android:id="@+id/event"
+        android:name="com.example.potensituitionapp.Main.event"
+        android:label="event" />
 </navigation>
