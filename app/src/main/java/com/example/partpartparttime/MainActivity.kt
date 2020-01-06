@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
     companion object {
         var loggedUser = ""
         var name = ""
+        var IMAGE_DIRECTORY = "/demonuts"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
