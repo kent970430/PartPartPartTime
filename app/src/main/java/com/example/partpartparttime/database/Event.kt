@@ -32,7 +32,7 @@ data class Event(
         var event_description: String = "",
 
         @ColumnInfo(name = "eventImage")
-        var eventImage: String = "",
+        var eventImage: String? = null,
 
         @ColumnInfo(name = "notic_idd")
         var notic_idd: Int

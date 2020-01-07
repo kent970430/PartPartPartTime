@@ -265,8 +265,6 @@ class CompanyFragment : Fragment() {
             MainActivity.imagePath = file.absolutePath
             out.flush()
             out.close()
-
-
         } catch (e: Exception) {
             e.printStackTrace()
 
