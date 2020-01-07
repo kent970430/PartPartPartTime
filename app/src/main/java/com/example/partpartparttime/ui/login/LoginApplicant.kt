@@ -12,9 +12,11 @@ import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.view.get
 import com.example.partpartparttime.R
 import com.example.partpartparttime.database.PartimeDatabase
 import androidx.databinding.DataBindingUtil
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import com.example.partpartparttime.MainActivity
@@ -22,7 +24,9 @@ import com.example.partpartparttime.MainActivity.Companion.loggedUser
 import com.example.partpartparttime.MainActivity.Companion.name
 import com.example.partpartparttime.database.Applicant
 import com.example.partpartparttime.databinding.FragmentLoginApplicantBinding
+import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.fragment_login_applicant.*
+import kotlinx.android.synthetic.main.fragment_login_company.view.*
 
 class LoginApplicant : Fragment() {
     private var username:String = ""
@@ -64,18 +68,32 @@ class LoginApplicant : Fragment() {
                 if(appl.password.equals(password)){
                     Toast.makeText(activity, R.string.login_success, Toast.LENGTH_SHORT).show()
 
-                    loggedUser = appl.userID
+                    loggedUser = appl.userID.toString()
                     name = appl.firstName+appl.lastName
 //                    loginViewModel.nav_header_title = name
 //                    loginViewModel.nav_header_subtitle = appl.email
 
                     Log.i("Result","Successfully logged in")
 
+                    val navView : NavigationView = activity!!.findViewById(R.id.nav_view)
+
+                    navView.menu.getItem(4).isVisible = false
+
+//                    navView.menu.getItem(5).isVisible = true
+
+//                    navView.menu.getItem(5).isVisible = true
+
 //                    with(sharedPreferences.edit()){
 //                        putString(getString(R.string.nav_header_title), loginViewModel.nav_header_title)
 //                        putString(getString(R.string.nav_header_subtitle), loginViewModel.nav_header_subtitle)
 //                        commit()
 //                    }
+
+
+//                    val drawerLayout : DrawerLayout = activity!!.findViewById(R.id.drawer_layout)
+
+
+
 
                     view.findNavController().
                         navigate(R.id.action_login_to_applicantFragment)

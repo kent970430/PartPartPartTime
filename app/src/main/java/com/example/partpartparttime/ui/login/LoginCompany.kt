@@ -20,6 +20,7 @@ import com.example.partpartparttime.database.Applicant
 import com.example.partpartparttime.database.Company
 import com.example.partpartparttime.databinding.FragmentLoginApplicantBinding
 import com.example.partpartparttime.databinding.FragmentLoginCompanyBinding
+import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.fragment_login_applicant.*
 
 class LoginCompany : Fragment() {
@@ -56,8 +57,8 @@ class LoginCompany : Fragment() {
                 if(comp.password.equals(password)){
                     Toast.makeText(activity, R.string.login_success, Toast.LENGTH_SHORT).show()
 
-                    loggedUser = comp.companyID
-                    name = comp.companyName
+                    loggedUser = comp.companyID.toString()
+                    name = comp.companyName.toString()
 
                     Log.i("Result","Successfully logged in")
 
@@ -71,6 +72,10 @@ class LoginCompany : Fragment() {
                     Log.i("Result","Invalid password")
                 }
             }
+
+            val navView : NavigationView = activity!!.findViewById(R.id.nav_view)
+
+            navView.menu.getItem(4).isVisible = false
         }
 
         binding.buttonCancel.setOnClickListener { view ->

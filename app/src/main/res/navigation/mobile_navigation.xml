@@ -33,7 +33,7 @@
         tools:layout="@layout/fragment_login_applicant">
         <action
             android:id="@+id/action_login_to_applicantFragment"
-            app:destination="@id/profile_applicant" />
+            app:destination="@+id/profile_applicant" />
         <action
             android:id="@+id/action_login_applicant_to_register"
             app:destination="@id/register" />
@@ -128,8 +128,4 @@
             android:id="@+id/action_register_company_to_nav_home"
             app:destination="@id/nav_home" />
     </fragment>
-    <fragment
-        android:id="@+id/event"
-        android:name="com.example.potensituitionapp.Main.event"
-        android:label="event" />
 </navigation>

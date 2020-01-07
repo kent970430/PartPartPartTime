@@ -30,29 +30,35 @@ data class Company(
         var num: Long = 0L,
 
         @ColumnInfo(name = "userName")
-        var userName: String = "",
+        var userName: String? = null,
 
         @ColumnInfo(name = "password")
-        var password: String = "",
+        var password: String? = null,
 
         @ColumnInfo(name = "companyID")
-        var companyID: String = "",
+        var companyID: String? = null,
 
         @ColumnInfo(name = "companyName")
-        var companyName: String = "",
+        var companyName: String? = null,
 
         @ColumnInfo(name = "address")
-        var address: String = "",
+        var address: String? = null,
 
         @ColumnInfo(name = "contact")
-        var contact: String = "",
+        var contact: String? = null,
 
         @ColumnInfo(name = "email")
-        var email: String = "",
+        var email: String? = null,
 
         @ColumnInfo(name = "details")
-        var details: String = "",
+        var details: String? = null,
 
-        @ColumnInfo(name = "Job")
-        var job: String = ""
+        @ColumnInfo(name = "job")
+        var job: String? = null,
+
+        @ColumnInfo(name = "image")
+        var image: String? = null,
+
+        @ColumnInfo(name = "category")
+        var category: String? = null
 )

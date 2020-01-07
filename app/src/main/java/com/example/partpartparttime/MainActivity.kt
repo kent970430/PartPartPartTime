@@ -14,6 +14,8 @@ import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
+import android.widget.ImageView
+
 //import com.example.partpartparttime.databinding.ActivityMainBinding
 
 
@@ -25,7 +27,9 @@ class MainActivity : AppCompatActivity() {
     companion object {
         var loggedUser = ""
         var name = ""
-        var IMAGE_DIRECTORY = "/demonuts"
+//        var IMAGE_DIRECTORY = "/DCIM/"
+        var imagePath: String? = ""
+        var imageview: ImageView? = null
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

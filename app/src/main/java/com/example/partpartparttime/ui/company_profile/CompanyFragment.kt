@@ -12,6 +12,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.core.net.toUri
 import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -23,6 +24,7 @@ import com.example.partpartparttime.R
 import com.example.partpartparttime.database.Company
 import com.example.partpartparttime.database.PartimeDatabase
 import com.example.partpartparttime.databinding.FragmentCompanyBinding
+import com.google.android.material.navigation.NavigationView
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
@@ -84,25 +86,45 @@ class CompanyFragment : Fragment() {
             val job: EditText = binding.root.findViewById(R.id.textDescription3)
             job.setText(comp.job)
 
+            val image: ImageView = binding.root.findViewById(R.id.imageViewPreview2)
+            val imageV = comp.image.toString().toUri()
+            image.setImageURI(imageV)
+
             val headName: TextView = this.getActivity()!!.findViewById(R.id.head_name)
             headName.setText(MainActivity.name)
             val headEmail: TextView = this.getActivity()!!.findViewById(R.id.head_email)
             headEmail.setText(comp.email)
+            val imageView : ImageView = this.getActivity()!!.findViewById(R.id.imageView)
+            imageView.setImageURI(imageV)
 
         }
 
+        val navView: NavigationView = activity!!.findViewById(R.id.nav_view)
+
+        val headerView = navView.menu.getItem(3)
+        headerView.isVisible = true
+
         binding.buttonLogOut.setOnClickListener { view ->
-            //            Log.i("Result", MainActivity.loggedUser)
+
             Toast.makeText(activity, R.string.logout_success, Toast.LENGTH_SHORT).show()
 
             loggedUser = ""
             name = ""
             val headName: TextView = this.getActivity()!!.findViewById(R.id.head_name)
-            headName.setText("")
+            headName.setText(R.string.nav_header_title)
             val headEmail: TextView = this.getActivity()!!.findViewById(R.id.head_email)
-            headEmail.setText("")
+            headEmail.setText(R.string.nav_header_subtitle)
+            val imageView : ImageView = this.getActivity()!!.findViewById(R.id.imageView)
+            imageView.setImageResource(R.mipmap.ic_launcher)
 
+            Toast.makeText(activity, "Successfully logged out", Toast.LENGTH_SHORT).show()
             Log.i("Result", "Successfully logged out")
+
+            val navView: NavigationView = activity!!.findViewById(R.id.nav_view)
+
+            navView.menu.getItem(3).isVisible = false
+
+            navView.menu.getItem(4).isVisible = true
 
 
             view.findNavController().navigate(R.id.action_companyFragment_to_nav_home)
@@ -135,15 +157,19 @@ class CompanyFragment : Fragment() {
             uDescription = binding.textDescription2.text.toString()
             uJob = binding.textDescription3.text.toString()
 
-            if(comp != null) {
+            if (comp != null) {
                 comp.contact = uContact
                 comp.email = uEmail
                 comp.address = uAddress
                 comp.details = uDescription
                 comp.job = uJob
+                comp.image = MainActivity.imagePath
 
                 dataSource.update(comp)
             }
+
+            val imageView : ImageView = this.getActivity()!!.findViewById(R.id.imageView)
+            imageView.setImageURI(MainActivity.imagePath!!.toUri())
 
             val email: EditText = binding.root.findViewById(R.id.textEmaill)
             email.isEnabled = false
@@ -195,13 +221,9 @@ class CompanyFragment : Fragment() {
         startActivityForResult(intent, CAMERA)
     }
 
-    public override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 
         super.onActivityResult(requestCode, resultCode, data)
-        /* if (resultCode == this.RESULT_CANCELED)
-         {
-         return
-         }*/
         if (requestCode == GALLERY) {
             if (data != null) {
                 val contentURI = data!!.data
@@ -211,12 +233,10 @@ class CompanyFragment : Fragment() {
                         contentURI
                     )
                     val path = saveImage(bitmap)
-//                    Toast.makeText(this@MainActivity, "Image Saved!", Toast.LENGTH_SHORT).show()
                     imageview!!.setImageBitmap(bitmap)
 
                 } catch (e: IOException) {
                     e.printStackTrace()
-//                    Toast.makeText(this@MainActivity, "Failed!", Toast.LENGTH_SHORT).show()
                 }
 
             }
@@ -225,45 +245,32 @@ class CompanyFragment : Fragment() {
             val thumbnail = data!!.extras!!.get("data") as Bitmap
             imageview!!.setImageBitmap(thumbnail)
             saveImage(thumbnail)
-//            Toast.makeText(this@MainActivity, "Image Saved!", Toast.LENGTH_SHORT).show()
         }
     }
 
-    fun saveImage(myBitmap: Bitmap): String {
-        val bytes = ByteArrayOutputStream()
-        myBitmap.compress(Bitmap.CompressFormat.JPEG, 90, bytes)
-        val wallpaperDirectory = File(
-            (Environment.getExternalStorageState()).toString() + MainActivity.IMAGE_DIRECTORY
-        )
-        // have the object build the directory structure, if needed.
-        Log.d("fee", wallpaperDirectory.toString())
-        if (!wallpaperDirectory.exists()) {
+    private fun saveImage(finalBitmap: Bitmap): String {
 
-            wallpaperDirectory.mkdirs()
-        }
-
+        val root = Environment.getExternalStorageDirectory().toString()
+        val myDir = File(root + "/capture_photo")
+        myDir.mkdirs()
+        val generator = Random()
+        var n = 10000
+        n = generator.nextInt(n)
+        val OutletFname = "Image-$n.jpg"
+        val file = File(myDir, OutletFname)
+        if (file.exists()) file.delete()
         try {
-            Log.d("heel", wallpaperDirectory.toString())
-            val f = File(
-                wallpaperDirectory, ((Calendar.getInstance()
-                    .getTimeInMillis()).toString() + ".jpg")
-            )
-            f.createNewFile()
-            val fo = FileOutputStream(f)
-            fo.write(bytes.toByteArray())
-            MediaScannerConnection.scanFile(
-                this.context,
-                arrayOf(f.getPath()),
-                arrayOf("image/jpeg"), null
-            )
-            fo.close()
-            Log.d("TAG", "File Saved::--->" + f.getAbsolutePath())
+            val out = FileOutputStream(file)
+            finalBitmap.compress(Bitmap.CompressFormat.JPEG, 90, out)
+            MainActivity.imagePath = file.absolutePath
+            out.flush()
+            out.close()
 
-            return f.getAbsolutePath()
-        } catch (e1: IOException) {
-            e1.printStackTrace()
+
+        } catch (e: Exception) {
+            e.printStackTrace()
+
         }
-
-        return ""
+        return MainActivity.imagePath.toString()
     }
 }

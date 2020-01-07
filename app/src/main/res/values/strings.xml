@@ -12,6 +12,7 @@
     <string name="menu_event">Event</string>
     <string name="menu_tools">Tools</string>
     <string name="menu_login">Login</string>
+    <string name="menu_signout">Sign Out</string>
     <string name="menu_login_applicant">Applicant Login</string>
     <string name="menu_login_compnay">Company Login</string>
     <string name="menu_register_applicant">Applicant Register</string>

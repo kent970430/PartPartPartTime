@@ -15,24 +15,30 @@
         <item
             android:id="@+id/profile_applicant"
             android:icon="@drawable/ic_friends"
-            android:title="@string/menu_profile_applicant" />
+            android:title="@string/menu_profile_applicant"
+            android:visible="false" />
         <item
             android:id="@+id/profile_company"
             android:icon="@drawable/ic_account_balance"
-            android:title="@string/menu_profile_company" />
+            android:title="@string/menu_profile_company"
+            android:visible="false" />
+
+        <item
+            android:id="@+id/login"
+            android:icon="@drawable/ic_person_pin_black_24dp"
+            android:title="@string/menu_login" />
+        <item
+            android:id="@+id/signout"
+            android:icon="@drawable/ic_signout"
+            android:title="@string/menu_signout"
+            android:visible="false" />
+        <item
+            android:id="@+id/register"
+            android:icon="@drawable/ic_update"
+            android:title="@string/menu_register" />
+
+
     </group>
 
-    <item android:title="Account Settings">
-        <menu>
-            <item
-                android:id="@+id/login"
-                android:icon="@drawable/ic_person_pin_black_24dp"
-                android:title="@string/menu_login" />
-            <item
-                android:id="@+id/register"
-                android:icon="@drawable/ic_update"
-                android:title="@string/menu_register" />
-        </menu>
-    </item>
 
 </menu>

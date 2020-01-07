@@ -16,6 +16,7 @@
 
 package com.example.partpartparttime.database
 
+import android.net.Uri
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
@@ -30,36 +31,39 @@ data class Applicant(
     var num: Long = 0L,
 
     @ColumnInfo(name = "userName")
-    var userName: String = "",
+    var userName: String? = null,
 
     @ColumnInfo(name = "password")
-    var password: String = "",
+    var password: String? = null,
 
     @ColumnInfo(name = "userID")
-    var userID: String = "",
+    var userID: String? = null,
 
     @ColumnInfo(name = "firstName")
-    var firstName: String = "",
+    var firstName: String? = null,
 
     @ColumnInfo(name = "lastName")
-    var lastName: String= "",
+    var lastName: String? = null,
 
     @ColumnInfo(name = "contact")
-    var contact: String= "",
+    var contact: String? = null,
 
     @ColumnInfo(name = "email")
-    var email: String= "",
+    var email: String? = null,
 
     @ColumnInfo(name = "experience")
-    var experince: String= "",
+    var experince: String? = null,
 
     @ColumnInfo(name = "skill")
-    var skill: String= "",
+    var skill: String? = null,
 
     @ColumnInfo(name = "education")
-    var education: String= ""
+    var education: String? = null,
 
-//    @ColumnInfo(typeAffinity = ColumnInfo.BLOB)
-//    var data: ByteArray? = null,
+    @ColumnInfo(name = "image")
+    var image: String? = null,
+
+    @ColumnInfo(name = "category")
+    var category: String? = null
 )
 
