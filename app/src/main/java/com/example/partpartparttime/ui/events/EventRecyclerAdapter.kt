@@ -55,6 +55,6 @@ class EventDiffCallback : DiffUtil.ItemCallback<Event>() {
     }
 }
 
-class EventListener(val clickListener: (eventId: Int) -> Unit) {
-    fun onClick(eventt: Event) = clickListener(eventt.eventID)
+class EventListener(val clickListener: (companyID: String?) -> Unit) {
+    fun onClick(eventt: Event) = clickListener(eventt.companyID)
 }

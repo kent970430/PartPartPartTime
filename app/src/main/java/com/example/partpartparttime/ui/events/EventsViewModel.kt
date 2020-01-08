@@ -9,12 +9,12 @@ class EventsViewModel(val database: EventDao,
                       application: Application
 ): AndroidViewModel(application){
 
-    private val _navigateToCompany = MutableLiveData<Int>()
+    private val _navigateToCompany = MutableLiveData<String>()
     val navigateToCompany get() =_navigateToCompany
 
     val eventttt = database.getAllEvents()
 
-    fun onEventClicked(id: Int) {
+    fun onEventClicked(id: String?) {
         _navigateToCompany.value = id
     }
 

@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.partpartparttime.R
 import com.example.partpartparttime.database.PartimeDatabase
@@ -30,19 +31,17 @@ class EventFragment : Fragment() {
         val binding: FragmentEventBinding = DataBindingUtil.inflate(inflater,
             R.layout.fragment_event, container, false)
 
-        //Database
         val application = requireNotNull(this.activity).application
         val dataSource = PartimeDatabase.getInstance(application).eventDao
         val viewModelFactory = EventsViewModelFactory(dataSource, application)
-
 
         val eventViewModel =
             ViewModelProviders.of(
                 this, viewModelFactory).get(EventsViewModel::class.java)
 
-        val adapter = EventRecyclerAdapter(EventListener { eventId ->
-            Toast.makeText(context,"${eventId}", Toast.LENGTH_LONG).show()
-            eventViewModel.onEventClicked(eventId)
+        val adapter = EventRecyclerAdapter(EventListener { companyID ->
+            Toast.makeText(context,"${companyID}", Toast.LENGTH_LONG).show()
+            eventViewModel.onEventClicked(companyID)
         })
 
         eventViewModel.eventttt.observe(viewLifecycleOwner, Observer{
@@ -58,7 +57,7 @@ class EventFragment : Fragment() {
 //        eventViewModel.navigateToCompany.observe(this, Observer { iddd ->
 //            iddd?.let {
 //                this.findNavController().navigate(
-//                    eventDirections
+//                    EventFragmentDirections
 //                        .actionMainmenuFragmentToClassdetailFragment(iddd))
 //                eventViewModel.onEventNavigated()
 //            }

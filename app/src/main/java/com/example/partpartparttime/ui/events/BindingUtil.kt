@@ -14,6 +14,20 @@ fun TextView.setEventNameString(item: Event?) {
     }
 }
 
+@BindingAdapter("companyIDString")
+fun TextView.setCompanyIDString(item: Event?) {
+    item?.let {
+        text = item.companyID
+    }
+}
+
+@BindingAdapter("companyNameString")
+fun TextView.setCompanyNameString(item: Event?) {
+    item?.let {
+        text = item.companyName
+    }
+}
+
 @BindingAdapter("eventDescriptionString")
 fun TextView.setEventDescriptionString(item: Event?) {
     item?.let {

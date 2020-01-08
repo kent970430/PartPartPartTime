@@ -27,23 +27,47 @@
             android:id="@+id/event_name"
             android:layout_width="80dp"
             android:layout_height="24dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="20dp"
             app:eventNameString="@{eventttttt}"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.078"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Event Name" />
 
         <TextView
+            android:id="@+id/company_id"
+            android:layout_width="80dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="15dp"
+            app:companyIDString="@{eventttttt}"
+            app:layout_constraintEnd_toStartOf="@+id/company_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/event_name"
+            tools:text="Company ID" />
+
+        <TextView
+            android:id="@+id/company_name"
+            android:layout_width="150dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="15dp"
+            app:companyNameString="@{eventttttt}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/event_name"
+            tools:text="Company Name" />
+
+        <TextView
             android:id="@+id/event_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="15dp"
             android:text="@string/description"
             app:eventDescriptionString="@{eventttttt}"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.076"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/event_name" />
+            app:layout_constraintTop_toBottomOf="@+id/company_name" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

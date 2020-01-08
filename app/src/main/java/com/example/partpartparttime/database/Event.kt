@@ -34,6 +34,12 @@ data class Event(
         @ColumnInfo(name = "eventImage")
         var eventImage: String? = null,
 
+        @ColumnInfo(name = "companyID")
+        var companyID: String? = null,
+
+        @ColumnInfo(name = "companyName")
+        var companyName: String? = null,
+
         @ColumnInfo(name = "notic_idd")
         var notic_idd: Int
 )
