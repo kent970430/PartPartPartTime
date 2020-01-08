@@ -16,17 +16,18 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.partpartparttime.R
 import com.example.partpartparttime.database.PartimeDatabase
 import com.example.partpartparttime.databinding.FragmentEventBinding
+import kotlinx.android.synthetic.main.list_event.*
 
 /**
  * A simple [Fragment] subclass.
  */
 class EventFragment : Fragment() {
-
+    var users = ""
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        (activity as AppCompatActivity).supportActionBar?.title = "Main Menu"
+        (activity as AppCompatActivity).supportActionBar?.title = "Event"
 
         val binding: FragmentEventBinding = DataBindingUtil.inflate(inflater,
             R.layout.fragment_event, container, false)
@@ -54,14 +55,17 @@ class EventFragment : Fragment() {
 
         binding.eventList.adapter = adapter
 
-//        eventViewModel.navigateToCompany.observe(this, Observer { iddd ->
-//            iddd?.let {
-//                this.findNavController().navigate(
-//                    EventFragmentDirections
-//                        .actionMainmenuFragmentToClassdetailFragment(iddd))
-//                eventViewModel.onEventNavigated()
-//            }
-//        })
+        eventViewModel.navigateToCompany.observe(this, Observer { iddd ->
+            iddd?.let {
+                this.findNavController().navigate(
+                    EventFragmentDirections
+                        .actionEventsToProfileCompany(iddd))
+                eventViewModel.onEventNavigated()
+
+                users = company_id.text.toString()
+
+            }
+        })
 
 
         val aaa = GridLayoutManager(activity, 2)

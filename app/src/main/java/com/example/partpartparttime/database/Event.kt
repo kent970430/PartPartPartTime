@@ -18,9 +18,8 @@ package com.example.partpartparttime.database
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
-import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
-import java.util.*
+
 @Entity(tableName = "event_table"
 )
 data class Event(
@@ -29,7 +28,7 @@ data class Event(
         var eventID: Int = "E".toInt() + 1001,
 
         @ColumnInfo(name = "event_description")
-        var event_description: String = "",
+        var event_description: String? = null,
 
         @ColumnInfo(name = "eventImage")
         var eventImage: String? = null,
@@ -38,8 +37,5 @@ data class Event(
         var companyID: String? = null,
 
         @ColumnInfo(name = "companyName")
-        var companyName: String? = null,
-
-        @ColumnInfo(name = "notic_idd")
-        var notic_idd: Int
+        var companyName: String? = null
 )

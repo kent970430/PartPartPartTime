@@ -21,10 +21,13 @@ import com.example.partpartparttime.MainActivity
 import com.example.partpartparttime.MainActivity.Companion.loggedUser
 import com.example.partpartparttime.MainActivity.Companion.name
 import com.example.partpartparttime.R
+import com.example.partpartparttime.database.Applicant
 import com.example.partpartparttime.database.Company
 import com.example.partpartparttime.database.PartimeDatabase
 import com.example.partpartparttime.databinding.FragmentCompanyBinding
+import com.example.partpartparttime.ui.events.EventFragment
 import com.google.android.material.navigation.NavigationView
+import kotlinx.android.synthetic.main.fragment_company.*
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
@@ -61,12 +64,66 @@ class CompanyFragment : Fragment() {
 
         val application = requireNotNull(this.activity).application
         val dataSource = PartimeDatabase.getInstance(application).companyDao
+        val userSourse = PartimeDatabase.getInstance(application).applicantDao
 
         var comp: Company? = dataSource.getCompanyID(loggedUser)
+        var userrr: Applicant? = userSourse.getApplicantID(loggedUser)
+
+        var evenn = EventFragment()
+        var userss = evenn.users
+        var comp1: Company? = dataSource.getCompanyID(userss)
 
         if (comp == null) {
-            Toast.makeText(activity, R.string.login_failed, Toast.LENGTH_SHORT).show()
-            Log.i("Result", "No user found")
+            if(userrr == null) {
+                Toast.makeText(activity, R.string.get_failed, Toast.LENGTH_SHORT).show()
+                Log.i("Result", "No company found")
+            } else {
+                buttonEdit.hidee(false)
+                buttonSave.hidee(false)
+                buttonLogOut.hidee(false)
+                val name:EditText = binding.root.findViewById(R.id.textName)
+                if (comp1 != null) {
+                    name.setText(comp1.companyName)
+                }
+
+                val email: EditText = binding.root.findViewById(R.id.textEmaill)
+                if (comp1 != null) {
+                    email.setText(comp1.email)
+                }
+
+                val contact: EditText = binding.root.findViewById(R.id.textDescription)
+                if (comp1 != null) {
+                    contact.setText(comp1.contact)
+                }
+
+                val address: EditText = binding.root.findViewById(R.id.textDescription1)
+                if (comp1 != null) {
+                    address.setText(comp1.address)
+                }
+
+                val description: EditText = binding.root.findViewById(R.id.textDescription2)
+                if (comp1 != null) {
+                    description.setText(comp1.details)
+                }
+
+                val job: EditText = binding.root.findViewById(R.id.textDescription3)
+                if (comp1 != null) {
+                    job.setText(comp1.job)
+                }
+
+                val image: ImageView = binding.root.findViewById(R.id.imageViewPreview2)
+                val imageV = comp1?.image.toString().toUri()
+                image.setImageURI(imageV)
+
+                val headName: TextView = this.getActivity()!!.findViewById(R.id.head_name)
+                headName.setText(MainActivity.name)
+                val headEmail: TextView = this.getActivity()!!.findViewById(R.id.head_email)
+                if (comp1 != null) {
+                    headEmail.setText(comp1.email)
+                }
+                val imageView : ImageView = this.getActivity()!!.findViewById(R.id.imageView)
+                imageView.setImageURI(imageV)
+            }
         } else {
             val name: EditText = binding.root.findViewById(R.id.textName)
             name.setText(comp.companyName)
@@ -270,5 +327,13 @@ class CompanyFragment : Fragment() {
 
         }
         return MainActivity.imagePath.toString()
+    }
+
+    fun View.hidee(show: Boolean) {
+        visibility = if(show) {
+            View.VISIBLE
+        } else {
+            View.GONE
+        }
     }
 }

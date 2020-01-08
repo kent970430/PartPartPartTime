@@ -62,6 +62,9 @@
     <string name="login_success">Successfully Login!</string>
     <string name="login_failed">Invalid username or password!</string>
 
+    <string name="get_failed">Invalid Company!</string>
+
+
     <string name="logout_success">Successfully Log Out!</string>
 
     <string name="applicants">All Applicants</string>
@@ -69,6 +72,15 @@
 
     <string name="companys">All Companies</string>
     <string name="company_id">Company ID</string>
+    <string name="company_name">Company Name</string>
+
+    <string name="add_event">Add New Event</string>
+
+    <string name="event_id">Event ID</string>
+    <string name="event_des">Event Description</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
