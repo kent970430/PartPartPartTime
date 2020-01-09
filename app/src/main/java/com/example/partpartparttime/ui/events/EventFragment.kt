@@ -58,15 +58,11 @@ class EventFragment : Fragment() {
 
         eventViewModel.navigateToCompany.observe(this, Observer { iddd ->
             iddd?.let {
-
                 users = company_id.text.toString()
                 this.findNavController().navigate(
                     EventFragmentDirections
                         .actionEventsToProfileCompany(users))
                 eventViewModel.onEventNavigated()
-
-
-
             }
         })
 

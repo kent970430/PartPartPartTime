@@ -28,48 +28,13 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/textEventIDD"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="140dp"
-            android:layout_marginEnd="100dp"
-            android:background="@drawable/textview_background"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="@string/event_id"
-            android:inputType="textPersonName"
-            android:padding="13dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-
-        <EditText
-            android:id="@+id/textCompanyIDD"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="210dp"
-            android:layout_marginEnd="100dp"
-            android:background="@drawable/textview_background"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="@string/company_id"
-            android:inputType="textPersonName"
-            android:padding="13dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-
-        <EditText
             android:id="@+id/textCompanyNamee"
-            android:layout_width="wrap_content"
+            android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_marginStart="100dp"
-            android:layout_marginTop="280dp"
+            android:layout_marginTop="150dp"
             android:layout_marginEnd="100dp"
             android:background="@drawable/textview_background"
-            android:ems="10"
             android:gravity="center"
             android:hint="@string/company_name"
             android:padding="13dp"
@@ -79,13 +44,12 @@
 
         <EditText
             android:id="@+id/textEventDesc"
-            android:layout_width="wrap_content"
-            android:layout_height="140dp"
+            android:layout_width="300dp"
+            android:layout_height="325dp"
             android:layout_marginStart="100dp"
-            android:layout_marginTop="385dp"
+            android:layout_marginTop="210"
             android:layout_marginEnd="100dp"
             android:background="@drawable/textview_background"
-            android:ems="10"
             android:gravity="center"
             android:hint="@string/event_des"
             android:inputType="textPersonName"
@@ -96,7 +60,7 @@
 
         <Button
             android:id="@+id/buttonAdd"
-            android:layout_width="217dp"
+            android:layout_width="300dp"
             android:layout_height="48dp"
             android:layout_marginStart="100dp"
             android:layout_marginTop="545dp"
@@ -111,7 +75,7 @@
 
         <Button
             android:id="@+id/buttonCancell"
-            android:layout_width="217dp"
+            android:layout_width="300dp"
             android:layout_height="48dp"
             android:layout_marginStart="100dp"
             android:layout_marginTop="610dp"

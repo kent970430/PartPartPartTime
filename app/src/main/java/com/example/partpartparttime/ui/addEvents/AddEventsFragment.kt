@@ -66,9 +66,9 @@ class AddEventsFragment : Fragment() {
             companyNamee = comp.companyName
             companyIDD = comp.companyID
 
-            val idd: EditText = binding.root.findViewById(R.id.textCompanyIDD)
-            idd.setText(comp.companyID)
-            idd.isEnabled = false
+//            val idd: EditText = binding.root.findViewById(R.id.textCompanyIDD)
+//            idd.setText(comp.companyID)
+//            idd.isEnabled = false
 
             val name: EditText = binding.root.findViewById(R.id.textCompanyNamee)
             name.setText(comp.companyName)
@@ -87,9 +87,7 @@ class AddEventsFragment : Fragment() {
         binding.setLifecycleOwner(this)
 
         binding.buttonAdd.setOnClickListener{view ->
-            eventIDD = binding.textEventIDD.text.toString()
             eventDescriptionn = binding.textEventDesc.text.toString()
-            companyIDD = binding.textCompanyIDD.text.toString()
             companyNamee = binding.textCompanyNamee.text.toString()
 
             //var num:Int = eventIDD.toInt()
