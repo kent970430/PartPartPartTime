@@ -2,7 +2,6 @@ package com.example.partpartparttime.ui.training
 
 import android.app.Application
 import androidx.lifecycle.*
-import com.example.partpartparttime.database.Training
 import com.example.partpartparttime.database.TrainingDao
 
 class TrainingViewModel(val database: TrainingDao,

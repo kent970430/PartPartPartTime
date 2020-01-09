@@ -61,7 +61,7 @@ class TrainingFragment : Fragment() {
         binding.trainingList.layoutManager = ooo
 
         binding.buttonCancelll.setOnClickListener{view ->
-            view.findNavController().navigate(R.id.action_trainingFragment_to_nav_home)
+            view.findNavController().navigate(R.id.action_trainings_to_nav_home)
         }
 
         trainingViewModel.navigateToTraining.observe(this, Observer{ yooo ->
