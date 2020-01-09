@@ -19,6 +19,7 @@ import com.example.partpartparttime.database.Company
 import com.example.partpartparttime.database.Event
 import com.example.partpartparttime.database.PartimeDatabase
 import com.example.partpartparttime.databinding.FragmentAddEventBinding
+import java.util.*
 
 /**
  * A simple [Fragment] subclass.
@@ -46,17 +47,16 @@ class AddEventsFragment : Fragment() {
 
         var comp: Company? = dataSource.getCompanyID(MainActivity.loggedUser)
 
-        var lastt: LiveData<List<Event>> = dataSource1.getLastID()
-        val lastitem = lastt.toString()
-        var numm:Int = lastitem.toInt()
-        var thisislast:Int = numm + 1
+//        var lastt: String = dataSource1.getLastID()
+//        var numm:Int = lastt.toInt()
+//        var thisislast:Int = numm + 1
 
 
-        val eventIDDD: EditText = binding.root.findViewById(R.id.textEventIDD)
-        if (lastt != null) {
-            eventIDDD.setText(thisislast.toString())
-            eventIDDD.isEnabled = false
-        }
+//        val eventIDDD: EditText = binding.root.findViewById(R.id.textEventIDD)
+//        if (lastt != null) {
+//            eventIDDD.setText(thisislast.toString())
+//            eventIDDD.isEnabled = false
+//        }
 
 
         if (comp == null) {
@@ -92,23 +92,22 @@ class AddEventsFragment : Fragment() {
             companyIDD = binding.textCompanyIDD.text.toString()
             companyNamee = binding.textCompanyNamee.text.toString()
 
-            var num:Int = eventIDD.toInt()
+            //var num:Int = eventIDD.toInt()
 
             var addd = Event()
 
-            addd.eventID = num
+            addd.eventID = UUID.randomUUID().toString()
             addd.companyID = companyIDD
             addd.companyName = companyNamee
             addd.event_description = eventDescriptionn
 
             dataSource1.insert(addd)
-            //view.findNavController().navigate(R.id.action_events_to_profile_company)
+            view.findNavController().navigate(R.id.action_addEventsFragment_to_events)
         }
 
         binding.buttonCancell.setOnClickListener { view ->
-            //view.findNavController().navigate(R.id.action_events_to_profile_company)
+            view.findNavController().navigate(R.id.action_addEventsFragment_to_events)
         }
-
         return binding.root
     }
 

@@ -24,8 +24,10 @@ import androidx.room.PrimaryKey
 )
 data class Event(
         @PrimaryKey(autoGenerate = true)
+        var num: Long = 0L,
+
         @ColumnInfo(name = "eventID")
-        var eventID: Int = "E".toInt() + 1001,
+        var eventID: String? = null,
 
         @ColumnInfo(name = "event_description")
         var event_description: String? = null,

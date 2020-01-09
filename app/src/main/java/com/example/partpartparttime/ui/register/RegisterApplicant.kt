@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
@@ -49,6 +51,11 @@ class RegisterApplicant : Fragment() {
 
         binding.setLifecycleOwner(this)
 
+        var category: Array<String> =
+            arrayOf("IT", "Marketing", "Business", "Interior Design", "Finance")
+        var adapterCategory = ArrayAdapter(this.context!!,android.R.layout.simple_list_item_1,category)
+        binding.spinnerCategory.adapter = adapterCategory
+
 
         binding.buttonSignUp.setOnClickListener {view ->
             username = binding.textUserName.text.toString()
@@ -68,10 +75,11 @@ class RegisterApplicant : Fragment() {
             appl.firstName = firstname
             appl.lastName = lastname
             appl.userID = UUID.randomUUID().toString()
+            appl.category = binding.spinnerCategory.selectedItem.toString()
 
             dataSource.insert(appl)
 
-
+            Toast.makeText(activity, "Successfully Register!!", Toast.LENGTH_SHORT).show()
             view.findNavController().navigate(R.id.action_register_applicant_to_login_applicant)
         }
 

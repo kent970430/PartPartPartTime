@@ -64,6 +64,7 @@ class CompanyFragment : Fragment() {
 
         val application = requireNotNull(this.activity).application
         val dataSource = PartimeDatabase.getInstance(application).companyDao
+
         val userSourse = PartimeDatabase.getInstance(application).applicantDao
 
         var comp: Company? = dataSource.getCompanyID(loggedUser)

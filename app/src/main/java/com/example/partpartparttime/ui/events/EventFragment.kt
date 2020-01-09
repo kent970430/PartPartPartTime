@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.partpartparttime.R
@@ -57,20 +58,25 @@ class EventFragment : Fragment() {
 
         eventViewModel.navigateToCompany.observe(this, Observer { iddd ->
             iddd?.let {
-                this.findNavController().navigate(
-                    EventFragmentDirections
-                        .actionEventsToProfileCompany(iddd))
-                eventViewModel.onEventNavigated()
 
                 users = company_id.text.toString()
+                this.findNavController().navigate(
+                    EventFragmentDirections
+                        .actionEventsToProfileCompany(users))
+                eventViewModel.onEventNavigated()
+
+
 
             }
         })
 
-
-        val aaa = GridLayoutManager(activity, 2)
+        val aaa = GridLayoutManager(activity, 1)
 
         binding.eventList.layoutManager = aaa
+
+        binding.buttonAdd.setOnClickListener { view ->
+            view.findNavController().navigate(R.id.action_events_to_addEventsFragment)
+        }
 
         return binding.root
     }

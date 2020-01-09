@@ -61,6 +61,9 @@
         <action
             android:id="@+id/action_events_to_profile_company"
             app:destination="@+id/profile_company" />
+        <action
+            android:id="@+id/action_events_to_addEventsFragment"
+            app:destination="@id/addEventsFragment" />
     </fragment>
     <fragment
         android:id="@+id/profile_applicant"
@@ -134,5 +137,14 @@
         <action
             android:id="@+id/action_register_company_to_nav_home"
             app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/addEventsFragment"
+        android:name="com.example.partpartparttime.ui.addEvents.AddEventsFragment"
+        android:label="AddEventsFragment"
+        tools:layout="@layout/fragment_add_event">
+        <action
+            android:id="@+id/action_addEventsFragment_to_events"
+            app:destination="@id/events" />
     </fragment>
 </navigation>

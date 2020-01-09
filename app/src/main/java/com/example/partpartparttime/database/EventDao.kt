@@ -34,8 +34,8 @@ interface EventDao {
     @Query("SELECT * FROM event_table ORDER BY eventId DESC")
     fun getAllEvents(): LiveData<List<Event>>
 
-    @Query("SELECT * FROM event_table ORDER BY eventID DESC LIMIT 1")
-    fun getLastID(): LiveData<List<Event>>
+//    @Query("SELECT * FROM event_table ORDER BY eventID DESC LIMIT 1")
+//    fun getLastID(): String
 
 //    @Query("SELECT * from daily_sleep_quality_table WHERE nightId = :key")
 //    fun get(key: Long): User?

@@ -50,9 +50,10 @@
             android:id="@+id/company_name"
             android:layout_width="150dp"
             android:layout_height="24dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="12dp"
             app:companyNameString="@{eventttttt}"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.939"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/event_name"
             tools:text="Company Name" />
