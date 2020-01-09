@@ -16,8 +16,11 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:background="@color/gray"
+        android:background="@drawable/recyclevieww"
         android:onClick="@{() -> clickListener.onClick(trainingggg)}"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         app:eventImageString="@{trainingggg}"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
