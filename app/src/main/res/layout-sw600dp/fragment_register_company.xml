@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="registerCompanyViewModel"
+            type="com.example.partpartparttime.ui.register.RegisterCompanyViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.register.RegisterCompany">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="84dp"
+            android:text="@string/register"
+            android:textColor="#242729"
+            android:textSize="50px"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/textCompanyName"
+            android:layout_width="360dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="125dp"
+            android:layout_marginTop="170dp"
+            android:layout_marginEnd="100dp"
+            android:background="@drawable/textview_background"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/companyName"
+            android:inputType="textPersonName"
+            android:padding="13dp" />
+
+        <EditText
+            android:id="@+id/textEmail"
+            android:layout_width="360dp"
+            android:layout_height="50dp"
+            android:inputType="textEmailAddress"
+            android:layout_marginStart="125dp"
+            android:layout_marginTop="250dp"
+            android:layout_marginEnd="100dp"
+            android:background="@drawable/textview_background"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/email"
+            android:padding="13dp" />
+
+        <EditText
+            android:id="@+id/textUserName"
+            android:layout_width="360dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="125dp"
+            android:layout_marginTop="405dp"
+            android:layout_marginEnd="100dp"
+            android:background="@drawable/textview_background"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/username"
+            android:inputType="textPersonName"
+            android:padding="13dp" />
+
+        <EditText
+            android:id="@+id/textPassword"
+            android:layout_width="360dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="125dp"
+            android:layout_marginTop="475dp"
+            android:layout_marginEnd="100dp"
+            android:background="@drawable/textview_background"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:padding="13dp" />
+
+        <Button
+            android:id="@+id/buttonSignUp"
+            android:layout_width="360dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="125dp"
+            android:layout_marginTop="565dp"
+            android:layout_marginEnd="100dp"
+            android:background="@drawable/ownbutton"
+            android:padding="10dp"
+            android:text="@string/signUp"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/buttonCancel"
+            android:layout_width="360dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="125dp"
+            android:layout_marginTop="630dp"
+            android:layout_marginEnd="100dp"
+            android:background="@drawable/ownbutton"
+            android:padding="10dp"
+            android:text="@string/cancel"
+            android:textColor="#000000" />
+
+        <Spinner
+            android:id="@+id/spinnerCategory"
+            android:layout_width="360dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="125dp"
+            android:layout_marginTop="320dp"
+            android:layout_marginEnd="100dp"
+            android:gravity="center"
+            android:padding="13dp" />
+
+    </FrameLayout>
+
+</layout>

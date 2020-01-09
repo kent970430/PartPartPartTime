@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="registerApplicantViewModel"
+            type="com.example.partpartparttime.ui.register.RegisterApplicantViewModel" />
+    </data>
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.register.RegisterApplicant">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="290dp"
+            android:layout_marginTop="50dp"
+            android:text="@string/register"
+            android:textColor="#242729"
+            android:textSize="80px"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/textFirstName"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="110dp"
+            android:layout_marginEnd="100dp"
+            android:background="@drawable/textview_background"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/firstName"
+            android:inputType="textPersonName"
+            android:padding="13dp" />
+
+        <EditText
+            android:id="@+id/textLastName"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="180dp"
+            android:layout_marginEnd="100dp"
+            android:background="@drawable/textview_background"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/lastName"
+            android:inputType="textPersonName"
+            android:padding="13dp" />
+
+        <EditText
+            android:id="@+id/textEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="270dp"
+            android:layout_marginEnd="100dp"
+            android:background="@drawable/textview_background"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:padding="13dp" />
+
+        <EditText
+            android:id="@+id/textUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginStart="420dp"
+            android:layout_marginTop="110dp"
+            android:layout_marginEnd="100dp"
+            android:background="@drawable/textview_background"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/username"
+            android:inputType="textPersonName"
+            android:padding="13dp" />
+
+        <EditText
+            android:id="@+id/textPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginStart="420dp"
+            android:layout_marginTop="180dp"
+            android:layout_marginEnd="100dp"
+            android:background="@drawable/textview_background"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:padding="13dp" />
+
+        <Button
+            android:id="@+id/buttonSignUp"
+            android:layout_width="217dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="420dp"
+            android:layout_marginTop="270dp"
+            android:layout_marginEnd="100dp"
+            android:background="@drawable/ownbutton"
+            android:padding="10dp"
+            android:text="@string/signUp"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/buttonCancel"
+            android:layout_width="217dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="420dp"
+            android:layout_marginTop="340dp"
+            android:layout_marginEnd="100dp"
+            android:background="@drawable/ownbutton"
+            android:padding="10dp"
+            android:text="@string/cancel"
+            android:textColor="#000000" />
+
+        <Spinner
+            android:id="@+id/spinnerCategory"
+            android:layout_width="212dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="340dp"
+            android:layout_marginEnd="100dp"
+            android:gravity="center"
+            android:padding="13dp" />
+
+    </FrameLayout>
+
+</layout>
