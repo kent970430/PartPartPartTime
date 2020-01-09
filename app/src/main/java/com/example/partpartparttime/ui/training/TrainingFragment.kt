@@ -57,31 +57,31 @@ class TrainingFragment : Fragment() {
             })
         })
 
-        var addd = Training()
+        val addd = Training()
         addd.trainingID = UUID.randomUUID().toString()
         addd.trainingName = "TARUC Open Day 2020!!!"
         addd.date = "24/01/2020"
         addd.website = "https://www.tarc.edu.my/"
 
-        var addd2 = Training()
+        val addd2 = Training()
         addd2.trainingID = UUID.randomUUID().toString()
         addd2.trainingName = "Sunway Education Open Day is Back !!"
         addd2.date = "15/02/2020"
         addd2.website = "https://my.sunway.edu.my/openday/"
 
-        var addd3 = Training()
+        val addd3 = Training()
         addd3.trainingID = UUID.randomUUID().toString()
         addd3.trainingName = "Taylor's Open Day 2019"
         addd3.date = "16/02/2020"
         addd3.website = "https://university2.taylors.edu.my/enrol/"
 
-        var addd4 = Training()
+        val addd4 = Training()
         addd4.trainingID = UUID.randomUUID().toString()
         addd4.trainingName = "THE BEST TERTIARY EDUCATION BEGINS HERE"
         addd4.date = "28/03/2020 - 29/03/2020"
         addd4.website = "http://openday.ucsiuniversity.edu.my/"
 
-        var addd5 = Training()
+        val addd5 = Training()
         addd4.trainingID = UUID.randomUUID().toString()
         addd4.trainingName = "5 Corporate Training Programs Every Employee Should Take"
         addd4.date = "01/04/2020"
