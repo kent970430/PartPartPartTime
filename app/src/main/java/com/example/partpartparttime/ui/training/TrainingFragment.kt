@@ -1,6 +1,8 @@
 package com.example.partpartparttime.ui.training
 
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -57,15 +59,21 @@ class TrainingFragment : Fragment() {
 
         binding.trainingList.adapter = adapter
 
-
         val ooo = GridLayoutManager(activity,1)
         binding.trainingList.layoutManager = ooo
 
         binding.buttonCancelll.setOnClickListener{view ->
             view.findNavController().navigate(R.id.action_trainingFragment_to_nav_home)
         }
+
+        trainingViewModel.navigateToTraining.observe(this, Observer{ yooo ->
+            yooo?.let{
+                val openURL = Intent(Intent.ACTION_VIEW)
+                var site = training_website.text.toString()
+                openURL.data = Uri.parse(site)
+                startActivity(openURL)
+            }
+        })
         return binding.root
     }
-
-
 }
