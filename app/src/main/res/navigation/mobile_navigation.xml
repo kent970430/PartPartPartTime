@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_nav_home_to_events"
             app:destination="@id/events" />
+        <action
+            android:id="@+id/action_nav_home_to_trainingFragment"
+            app:destination="@id/trainingFragment" />
     </fragment>
     <fragment
         android:id="@+id/login_applicant"
@@ -146,5 +149,14 @@
         <action
             android:id="@+id/action_addEventsFragment_to_events"
             app:destination="@id/events" />
+    </fragment>
+    <fragment
+        android:id="@+id/trainingFragment"
+        android:name="com.example.partpartparttime.ui.training.TrainingFragment"
+        android:label="TrainingFragment"
+        tools:layout="@layout/fragment_training">
+        <action
+            android:id="@+id/action_trainingFragment_to_nav_home"
+            app:destination="@id/nav_home" />
     </fragment>
 </navigation>

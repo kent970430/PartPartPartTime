@@ -13,6 +13,10 @@
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_event" />
         <item
+            android:id="@+id/trainings"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/training" />
+        <item
             android:id="@+id/profile_applicant"
             android:icon="@drawable/ic_friends"
             android:title="@string/menu_profile_applicant"
