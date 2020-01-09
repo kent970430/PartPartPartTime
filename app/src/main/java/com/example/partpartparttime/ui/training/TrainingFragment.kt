@@ -14,11 +14,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.partpartparttime.R
 import com.example.partpartparttime.database.PartimeDatabase
-import com.example.partpartparttime.database.Training
 import com.example.partpartparttime.databinding.FragmentTrainingBinding
 import kotlinx.android.synthetic.main.list_training.*
 
@@ -69,7 +67,7 @@ class TrainingFragment : Fragment() {
         trainingViewModel.navigateToTraining.observe(this, Observer{ yooo ->
             yooo?.let{
                 val openURL = Intent(Intent.ACTION_VIEW)
-                var site = training_website.text.toString()
+                val site = training_website.text.toString()
                 openURL.data = Uri.parse(site)
                 startActivity(openURL)
             }
