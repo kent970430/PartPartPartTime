@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
@@ -20,10 +21,14 @@ import com.example.partpartparttime.MainActivity
 import com.example.partpartparttime.MainActivity.Companion.loggedUser
 import com.example.partpartparttime.R
 import com.example.partpartparttime.database.Applicant
+import com.example.partpartparttime.database.Company
 import com.example.partpartparttime.database.PartimeDatabase
 import com.example.partpartparttime.databinding.FragmentEventBinding
 import kotlinx.android.synthetic.main.fragment_event.*
 import kotlinx.android.synthetic.main.list_event.*
+
+
+
 
 /**
  * A simple [Fragment] subclass.
@@ -42,6 +47,20 @@ class EventFragment : Fragment() {
         val application = requireNotNull(this.activity).application
         val dataSource = PartimeDatabase.getInstance(application).eventDao
         val viewModelFactory = EventsViewModelFactory(dataSource, application)
+
+        val dataSource1 = PartimeDatabase.getInstance(application).companyDao
+        var comp: Company? = dataSource1.getCompanyID(loggedUser)
+       // val btn: Button = activity!!.findViewById(R.id.buttonAdd)
+
+//        if(app != null){
+//            if(app.userID == loggedUser) {
+//                buttonAdd.isVisible = false
+//            }
+//        }else if (loggedUser == null){
+//            buttonAdd.isVisible = false
+//        }else{
+//            buttonAdd.isVisible = true
+//        }
 
         val eventViewModel =
             ViewModelProviders.of(
@@ -78,15 +97,10 @@ class EventFragment : Fragment() {
 
         binding.eventList.layoutManager = aaa
 
-        val dataSource1 = PartimeDatabase.getInstance(application).applicantDao
-        val comp: Applicant? = dataSource1.getApplicantID(loggedUser)
-
-        if(comp != null){
-            buttonAdd.isVisible=false
-        }else if(loggedUser == null){
-            buttonAdd.isVisible=false
-        }else{
-            buttonAdd.isVisible=true
+        if(loggedUser.trim().isNotEmpty()){
+            if(comp != null){
+                binding.buttonAdd.hidee(true)
+            }
         }
 
         binding.buttonAdd.setOnClickListener { view ->
@@ -94,5 +108,13 @@ class EventFragment : Fragment() {
         }
 
         return binding.root
+    }
+
+    fun View.hidee(show: Boolean) {
+        visibility = if(show) {
+            View.VISIBLE
+        } else {
+            View.GONE
+        }
     }
 }
