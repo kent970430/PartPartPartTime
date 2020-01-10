@@ -14,7 +14,7 @@
             android:title="@string/menu_event" />
         <item
             android:id="@+id/trainings"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_directions"
             android:title="@string/training" />
         <item
             android:id="@+id/profile_applicant"

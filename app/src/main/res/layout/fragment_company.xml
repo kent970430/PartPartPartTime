@@ -27,12 +27,11 @@
             android:id="@+id/buttonSave"
             android:layout_width="130dp"
             android:layout_height="51dp"
-            android:layout_marginEnd="20dp"
             android:background="@drawable/homebutton"
             android:padding="10dp"
             android:text="@string/save"
             android:textColor="#000000"
-            app:layout_constraintEnd_toStartOf="@+id/fab"
+            app:layout_constraintEnd_toEndOf="@+id/buttonLogOut"
             app:layout_constraintTop_toTopOf="@+id/buttonEdit" />
 
         <Button
@@ -74,19 +73,6 @@
             app:layout_constraintHorizontal_bias="0.27"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textDescription2" />
-
-        <TextView
-            android:id="@+id/textRating"
-            android:layout_width="289dp"
-            android:layout_height="36dp"
-            android:layout_marginTop="44dp"
-            android:padding="10dp"
-            android:text="@string/rating"
-            android:gravity="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.261"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textDescription3" />
 
         <Button
             android:id="@+id/buttonLogOut"
@@ -168,18 +154,6 @@
             app:layout_constraintStart_toEndOf="@+id/imageViewPreview2"
             app:layout_constraintTop_toBottomOf="@+id/textDescription" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_marginTop="640dp"
-            android:visibility="invisible"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.954"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_add_whilte_24dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

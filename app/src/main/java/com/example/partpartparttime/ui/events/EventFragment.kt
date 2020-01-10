@@ -9,15 +9,20 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.partpartparttime.MainActivity
+import com.example.partpartparttime.MainActivity.Companion.loggedUser
 import com.example.partpartparttime.R
+import com.example.partpartparttime.database.Applicant
 import com.example.partpartparttime.database.PartimeDatabase
 import com.example.partpartparttime.databinding.FragmentEventBinding
+import kotlinx.android.synthetic.main.fragment_event.*
 import kotlinx.android.synthetic.main.list_event.*
 
 /**
@@ -73,12 +78,21 @@ class EventFragment : Fragment() {
 
         binding.eventList.layoutManager = aaa
 
+        val dataSource1 = PartimeDatabase.getInstance(application).applicantDao
+        val comp: Applicant? = dataSource1.getApplicantID(loggedUser)
+
+        if(comp != null){
+            buttonAdd.isVisible=false
+        }else if(loggedUser == null){
+            buttonAdd.isVisible=false
+        }else{
+            buttonAdd.isVisible=true
+        }
+
         binding.buttonAdd.setOnClickListener { view ->
             view.findNavController().navigate(R.id.action_events_to_addEventsFragment)
         }
 
         return binding.root
     }
-
-
 }
