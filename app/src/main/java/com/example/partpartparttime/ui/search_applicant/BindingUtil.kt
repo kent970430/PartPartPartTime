@@ -25,6 +25,6 @@ fun TextView.setUserIDDString(item: Match?) {
 @BindingAdapter("matchImageString")
 fun ConstraintLayout.setEventImage(item: Match?) {
     item?.let {
-        background = ContextCompat.getDrawable(context, R.color.gray)
+        background = ContextCompat.getDrawable(context, R.drawable.recyclevieww)
     }
 }

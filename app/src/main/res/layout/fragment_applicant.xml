@@ -10,15 +10,15 @@
 
         <EditText
             android:id="@+id/textEmaill"
-            android:layout_width="146dp"
-            android:layout_height="41dp"
-            android:layout_marginTop="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:enabled="false"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:textSize="17dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.561"
+            app:layout_constraintHorizontal_bias="0.209"
             app:layout_constraintStart_toEndOf="@+id/imageViewPreview2"
             app:layout_constraintTop_toBottomOf="@+id/textDescription" />
 

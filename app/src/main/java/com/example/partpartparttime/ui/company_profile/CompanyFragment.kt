@@ -77,7 +77,6 @@ class CompanyFragment : Fragment() {
         var userss = evenn.users
         var comp1: Company? = dataSource.getCompanyID(userss)
 
-        //if(userss == loggedUser) {
             if (comp == null) {
                 Toast.makeText(activity, R.string.get_failed, Toast.LENGTH_SHORT).show()
                 Log.i("Result", "No company found")
