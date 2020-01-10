@@ -1,4 +1,4 @@
-package com.example.partpartparttime.ui.SearchJob
+package com.example.partpartparttime.ui.search_job
 
 import android.app.Application
 import androidx.lifecycle.ViewModel

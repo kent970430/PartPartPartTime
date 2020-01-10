@@ -29,6 +29,9 @@
             android:id="@+id/action_nav_home_to_searchCompany"
             app:destination="@id/searchCompany" />
         <action
+            android:id="@+id/action_nav_home_to_trainings"
+            app:destination="@id/trainings" />
+        <action
             android:id="@+id/action_nav_home_to_searchApplicant"
             app:destination="@id/searchApplicant" />
     </fragment>
@@ -65,11 +68,11 @@
         android:label="@string/menu_event"
         tools:layout="@layout/fragment_event" >
         <action
-            android:id="@+id/action_events_to_profile_company"
-            app:destination="@+id/profile_company" />
-        <action
             android:id="@+id/action_events_to_addEventsFragment"
             app:destination="@id/addEventsFragment" />
+        <action
+            android:id="@+id/action_events_to_companysssss"
+            app:destination="@id/companysssss" />
     </fragment>
     <fragment
         android:id="@+id/profile_applicant"
@@ -86,9 +89,6 @@
         android:name="com.example.partpartparttime.ui.company_profile.CompanyFragment"
         android:label="@string/company"
         tools:layout="@layout/fragment_company">
-        <argument
-            android:name="company_id"
-            app:argType="string" />
         <action
             android:id="@+id/action_companyFragment_to_nav_home"
             app:destination="@id/nav_home" />
@@ -154,8 +154,17 @@
             app:destination="@id/events" />
     </fragment>
     <fragment
+        android:id="@+id/trainings"
+        android:name="com.example.partpartparttime.ui.training.TrainingFragment"
+        android:label="TrainingFragment"
+        tools:layout="@layout/fragment_training">
+        <action
+            android:id="@+id/action_trainings_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
         android:id="@+id/searchCompany"
-        android:name="com.example.partpartparttime.ui.SearchJob.SearchCompany"
+        android:name="com.example.partpartparttime.ui.search_job.SearchCompany"
         android:label="SearchCompany"
         tools:layout="@layout/fragment_search_company">
         <action
@@ -164,7 +173,7 @@
     </fragment>
     <fragment
         android:id="@+id/swapComapanyTemplate"
-        android:name="com.example.partpartparttime.ui.SearchJob.SwapComapanyTemplate"
+        android:name="com.example.partpartparttime.ui.search_job.SwapComapanyTemplate"
         android:label="SwapComapanyTemplate"
         tools:layout="@layout/fragment_swap_company_template">
         <argument
@@ -173,7 +182,7 @@
     </fragment>
     <fragment
         android:id="@+id/searchApplicant"
-        android:name="com.example.partpartparttime.ui.SearchApplicant.SearchApplicant"
+        android:name="com.example.partpartparttime.ui.search_applicant.SearchApplicantFragment"
         android:label="SearchApplicant"
         tools:layout="@layout/fragment_search_applicant">
         <action
@@ -182,11 +191,21 @@
     </fragment>
     <fragment
         android:id="@+id/swapApplicantTemplate"
-        android:name="com.example.partpartparttime.ui.SearchApplicant.SwapApplicantTemplate"
+        android:name="com.example.partpartparttime.ui.search_applicant.SwapApplicantTemplate"
         android:label="SwapApplicantTemplate"
         tools:layout="@layout/fragment_swap_applicant_template">
         <argument
             android:name="userid"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/companysssss"
+        android:name="com.example.partpartparttime.ui.company_profile.companysssss"
+        android:label="companysssss"
+        tools:layout="@layout/fragment_companysssss">
+        <argument
+            android:name="company_id"
+            app:argType="string" />
+    </fragment>
+
 </navigation>

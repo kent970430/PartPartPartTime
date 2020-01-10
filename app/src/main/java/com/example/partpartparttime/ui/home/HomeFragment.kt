@@ -50,7 +50,7 @@ class HomeFragment : Fragment() {
 
         }
 
-        binding.buttonHR.setOnClickListener { view ->
+        binding.buttonHR!!.setOnClickListener { view ->
 
             view.findNavController().navigate(R.id.action_nav_home_to_searchApplicant)
 

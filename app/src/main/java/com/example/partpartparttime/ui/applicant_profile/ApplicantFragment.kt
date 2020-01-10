@@ -99,7 +99,7 @@ class ApplicantFragment : Fragment() {
 
         val navView: NavigationView = activity!!.findViewById(R.id.nav_view)
 
-        val headerView = navView.menu.getItem(2)
+        val headerView = navView.menu.getItem(3)
         headerView.isVisible = true
 
         binding.buttonLogOut.setOnClickListener { view ->
@@ -121,9 +121,9 @@ class ApplicantFragment : Fragment() {
 
             val navView: NavigationView = activity!!.findViewById(R.id.nav_view)
 
-            navView.menu.getItem(2).isVisible = false
+            navView.menu.getItem(3).isVisible = false
 
-            navView.menu.getItem(4).isVisible = true
+            navView.menu.getItem(5).isVisible = true
 
 
             view.findNavController().navigate(R.id.action_applicantFragment_to_nav_home)

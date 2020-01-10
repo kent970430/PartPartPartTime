@@ -25,15 +25,17 @@ import java.util.*
 )
 data class Training(
         @PrimaryKey(autoGenerate = true)
-        @ColumnInfo(name = "trainingID")
-        var trainingID: Int = "T".toInt() + 1001,
+        var num: Long = 0L,
 
-        @ColumnInfo(name = "organization_idd")
-        var organization_idd: Int,
+        @ColumnInfo(name = "trainingID")
+        var trainingID: String? = null,
 
         @ColumnInfo(name = "trainingName")
-        var trainingName: String,
+        var trainingName: String? = null,
 
         @ColumnInfo(name = "date")
-        var date: String
+        var date: String? = null,
+
+        @ColumnInfo(name = "website")
+        var website: String? = null
 )

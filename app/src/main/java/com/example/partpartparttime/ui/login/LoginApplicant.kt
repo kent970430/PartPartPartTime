@@ -77,20 +77,7 @@ class LoginApplicant : Fragment() {
 
                     val navView : NavigationView = activity!!.findViewById(R.id.nav_view)
 
-                    navView.menu.getItem(4).isVisible = false
-
-//                    navView.menu.getItem(5).isVisible = true
-
-//                    navView.menu.getItem(5).isVisible = true
-
-//                    with(sharedPreferences.edit()){
-//                        putString(getString(R.string.nav_header_title), loginViewModel.nav_header_title)
-//                        putString(getString(R.string.nav_header_subtitle), loginViewModel.nav_header_subtitle)
-//                        commit()
-//                    }
-
-
-//                    val drawerLayout : DrawerLayout = activity!!.findViewById(R.id.drawer_layout)
+                    navView.menu.getItem(5).isVisible = false
 
 
 

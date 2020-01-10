@@ -1,9 +1,8 @@
-package com.example.partpartparttime.ui.SearchApplicant
+package com.example.partpartparttime.ui.search_applicant
 
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.partpartparttime.database.CompanyDao
 import com.example.partpartparttime.database.MatchDao
 
 class SearchApplicantViewModelFactory(private val dataSource: MatchDao,

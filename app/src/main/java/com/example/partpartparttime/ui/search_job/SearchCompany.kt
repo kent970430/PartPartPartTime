@@ -1,4 +1,4 @@
-package com.example.partpartparttime.ui.SearchJob
+package com.example.partpartparttime.ui.search_job
 
 
 import android.os.Bundle
@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.example.partpartparttime.R
 import com.example.partpartparttime.database.PartimeDatabase
@@ -16,8 +17,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import com.example.partpartparttime.MainActivity.Companion.categoryyyyy
-import com.example.partpartparttime.ui.events.EventFragmentDirections
-import kotlinx.android.synthetic.main.list_event.*
 
 
 /**
@@ -41,20 +40,25 @@ class SearchCompany : Fragment() {
 
         val viewModelFactory = SearchCompanyViewModelFactory(dataSource, application, categoryyyyy)
 
-        val searchCompanyViewModel =
+        val serchCompanyViewModel =
             ViewModelProviders.of(
                 this, viewModelFactory
             ).get(SearchCompanyViewModel::class.java)
 
-        val adapter = SearchCompanyAdapter()
+        val adapter = SearchCompanyAdapter(MatchListener{company_id ->
+            Toast.makeText(context,"${company_id}",Toast.LENGTH_LONG).show()
+            serchCompanyViewModel.onEventClicked(company_id)
+        })
+
+        serchCompanyViewModel.companies.observe(viewLifecycleOwner, Observer {
+            serchCompanyViewModel.companies.observe(viewLifecycleOwner, Observer{
+                it?.let {
+                    adapter.submitList(it)
+                }
+            })
+        })
 
         binding.companyList.adapter = adapter
-
-        searchCompanyViewModel.companies.observe(viewLifecycleOwner, Observer {
-            it?.let {
-                adapter.data = it
-            }
-        })
 
         var category: Array<String> =
             arrayOf("IT", "Marketing", "Business", "Interior Design", "Finance")
@@ -67,21 +71,23 @@ class SearchCompany : Fragment() {
            val category = binding.spinnerCategory.selectedItem.toString()
             categoryyyyy = category
 
-            searchCompanyViewModel.company_category.observe(viewLifecycleOwner, Observer {
-                it?.let {
-                    adapter.data = it
-                }
+            serchCompanyViewModel.company_category.observe(viewLifecycleOwner, Observer {
+                serchCompanyViewModel.company_category.observe(viewLifecycleOwner, Observer{
+                    it?.let {
+                        adapter.submitList(it)
+                    }
+                })
             })
 
         }
 
-        searchCompanyViewModel.navigateToCompany.observe(this, Observer { iddd ->
+        serchCompanyViewModel.navigateToCompany.observe(this, Observer { iddd ->
             iddd?.let {
 
                 this.findNavController().navigate(
                     SearchCompanyDirections
                         .actionSearchCompanyToSwapComapanyTemplate(iddd))
-                searchCompanyViewModel.onEventNavigated()
+                serchCompanyViewModel.onEventNavigated()
 
                 Log.i("idddd",iddd)
 

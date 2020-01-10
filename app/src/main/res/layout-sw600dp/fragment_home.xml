@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="84dp"
+        android:text="@string/partpartpartTime"
+        android:textColor="#242729"
+        android:textSize="50px"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="200dp"
+        android:text="Name"
+        android:textColor="#000000"
+        android:textSize="40px"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/buttonEvent"
+        android:layout_width="438dp"
+        android:layout_height="104dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="287dp"
+        android:layout_marginEnd="100dp"
+        android:background="@drawable/homebutton"
+        android:padding="10dp"
+        android:text="@string/events"
+        android:textColor="#000000" />
+
+    <Button
+        android:id="@+id/buttonTraining"
+        android:layout_width="438dp"
+        android:layout_height="104dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="457dp"
+        android:layout_marginEnd="100dp"
+        android:background="@drawable/homebutton"
+        android:padding="10dp"
+        android:text="@string/training"
+        android:textColor="#000000" />
+
+    <Button
+        android:id="@+id/buttonJob"
+        android:layout_width="438dp"
+        android:layout_height="104dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="617dp"
+        android:layout_marginEnd="100dp"
+        android:background="@drawable/homebutton"
+        android:padding="10dp"
+        android:text="@string/ptj"
+        android:textColor="#000000" />
+
+</FrameLayout>
+
+</layout>

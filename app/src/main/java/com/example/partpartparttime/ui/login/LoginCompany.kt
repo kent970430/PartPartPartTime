@@ -75,7 +75,7 @@ class LoginCompany : Fragment() {
 
             val navView : NavigationView = activity!!.findViewById(R.id.nav_view)
 
-            navView.menu.getItem(4).isVisible = false
+            navView.menu.getItem(5).isVisible = false
         }
 
         binding.buttonCancel.setOnClickListener { view ->

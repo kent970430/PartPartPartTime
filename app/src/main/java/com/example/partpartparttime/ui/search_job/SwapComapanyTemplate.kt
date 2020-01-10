@@ -1,4 +1,4 @@
-package com.example.partpartparttime.ui.SearchJob
+package com.example.partpartparttime.ui.search_job
 
 
 import android.os.Bundle
@@ -6,15 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import com.example.partpartparttime.MainActivity
-import com.example.partpartparttime.MainActivity.Companion.loggedUser
 import com.example.partpartparttime.R
 import com.example.partpartparttime.database.Match
 import com.example.partpartparttime.database.PartimeDatabase
 import com.example.partpartparttime.databinding.FragmentSwapCompanyTemplateBinding
-import com.example.partpartparttime.ui.SearchJob.SearchCompanyViewModelFactory
 
 /**
  * A simple [Fragment] subclass.

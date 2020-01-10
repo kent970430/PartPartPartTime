@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.search_applicant.SwapApplicantTemplate">
+
+        <ImageView
+            android:id="@+id/ApplicantImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ApplicantNameTxtView"
+            tools:src="@tools:sample/avatars" />
+
+        <Button
+            android:id="@+id/btnlike"
+            android:layout_width="150dp"
+            android:layout_height="110dp"
+            android:layout_marginBottom="200dp"
+            android:background="@drawable/homebutton"
+            android:text="@string/btnlike"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btndislike"
+            app:layout_constraintTop_toBottomOf="@+id/ApplicantImageView" />
+
+        <Button
+            android:id="@+id/btndislike"
+            android:layout_width="150dp"
+            android:layout_height="110dp"
+            android:layout_marginBottom="200dp"
+            android:background="@drawable/homebutton"
+            android:text="@string/btndislike"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnlike"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ApplicantImageView" />
+
+        <TextView
+            android:id="@+id/ApplicantNameTxtView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200dp"
+            android:text="@string/appname"
+            app:layout_constraintBottom_toTopOf="@+id/ApplicantImageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

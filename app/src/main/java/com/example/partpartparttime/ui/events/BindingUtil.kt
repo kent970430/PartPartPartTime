@@ -38,6 +38,6 @@ fun TextView.setEventDescriptionString(item: Event?) {
 @BindingAdapter("eventImageString")
 fun ConstraintLayout.setEventImage(item: Event?) {
     item?.let {
-        background = ContextCompat.getDrawable(context, R.color.colorPrimaryDark)
+        background = ContextCompat.getDrawable(context, R.drawable.recyclevieww)
     }
 }
