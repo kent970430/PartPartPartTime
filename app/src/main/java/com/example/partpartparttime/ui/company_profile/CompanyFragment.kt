@@ -16,6 +16,8 @@ import androidx.core.net.toUri
 import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import com.example.partpartparttime.MainActivity
 import com.example.partpartparttime.MainActivity.Companion.loggedUser
@@ -63,15 +65,19 @@ class CompanyFragment : Fragment() {
         btn!!.setOnClickListener { showPictureDialog() }
 
         val application = requireNotNull(this.activity).application
+        val arguments = CompanyFragmentArgs.fromBundle(arguments)
+        val company_ID = arguments.companyId
+
+
         val dataSource = PartimeDatabase.getInstance(application).companyDao
 
         var comp: Company? = dataSource.getCompanyID(loggedUser)
 
-        var evenn = EventFragment()
-        var userss = evenn.users
-        var comp1: Company? = dataSource.getCompanyID(userss)
+//        var evenn = EventFragment()
+//        var userss = evenn.users
+//        var comp1: Company? = dataSource.getCompanyID(userss)
 
-        if(userss == loggedUser) {
+        if(company_ID == loggedUser) {
             if (comp == null) {
                 Toast.makeText(activity, R.string.get_failed, Toast.LENGTH_SHORT).show()
                 Log.i("Result", "No company found")
@@ -110,44 +116,44 @@ class CompanyFragment : Fragment() {
             binding.buttonSave.hidee(false)
             binding.buttonLogOut.hidee(false)
             val name: EditText = binding.root.findViewById(R.id.textName)
-            if (comp1 != null) {
-                name.setText(comp1.companyName)
+            if (comp != null) {
+                name.setText(comp.companyName)
             }
 
             val email: EditText = binding.root.findViewById(R.id.textEmaill)
-            if (comp1 != null) {
-                email.setText(comp1.email)
+            if (comp != null) {
+                email.setText(comp.email)
             }
 
             val contact: EditText = binding.root.findViewById(R.id.textDescription)
-            if (comp1 != null) {
-                contact.setText(comp1.contact)
+            if (comp != null) {
+                contact.setText(comp.contact)
             }
 
             val address: EditText = binding.root.findViewById(R.id.textDescription1)
-            if (comp1 != null) {
-                address.setText(comp1.address)
+            if (comp != null) {
+                address.setText(comp.address)
             }
 
             val description: EditText = binding.root.findViewById(R.id.textDescription2)
-            if (comp1 != null) {
-                description.setText(comp1.details)
+            if (comp != null) {
+                description.setText(comp.details)
             }
 
             val job: EditText = binding.root.findViewById(R.id.textDescription3)
-            if (comp1 != null) {
-                job.setText(comp1.job)
+            if (comp != null) {
+                job.setText(comp.job)
             }
 
             val image: ImageView = binding.root.findViewById(R.id.imageViewPreview2)
-            val imageV = comp1?.image.toString().toUri()
+            val imageV = comp?.image.toString().toUri()
             image.setImageURI(imageV)
 
             val headName: TextView = this.getActivity()!!.findViewById(R.id.head_name)
             headName.setText(MainActivity.name)
             val headEmail: TextView = this.getActivity()!!.findViewById(R.id.head_email)
-            if (comp1 != null) {
-                headEmail.setText(comp1.email)
+            if (comp != null) {
+                headEmail.setText(comp.email)
             }
             val imageView: ImageView = this.getActivity()!!.findViewById(R.id.imageView)
             imageView.setImageURI(imageV)
