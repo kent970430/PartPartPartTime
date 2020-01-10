@@ -40,4 +40,6 @@ interface CompanyDao {
     @Query("SELECT * FROM company_table ORDER BY num DESC")
     fun getAllCompanys(): LiveData<List<Company>>
 
+    @Query("SELECT * from company_table WHERE category = :key")
+    fun getCompanyCategory(key: String): LiveData<List<Company>>
 }

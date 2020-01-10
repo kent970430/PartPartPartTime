@@ -24,7 +24,7 @@ import java.util.*
 /**
  * A simple [Fragment] subclass.
  */
-class AddEventsFragment : Fragment() {
+class       AddEventsFragment : Fragment() {
 
     private var eventIDD: String = ""
     private var eventDescriptionn: String = ""

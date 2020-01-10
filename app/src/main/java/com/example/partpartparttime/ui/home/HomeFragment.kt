@@ -46,6 +46,13 @@ class HomeFragment : Fragment() {
 
         binding.buttonJob.setOnClickListener { view ->
 
+            view.findNavController().navigate(R.id.action_nav_home_to_searchCompany)
+
+        }
+
+        binding.buttonHR.setOnClickListener { view ->
+
+            view.findNavController().navigate(R.id.action_nav_home_to_searchApplicant)
 
         }
 

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<FrameLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.home.HomeFragment">
 
     <TextView
@@ -63,6 +63,18 @@
         android:background="@drawable/homebutton"
         android:padding="10dp"
         android:text="@string/ptj"
+        android:textColor="#000000" />
+
+    <Button
+        android:id="@+id/buttonHR"
+        android:layout_width="150dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="417dp"
+        android:layout_marginEnd="100dp"
+        android:background="@drawable/homebutton"
+        android:padding="10dp"
+        android:text="@string/pthr"
         android:textColor="#000000" />
 
 </FrameLayout>

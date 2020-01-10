@@ -25,6 +25,12 @@
         <action
             android:id="@+id/action_nav_home_to_events"
             app:destination="@id/events" />
+        <action
+            android:id="@+id/action_nav_home_to_searchCompany"
+            app:destination="@id/searchCompany" />
+        <action
+            android:id="@+id/action_nav_home_to_searchApplicant"
+            app:destination="@id/searchApplicant" />
     </fragment>
     <fragment
         android:id="@+id/login_applicant"
@@ -146,5 +152,41 @@
         <action
             android:id="@+id/action_addEventsFragment_to_events"
             app:destination="@id/events" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchCompany"
+        android:name="com.example.partpartparttime.ui.SearchJob.SearchCompany"
+        android:label="SearchCompany"
+        tools:layout="@layout/fragment_search_company">
+        <action
+            android:id="@+id/action_searchCompany_to_swapComapanyTemplate"
+            app:destination="@id/swapComapanyTemplate" />
+    </fragment>
+    <fragment
+        android:id="@+id/swapComapanyTemplate"
+        android:name="com.example.partpartparttime.ui.SearchJob.SwapComapanyTemplate"
+        android:label="SwapComapanyTemplate"
+        tools:layout="@layout/fragment_swap_company_template">
+        <argument
+            android:name="compid"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchApplicant"
+        android:name="com.example.partpartparttime.ui.SearchApplicant.SearchApplicant"
+        android:label="SearchApplicant"
+        tools:layout="@layout/fragment_search_applicant">
+        <action
+            android:id="@+id/action_searchApplicant_to_swapApplicantTemplate"
+            app:destination="@id/swapApplicantTemplate" />
+    </fragment>
+    <fragment
+        android:id="@+id/swapApplicantTemplate"
+        android:name="com.example.partpartparttime.ui.SearchApplicant.SwapApplicantTemplate"
+        android:label="SwapApplicantTemplate"
+        tools:layout="@layout/fragment_swap_applicant_template">
+        <argument
+            android:name="userid"
+            app:argType="string" />
     </fragment>
 </navigation>

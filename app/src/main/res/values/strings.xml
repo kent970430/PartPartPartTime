@@ -82,5 +82,15 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="searchjobcategor">Search Job Category</string>
+    <string name="searchapplicantcategor">Search Applicant Category</string>
+    <string name="jobcategory">Job Category</string>
+    <string name="applicantcategory">Applicant Submit</string>
+    <string name="search">Search</string>
+    <string name="pthr">Find Applicant</string>
+    <string name="btndislike">Dislike</string>
+    <string name="btnlike">Like</string>
+    <string name="comname">CompanyName</string>
+    <string name="appname">ApplicantName</string>
 
 </resources>
