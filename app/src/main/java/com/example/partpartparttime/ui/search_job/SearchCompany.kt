@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
@@ -16,13 +17,17 @@ import com.example.partpartparttime.databinding.FragmentSearchCompanyBinding
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
-import com.example.partpartparttime.MainActivity.Companion.categoryyyyy
 
 
 /**
  * A simple [Fragment] subclass.
  */
 class SearchCompany : Fragment() {
+
+    companion object {
+        var categoryyyyy : String = ""
+    }
+    var x : Int = 0
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,7 +42,27 @@ class SearchCompany : Fragment() {
 
         val application = requireNotNull(this.activity).application
         val dataSource = PartimeDatabase.getInstance(application).companyDao
+        var category: Array<String> =
+            arrayOf("IT", "Marketing", "Business", "Interior Design", "Finance")
+        var adapterCategory = ArrayAdapter(this.context!!,android.R.layout.simple_list_item_1,category)
+        binding.spinnerCategory.adapter = adapterCategory
+        binding.spinnerCategory.onItemSelectedListener =
+            object : AdapterView.OnItemSelectedListener {
+                override fun onNothingSelected(parent: AdapterView<*>?) {
+                }
 
+                override fun onItemSelected(
+                    parent: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long
+                ) {
+                    x = position
+                    val categories = category[x]
+                    categoryyyyy = categories
+                    println("clicked: " + categoryyyyy)
+                }
+            }
         val viewModelFactory = SearchCompanyViewModelFactory(dataSource, application, categoryyyyy)
 
         val serchCompanyViewModel =
@@ -60,16 +85,13 @@ class SearchCompany : Fragment() {
 
         binding.companyList.adapter = adapter
 
-        var category: Array<String> =
-            arrayOf("IT", "Marketing", "Business", "Interior Design", "Finance")
-        var adapterCategory = ArrayAdapter(this.context!!,android.R.layout.simple_list_item_1,category)
-        binding.spinnerCategory.adapter = adapterCategory
+
 
 
         binding.buttonSearch.setOnClickListener {
 
-           val category = binding.spinnerCategory.selectedItem.toString()
-            categoryyyyy = category
+//           val category = binding.spinnerCategory.selectedItem.toString()
+//            categoryyyyy = category
 
             serchCompanyViewModel.company_category.observe(viewLifecycleOwner, Observer {
                 serchCompanyViewModel.company_category.observe(viewLifecycleOwner, Observer{

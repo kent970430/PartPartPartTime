@@ -21,18 +21,17 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = arrayOf(User::class,Applicant::class,Company::class,Event::class,Notic::class,PartimeJob::class,Rate::class,Training::class,TrainingOrganization::class,Match::class), version = 9, exportSchema = false)
+@Database(entities = arrayOf(Applicant::class,Company::class,Event::class,PartimeJob::class,Training::class,Match::class,HistoryApplicant::class,HistoryCompany::class), version = 9, exportSchema = false)
 abstract class PartimeDatabase : RoomDatabase() {
 
-    abstract val userDao: UserDao
+
     abstract val applicantDao: ApplicantDao
     abstract val companyDao: CompanyDao
     abstract val eventDao: EventDao
-    abstract val noticDao: NoticDao
+    abstract val historyApplicantDao: HistoryApplicantDao
+    abstract val historyCompanyDao: HistoryCompanyDao
     abstract val partimeJobDao: PartimeJobDao
-    abstract val rateDao: RateDao
     abstract val trainingDao: TrainingDao
-    abstract val trainingOrganizationDao: TrainingOrganizationDao
     abstract val matchDao: MatchDao
 
     companion object {

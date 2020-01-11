@@ -23,23 +23,19 @@ import androidx.room.Query
 import androidx.room.Update
 
 @Dao
-interface UserDao {
+interface HistoryCompanyDao {
 
     @Insert
-    fun insert(user: User)
+    fun insert(history_company: HistoryCompany)
 
     @Update
-    fun update(user: User)
+    fun update(history_company: HistoryCompany)
 
-//    @Query("SELECT * from daily_sleep_quality_table WHERE nightId = :key")
-//    fun get(key: Long): User?
-//
-//    @Query("DELETE FROM daily_sleep_quality_table")
-//    fun clear()
-//
-//    @Query("SELECT * FROM daily_sleep_quality_table ORDER BY nightId DESC LIMIT 1")
-//    fun getTonight(): User?
-//
-//    @Query("SELECT * FROM daily_sleep_quality_table ORDER BY nightId DESC")
-//    fun getAllNights(): LiveData<List<User>>
+    @Query("SELECT * from history_company_table WHERE userID = :key")
+    fun getUserId(key: String): HistoryCompany?
+
+    @Query("SELECT * from history_company_table ORDER BY history_comID DESC ")
+    fun getAllHistory(): LiveData<List<HistoryCompany>>
+
+
 }

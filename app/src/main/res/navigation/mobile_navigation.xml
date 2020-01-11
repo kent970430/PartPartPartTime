@@ -179,6 +179,9 @@
         <argument
             android:name="compid"
             app:argType="string" />
+        <action
+            android:id="@+id/action_swapComapanyTemplate_to_historyFindJob"
+            app:destination="@id/historyFindJob" />
     </fragment>
     <fragment
         android:id="@+id/searchApplicant"
@@ -197,6 +200,9 @@
         <argument
             android:name="userid"
             app:argType="string" />
+        <action
+            android:id="@+id/action_swapApplicantTemplate_to_historyFindStaff"
+            app:destination="@id/historyFindStaff" />
     </fragment>
     <fragment
         android:id="@+id/companysssss"
@@ -207,5 +213,13 @@
             android:name="company_id"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/historyFindJob"
+        android:name="com.example.partpartparttime.ui.history_findjob.historyFindJob"
+        android:label="historyFindJob" />
+    <fragment
+        android:id="@+id/historyFindStaff"
+        android:name="com.example.partpartparttime.ui.history_findstaff.historyFindStaff"
+        android:label="historyFindStaff" />
 
 </navigation>

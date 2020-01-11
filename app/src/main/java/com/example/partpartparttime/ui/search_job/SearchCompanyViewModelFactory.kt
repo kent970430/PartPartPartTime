@@ -4,15 +4,16 @@ import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.partpartparttime.database.CompanyDao
+import com.example.partpartparttime.ui.search_job.SearchCompany.Companion.categoryyyyy
 
 class SearchCompanyViewModelFactory(private val dataSource: CompanyDao,
-                                    private val application: Application, val categoryyyyy:String
+                                    private val application: Application, val categoryyy:String = categoryyyyy
 ) : ViewModelProvider.Factory  {
 
     @Suppress("unchecked_cast")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(SearchCompanyViewModel::class.java)) {
-            return SearchCompanyViewModel(dataSource,application,categoryyyyy) as T
+            return SearchCompanyViewModel(dataSource,application,categoryyy) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

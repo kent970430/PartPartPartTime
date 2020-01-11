@@ -16,26 +16,34 @@
 
 package com.example.partpartparttime.database
 
+import android.net.Uri
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 import java.util.*
-@Entity(tableName = "training_organization_table")
-data class TrainingOrganization(
-        @PrimaryKey(autoGenerate = true)
-        @ColumnInfo(name = "organizationID")
-        var organizationID: Int = "O".toInt() + 1001,
 
-        @ColumnInfo(name = "organizationName")
-        var organizationName: String,
-
-        @ColumnInfo(name = "address")
-        var address: String,
-
-        @ColumnInfo(name = "contact")
-        var contact: String,
-
-        @ColumnInfo(name = "email")
-        var email: String
+@Entity(
+    tableName = "history_company_table"
 )
+data class HistoryCompany(
+
+    @PrimaryKey(autoGenerate = true)
+    var num: Long = 0L,
+
+    @ColumnInfo(name = "userID")
+    var userID: String? = null,
+
+    @ColumnInfo(name = "history_comID")
+    var history_comID: String? = null,
+
+    @ColumnInfo(name = "firstName")
+    var firstName: String? = null,
+
+    @ColumnInfo(name = "lastName")
+    var lastName: String? = null,
+
+    @ColumnInfo(name = "status")
+    var status: String? = null
+)
+

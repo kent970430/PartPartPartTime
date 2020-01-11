@@ -16,17 +16,31 @@
 
 package com.example.partpartparttime.database
 
+import android.net.Uri
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 import java.util.*
-@Entity(tableName = "rate_table")
-data class Rate(
-        @PrimaryKey(autoGenerate = true)
-        @ColumnInfo(name = "rateID")
-        var rateID: Int = "R".toInt() + 1001,
 
-        @ColumnInfo(name = "average")
-        var average: Double
+@Entity(
+    tableName = "history_applicant_table"
 )
+data class HistoryApplicant(
+
+    @PrimaryKey(autoGenerate = true)
+    var num: Long = 0L,
+
+    @ColumnInfo(name = "history_appID")
+    var history_appID: String? = null,
+
+    @ColumnInfo(name = "companyID")
+    var companyID: String? = null,
+
+    @ColumnInfo(name = "companyName")
+    var companyName: String? = null,
+
+    @ColumnInfo(name = "status")
+    var status: String? = null
+)
+

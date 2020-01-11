@@ -43,6 +43,9 @@ interface ApplicantDao {
     @Query("SELECT * FROM applicant_table ORDER BY num DESC")
     fun getAllApplicants(): LiveData<List<Applicant>>
 
+    @Query("SELECT * from applicant_table WHERE category = :key")
+    fun getApplicantCategory(key: String): LiveData<List<Applicant>>
+
 //    @Query("SELECT * from daily_sleep_quality_table WHERE nightId = :key")
 //    fun get(key: Long): User?
 //

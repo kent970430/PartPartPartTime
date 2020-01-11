@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.example.partpartparttime.MainActivity
 import com.example.partpartparttime.R
 import com.example.partpartparttime.database.Match
@@ -53,6 +54,8 @@ class SwapComapanyTemplate : Fragment() {
             m.usermatchcompany = "FALSE"
 
             dataSource.insert(m)
+
+            view.findNavController().navigate(R.id.action_swapComapanyTemplate_to_historyFindJob)
         }
 
 
@@ -67,6 +70,8 @@ class SwapComapanyTemplate : Fragment() {
             m.usermatchcompany = "TRUE"
 
             dataSource.insert(m)
+
+            view.findNavController().navigate(R.id.action_swapComapanyTemplate_to_historyFindJob)
 
         }
 

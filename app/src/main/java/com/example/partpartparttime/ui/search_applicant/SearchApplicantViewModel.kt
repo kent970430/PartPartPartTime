@@ -3,23 +3,25 @@ package com.example.partpartparttime.ui.search_applicant
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import com.example.partpartparttime.database.MatchDao
+import com.example.partpartparttime.database.ApplicantDao
 
-class SearchApplicantViewModel(val database: MatchDao,
-                               application: Application, company_id : String, user_id: String, status: String
+class SearchApplicantViewModel(val database: ApplicantDao,
+                               application: Application
 ): AndroidViewModel(application)  {
 
-    val getAppliedApplicant = database.getAppliedApplicant(company_id,user_id,status)
+    val applicants = database.getAllApplicants()
 
-    private val _navigateToCompany = MutableLiveData<String>()
-    val navigateToCompany get() =_navigateToCompany
+    val applicant_category = database.getApplicantCategory("")
 
-    fun onMatchClicked(id: String?) {
-        _navigateToCompany.value = id
+    private val _navigateToApplicant = MutableLiveData<String>()
+    val navigateToApplicant get() =_navigateToApplicant
+
+    fun onEventClicked(id: String?) {
+        _navigateToApplicant.value = id
     }
 
-    fun onMatchNavigated() {
-        _navigateToCompany.value = null
+    fun onEventNavigated() {
+        _navigateToApplicant.value = null
     }
 
 }

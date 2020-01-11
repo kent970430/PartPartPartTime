@@ -32,7 +32,6 @@ class LoginApplicant : Fragment() {
     private var username:String = ""
     private var password:String = ""
     lateinit var sharedPreferences: SharedPreferences
-    lateinit var loginViewModel: LoginViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,

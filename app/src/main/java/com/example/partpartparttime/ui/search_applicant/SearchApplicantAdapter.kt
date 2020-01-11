@@ -8,30 +8,11 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.partpartparttime.R
 import com.example.partpartparttime.TextItemViewHolder
-import com.example.partpartparttime.database.Match
+import com.example.partpartparttime.database.Applicant
 import com.example.partpartparttime.databinding.ListCompanyBinding
 
 class SearchApplicantAdapter(val clickListener: MatchListener):
-    ListAdapter<Match, SearchApplicantAdapter.ViewHolder>(MatchDiffCallBack()) {
-//    var data =  listOf<Match>()
-//        set(value) {
-//            field = value
-//            notifyDataSetChanged()
-//        }
-//
-//    override fun getItemCount() = data.size
-//
-//    override fun onBindViewHolder(holder: TextItemViewHolder, position: Int) {
-//        val item = data[position]
-//        holder.textView.text = item.userID
-//    }
-//
-//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TextItemViewHolder {
-//        val layoutInflater = LayoutInflater.from(parent.context)
-//        val view = layoutInflater
-//            .inflate(R.layout.list_company, parent, false) as TextView
-//        return TextItemViewHolder(view)
-//    }
+    ListAdapter<Applicant, SearchApplicantAdapter.ViewHolder>(MatchDiffCallBack()) {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(getItem(position)!!, clickListener)
@@ -45,7 +26,7 @@ class SearchApplicantAdapter(val clickListener: MatchListener):
 
     class ViewHolder private constructor(val binding: ListCompanyBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(
-            item: Match,
+            item: Applicant,
             clickListener: MatchListener
         ){
             binding.companyy = item
@@ -66,17 +47,17 @@ class SearchApplicantAdapter(val clickListener: MatchListener):
     }
 }
 
-class MatchDiffCallBack : DiffUtil.ItemCallback<Match>() {
-    override fun areItemsTheSame(oldItem: Match, newItem: Match): Boolean {
+class MatchDiffCallBack : DiffUtil.ItemCallback<Applicant>() {
+    override fun areItemsTheSame(oldItem: Applicant, newItem: Applicant): Boolean {
         return oldItem.userID == newItem.userID
     }
 
-    override fun areContentsTheSame(oldItem: Match, newItem: Match): Boolean {
+    override fun areContentsTheSame(oldItem: Applicant, newItem: Applicant): Boolean {
         return oldItem == newItem
 
     }
 }
 
-class MatchListener(val clickListener: (companyID: String?) -> Unit) {
-    fun onClick(searchMatch: Match) = clickListener(searchMatch.companyID)
+class MatchListener(val clickListener: (userID: String?) -> Unit) {
+    fun onClick(searchMatch: Applicant) = clickListener(searchMatch.userID)
 }
