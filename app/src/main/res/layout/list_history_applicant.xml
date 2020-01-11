@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="historyapplicant"
+            type="com.example.partpartparttime.database.HistoryApplicant"/>
+        <variable
+            name="clickListener"
+            type="com.example.partpartparttime.ui.history_applicant.HistoryListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/recyclevieww"
+        android:layout_marginTop="30dp"
+        android:onClick="@{() -> clickListener.onClick(historyapplicant)}"
+        android:layout_marginStart="30dp"
+        app:matchImageString="@{historyapplicant}"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/company_namee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            app:companyNameeString="@{historyapplicant}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.521"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.506"
+            tools:text="Company Name" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
