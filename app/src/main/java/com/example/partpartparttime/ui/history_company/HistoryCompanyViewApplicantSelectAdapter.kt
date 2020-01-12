@@ -7,9 +7,8 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.partpartparttime.database.HistoryApplicant
 import com.example.partpartparttime.databinding.ListHistoryyApplicantselectcompanyBinding
-import com.example.partpartparttime.databinding.ListHistoryyCompanyselectapplicantBinding
 
-class HistoryCompanyViewApplicantSelectAdapter (val clickListener: auuuListener):
+class HistoryCompanyViewApplicantSelectAdapter (val clickListener: ClickListenerrrr):
         ListAdapter<HistoryApplicant, HistoryCompanyViewApplicantSelectAdapter.ViewHolder>(HistoryyyyCompanyViewApplicantDiffCallback()){
 
     override fun onCreateViewHolder(
@@ -31,7 +30,7 @@ class HistoryCompanyViewApplicantSelectAdapter (val clickListener: auuuListener)
     class ViewHolder private constructor(val binding: ListHistoryyApplicantselectcompanyBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(
             item: HistoryApplicant,
-            clickListener: auuuListener
+            clickListener: ClickListenerrrr
         ) {
             binding.apphistoryapplicant = item
             binding.clickListener = clickListener
@@ -62,6 +61,6 @@ class HistoryyyyCompanyViewApplicantDiffCallback: DiffUtil.ItemCallback<HistoryA
     }
 }
 
-class auuuListener(val clickListener: (applicantIDDDDD: String?) -> Unit) {
+class ClickListenerrrr(val clickListener: (applicantIDDDDD: String?) -> Unit) {
     fun onClick(eventt: HistoryApplicant) = clickListener(eventt.history_appID)
 }

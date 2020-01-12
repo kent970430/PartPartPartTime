@@ -9,7 +9,7 @@
             type="com.example.partpartparttime.database.HistoryCompany"/>
         <variable
             name="clickListener"
-            type="com.example.partpartparttime.ui.history_applicant.companychooseListener" />
+            type="com.example.partpartparttime.ui.history_applicant.CompanychooseListener" />
 
     </data>
 

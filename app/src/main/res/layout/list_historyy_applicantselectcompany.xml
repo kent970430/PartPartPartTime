@@ -9,7 +9,7 @@
             type="com.example.partpartparttime.database.HistoryApplicant"/>
         <variable
             name="clickListener"
-            type="com.example.partpartparttime.ui.history_company.auuuListener" />
+            type="com.example.partpartparttime.ui.history_company.ClickListenerrrr" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -14,10 +14,10 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.partpartparttime.MainActivity.Companion.loggedUser
 import com.example.partpartparttime.R
 import com.example.partpartparttime.database.PartimeDatabase
 import com.example.partpartparttime.databinding.FragmentHistoryCompanyFindApplicantBinding
-import com.example.partpartparttime.ui.history_applicant.HistoryApplicantViewCompanySelectViewModel
 
 /**
  * A simple [Fragment] subclass.
@@ -38,7 +38,7 @@ class HistoryCompanyFindApplicant : Fragment() {
         val viewModelFactory = HistoryCompanyFindApplicantViewModelFactory(dataSource, application)
 
         val dataSource22 = PartimeDatabase.getInstance(application).historyApplicantDao
-        val viewModelFactory22 = HistoryCompanyViewApplicantSelectViewModelFactory(dataSource22,application)
+        val viewModelFactory22 = HistoryCompanyViewApplicantSelectViewModelFactory(dataSource22,application,loggedUser)
 
         val historycViewModel =
             ViewModelProviders.of(
@@ -53,9 +53,9 @@ class HistoryCompanyFindApplicant : Fragment() {
             historycViewModel.onApplicantClicked(userIDDDD)
         })
 
-        val adapter22 = HistoryCompanyViewApplicantSelectAdapter(auuuListener{ applicantIDDDDD ->
-            Toast.makeText(context, "${applicantIDDDDD}", Toast.LENGTH_LONG).show()
-            historyViewModel22.onCompanyClicked(applicantIDDDDD)
+        val adapter22 = HistoryCompanyViewApplicantSelectAdapter(ClickListenerrrr{ ads ->
+            Toast.makeText(context, "${ads}", Toast.LENGTH_LONG).show()
+            historyViewModel22.onCompanyClicked(ads)
         })
 
         historycViewModel.historyyy.observe(viewLifecycleOwner, Observer{
