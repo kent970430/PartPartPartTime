@@ -17,7 +17,6 @@ import com.example.partpartparttime.databinding.FragmentSearchCompanyBinding
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
-import com.example.partpartparttime.MainActivity.Companion.categoryyyyy
 
 
 /**
@@ -26,7 +25,7 @@ import com.example.partpartparttime.MainActivity.Companion.categoryyyyy
 class SearchCompany : Fragment() {
 
     companion object {
-//        var categoryyyyy : String = ""
+        var categoryyyyy : String = ""
     }
     var x : Int = 0
 

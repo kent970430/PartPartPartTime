@@ -1,56 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <variable
-            name="companyapplicant"
-            type="com.example.partpartparttime.database.HistoryCompany"/>
-        <variable
-            name="clickListener"
-            type="com.example.partpartparttime.ui.history_company.HistoryCListener" />
+            <variable
+                name="companyy"
+                type="com.example.partpartparttime.database.Applicant"/>
+            <variable
+                name="clickListener"
+                type="com.example.partpartparttime.ui.search_applicant.MatchListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="150dp"
+        android:layout_width="match_parent"
         android:layout_height="150dp"
         android:background="@drawable/recyclevieww"
         android:layout_marginTop="30dp"
-        android:onClick="@{() -> clickListener.onClick(historyapplicant)}"
         android:layout_marginStart="30dp"
-        app:matchImageString="@{historyapplicant}"
+        android:layout_marginEnd="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
-            android:id="@+id/first_namee"
+            android:id="@+id/company_idd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="84dp"
             android:textColor="#FFFFFF"
-            app:firstNameString="@{historyapplicant}"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.506"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.358"
-            tools:text="first Name" />
+            tools:text="Company ID" />
 
         <TextView
-            android:id="@+id/last_namee"
+            android:id="@+id/user_idd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
             android:textColor="#FFFFFF"
-            app:lastNameString="@{historyapplicant}"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.488"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.656"
-            tools:text="last Name" />
+            tools:text="User ID" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
+
