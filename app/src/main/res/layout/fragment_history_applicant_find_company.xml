@@ -28,25 +28,47 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/historyy_list"
             android:layout_width="421dp"
-            android:layout_height="459dp"
+            android:layout_height="200dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4"
             app:layout_constraintVertical_bias="0.071" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="356dp"
+            android:text="You have been Choosen"
+            android:textColor="#242729"
+            android:textSize="80px"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/historyy_CompanyChooseU_list"
+            android:layout_width="421dp"
+            android:layout_height="200dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:layout_constraintVertical_bias="0.741" />
 
         <Button
             android:id="@+id/buttonCancelll"
             android:layout_width="300dp"
             android:layout_height="48dp"
             android:layout_marginStart="100dp"
-            android:layout_marginTop="632dp"
+            android:layout_marginTop="648dp"
             android:layout_marginEnd="100dp"
             android:background="@drawable/ownbutton"
             android:padding="10dp"
             android:text="@string/cancel"
             android:textColor="#000000"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintHorizontal_bias="0.337"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
