@@ -12,7 +12,7 @@ class HistoryApplicantViewCompanySelectViewModel(val database: HistoryCompanyDao
     private val _navigateToApplicant = MutableLiveData<String>()
     val navigateToCompany get() = _navigateToApplicant
 
-    val historyyy = database.getUserId(userID)
+    val historyyy = database.getAllHistorys(userID)
 
     fun onApplicantClicked(id: String?) {
         _navigateToApplicant.value = id

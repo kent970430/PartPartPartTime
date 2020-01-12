@@ -6,13 +6,14 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.partpartparttime.MainActivity
 import com.example.partpartparttime.database.HistoryCompanyDao
 
-class HistoryApplicantViewCompanySelectViewModelFactory(val dataSource: HistoryCompanyDao,
-                                                        private val application: Application, private val userID : String= MainActivity.loggedUser
+class HistoryApplicantViewCompanySelectViewModelFactory(
+    val dataSource: HistoryCompanyDao,
+    private val application: Application, val userID: String = MainActivity.loggedUser
 ) : ViewModelProvider.Factory {
     @Suppress("unchecked_cast")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(HistoryApplicantViewCompanySelectViewModel::class.java)) {
-            return HistoryApplicantViewCompanySelectViewModel(dataSource, application,userID) as T
+            return HistoryApplicantViewCompanySelectViewModel(dataSource, application) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

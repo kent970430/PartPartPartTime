@@ -46,6 +46,9 @@ data class HistoryCompany(
     @ColumnInfo(name = "lastName")
     var lastName: String? = null,
 
+    @ColumnInfo(name = "companyName")
+    var companyName: String? = null,
+
     @ColumnInfo(name = "status")
     var status: String? = null
 )

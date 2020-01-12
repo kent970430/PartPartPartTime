@@ -15,6 +15,12 @@ fun TextView.setCompanyNameeString(item: HistoryApplicant?) {
     }
 }
 
+@BindingAdapter("statusString")
+fun TextView.setStatusString(item: HistoryApplicant?) {
+    item?.let {
+        text = item.status.toString()
+    }
+}
 
 @BindingAdapter("matchImageString")
 fun ConstraintLayout.setMatchImageString(item: HistoryApplicant?) {
@@ -26,7 +32,7 @@ fun ConstraintLayout.setMatchImageString(item: HistoryApplicant?) {
 @BindingAdapter("companyyyyNameeString")
 fun TextView.setCompanyNameeString(item: HistoryCompany?) {
     item?.let {
-        text = item.history_comID.toString()
+        text = item.companyName.toString()
     }
 }
 

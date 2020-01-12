@@ -47,7 +47,7 @@ class HistoryApplicantFindCompany : Fragment() {
         val viewModelFactory = HistoryApplicantFindCompanyViewModelFactory(dataSource, application, user_id)
 
         val dataSource11 = PartimeDatabase.getInstance(application).historyCompanyDao
-        val viewModelFactory11 = HistoryApplicantViewCompanySelectViewModelFactory(dataSource11,application,loggedUser)
+        val viewModelFactory11 = HistoryApplicantViewCompanySelectViewModelFactory(dataSource11,application,user_id)
 
         val historyViewModel =
             ViewModelProviders.of(
@@ -99,17 +99,21 @@ class HistoryApplicantFindCompany : Fragment() {
             }
         })
 
-//        historyViewModel11.navigateToCompany.observe(this,Observer{ iii ->
-//            iii?.let{
-//                this.findNavController().navigate{
-//
-//                }
-//            }
-//        })
+        historyViewModel11.navigateToCompany.observe(this,Observer{ iii ->
+            iii?.let{
+                this.findNavController().navigate(
+                    HistoryApplicantFindCompanyDirections.actionHistoryApplicantFindCompanyToSwapComapanyTemplate(iii)
+                )
+            }
+        })
 
         val hihi = GridLayoutManager(activity,2)
 
         binding.historyyList.layoutManager = hihi
+
+        val aa = GridLayoutManager(activity,2)
+
+        binding.historyyCompanyChooseUList.layoutManager = aa
 
         binding.buttonCancelll.setOnClickListener { view ->
             view.findNavController().navigate(R.id.action_historyApplicantFindCompany_to_nav_home)

@@ -14,6 +14,7 @@ import com.example.partpartparttime.database.HistoryApplicant
 import com.example.partpartparttime.database.Match
 import com.example.partpartparttime.database.PartimeDatabase
 import com.example.partpartparttime.databinding.FragmentSwapCompanyTemplateBinding
+import kotlinx.android.synthetic.main.list_applicant.*
 import java.util.*
 
 /**
@@ -34,6 +35,7 @@ class SwapComapanyTemplate : Fragment() {
         val dataSource = PartimeDatabase.getInstance(application).matchDao
         val dataSource1 = PartimeDatabase.getInstance(application).companyDao
         val dataSource2 = PartimeDatabase.getInstance(application).historyApplicantDao
+        val dataSource3 = PartimeDatabase.getInstance(application).applicantDao
 
         val arguement = SwapComapanyTemplateArgs.fromBundle(arguments)
 
@@ -43,9 +45,12 @@ class SwapComapanyTemplate : Fragment() {
 
         var company = dataSource1.getCompanyID(compid)
 
+
 //        println(company)
 
         var user_id = MainActivity.loggedUser
+
+        var applicant = dataSource3.getApplicantID(user_id)
 
         binding.btndislike.setOnClickListener { view ->
 
@@ -79,6 +84,8 @@ class SwapComapanyTemplate : Fragment() {
             h.userID = user_id
             h.companyID = compid
             h.companyName = company!!.companyName
+            h.fisrtName = applicant!!.firstName
+            h.lastName = applicant!!.lastName
             h.history_appID = UUID.randomUUID().toString()
             h.status = "pending"
 

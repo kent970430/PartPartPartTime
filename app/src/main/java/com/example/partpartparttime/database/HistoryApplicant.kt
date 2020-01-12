@@ -43,6 +43,12 @@ data class HistoryApplicant(
     @ColumnInfo(name = "companyName")
     var companyName: String? = null,
 
+    @ColumnInfo(name = "firstName")
+    var fisrtName: String? = null,
+
+    @ColumnInfo(name = "lastName")
+    var lastName: String? = null,
+
     @ColumnInfo(name = "status")
     var status: String? = null
 )

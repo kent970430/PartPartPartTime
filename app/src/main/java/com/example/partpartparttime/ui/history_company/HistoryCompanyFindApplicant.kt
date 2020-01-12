@@ -71,6 +71,14 @@ class HistoryCompanyFindApplicant : Fragment() {
             })
         })
 
+        historyViewModel22.historyyy.observe(viewLifecycleOwner, Observer{
+            historyViewModel22.historyyy.observe(viewLifecycleOwner, Observer{
+                it?.let{
+                    adapter22.submitList(it)
+                }
+            })
+        })
+
         binding.likedList.adapter = adapter
         binding.historyyApplicantChooseUList.adapter = adapter22
 
@@ -83,30 +91,24 @@ class HistoryCompanyFindApplicant : Fragment() {
                 historycViewModel.onApplicantNavigated()
             }
         })
-//        historycViewModel.navigateToCompany.observe(this,Observer{ iddd ->
-//            iddd?.let{
-//                this.findNavController().navigate{
-//
-//                }
-//            }
-//        })
 
-//        historyViewModel22.navigateToCompany.observe(this,Observer{ iddd ->
-//            iddd?.let{
-//                this.findNavController().navigate{
-//
-//                }
-//            }
-//        })
+        historyViewModel22.navigateToCompany.observe(this,Observer{ iddd ->
+            iddd?.let{
+                this.findNavController().navigate(
+                    HistoryCompanyFindApplicantDirections.actionHistoryCompanyFindApplicantToApplicantssssss(iddd)
+                )
+            }
+        })
 
         val lulu = GridLayoutManager(activity,2)
 
         binding.likedList.layoutManager = lulu
-        binding.historyyApplicantChooseUList.layoutManager = lulu
+        val qqq = GridLayoutManager(activity,2)
+        binding.historyyApplicantChooseUList.layoutManager = qqq
 
 // for cancel button
         binding.buttonCancelll.setOnClickListener{view->
-//            view.findNavController().navigate(R.id)
+            view.findNavController().navigate(R.id.action_historyCompanyFindApplicant_to_nav_home2)
         }
 
         return binding.root

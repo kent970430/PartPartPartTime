@@ -22,6 +22,13 @@ fun TextView.setLastNameString(item: HistoryCompany?) {
     }
 }
 
+@BindingAdapter("statusString")
+fun TextView.setStatusString(item: HistoryCompany?) {
+    item?.let {
+        text = item.status.toString()
+    }
+}
+
 @BindingAdapter("matchImageString")
 fun ConstraintLayout.msetMtchImageString(item: HistoryCompany?) {
     item?.let {
@@ -32,7 +39,7 @@ fun ConstraintLayout.msetMtchImageString(item: HistoryCompany?) {
 @BindingAdapter("applicantIDDDString")
 fun TextView.setApplicantIDDDString(item: HistoryApplicant?) {
     item?.let {
-        text = item.history_appID.toString()
+        text = item.fisrtName.toString() + item.lastName.toString()
     }
 }
 

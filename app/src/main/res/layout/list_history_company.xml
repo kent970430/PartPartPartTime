@@ -25,6 +25,20 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            app:statusString="@{companyapplicant}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.488"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.633"
+            tools:text="status" />
+
+        <TextView
             android:id="@+id/first_namee"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -35,7 +49,7 @@
             app:layout_constraintHorizontal_bias="0.506"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.358"
+            app:layout_constraintVertical_bias="0.19"
             tools:text="first Name" />
 
         <TextView
@@ -49,7 +63,7 @@
             app:layout_constraintHorizontal_bias="0.488"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.656"
+            app:layout_constraintVertical_bias="0.419"
             tools:text="last Name" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
