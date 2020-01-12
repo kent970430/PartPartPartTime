@@ -79,53 +79,6 @@ class companysssss : Fragment() {
             val imageView: ImageView = this.getActivity()!!.findViewById(R.id.imageView)
             imageView.setImageURI(imageV)
         }
-//        }else{
-//            binding.buttonEdit.hidee(false)
-//            binding.buttonSave.hidee(false)
-//            binding.buttonLogOut.hidee(false)
-//            val name: EditText = binding.root.findViewById(R.id.textName)
-//            if (comp1 != null) {
-//                name.setText(comp1.companyName)
-//            }
-//
-//            val email: EditText = binding.root.findViewById(R.id.textEmaill)
-//            if (comp1 != null) {
-//                email.setText(comp1.email)
-//            }
-//
-//            val contact: EditText = binding.root.findViewById(R.id.textDescription)
-//            if (comp1 != null) {
-//                contact.setText(comp1.contact)
-//            }
-//
-//            val address: EditText = binding.root.findViewById(R.id.textDescription1)
-//            if (comp1 != null) {
-//                address.setText(comp1.address)
-//            }
-//
-//            val description: EditText = binding.root.findViewById(R.id.textDescription2)
-//            if (comp1 != null) {
-//                description.setText(comp1.details)
-//            }
-//
-//            val job: EditText = binding.root.findViewById(R.id.textDescription3)
-//            if (comp1 != null) {
-//                job.setText(comp1.job)
-//            }
-//
-//            val image: ImageView = binding.root.findViewById(R.id.imageViewPreview2)
-//            val imageV = comp1?.image.toString().toUri()
-//            image.setImageURI(imageV)
-//
-//            val headName: TextView = this.getActivity()!!.findViewById(R.id.head_name)
-//            headName.setText(MainActivity.name)
-//            val headEmail: TextView = this.getActivity()!!.findViewById(R.id.head_email)
-//            if (comp1 != null) {
-//                headEmail.setText(comp1.email)
-//            }
-//            val imageView: ImageView = this.getActivity()!!.findViewById(R.id.imageView)
-//            imageView.setImageURI(imageV)
-//        }
 
         return binding.root
     }

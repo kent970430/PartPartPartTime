@@ -56,6 +56,12 @@ class HomeFragment : Fragment() {
 
         }
 
+        binding.buttonHis!!.setOnClickListener { view ->
+
+            view.findNavController().navigate(R.id.action_nav_home_to_searchCompany)
+
+        }
+
         return binding.root
     }
 }

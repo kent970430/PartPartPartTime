@@ -72,7 +72,7 @@
             app:destination="@id/addEventsFragment" />
         <action
             android:id="@+id/action_events_to_companysssss"
-            app:destination="@id/companysssss" />
+            app:destination="@+id/companysssss" />
     </fragment>
     <fragment
         android:id="@+id/profile_applicant"
@@ -180,8 +180,8 @@
             android:name="compid"
             app:argType="string" />
         <action
-            android:id="@+id/action_swapComapanyTemplate_to_historyFindJob"
-            app:destination="@id/historyFindJob" />
+            android:id="@+id/action_swapComapanyTemplate_to_historyApplicantFindCompany"
+            app:destination="@id/historyApplicantFindCompany" />
     </fragment>
     <fragment
         android:id="@+id/searchApplicant"
@@ -201,25 +201,49 @@
             android:name="userid"
             app:argType="string" />
         <action
-            android:id="@+id/action_swapApplicantTemplate_to_historyFindStaff"
-            app:destination="@id/historyFindStaff" />
+            android:id="@+id/action_swapApplicantTemplate_to_historyCompanyFindApplicant"
+            app:destination="@id/historyCompanyFindApplicant" />
     </fragment>
     <fragment
         android:id="@+id/companysssss"
         android:name="com.example.partpartparttime.ui.company_profile.companysssss"
-        android:label="companysssss"
-        tools:layout="@layout/fragment_companysssss">
+        android:label="companysssss">
         <argument
             android:name="company_id"
             app:argType="string" />
     </fragment>
     <fragment
-        android:id="@+id/historyFindJob"
-        android:name="com.example.partpartparttime.ui.history_findjob.historyFindJob"
-        android:label="historyFindJob" />
+        android:id="@+id/historyApplicantFindCompany"
+        android:name="com.example.partpartparttime.ui.history_applicant.HistoryApplicantFindCompany"
+        android:label="HistoryApplicantFindCompany"
+        tools:layout="@layout/fragment_history_applicant_find_company">
+        <action
+            android:id="@+id/action_historyApplicantFindCompany_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_historyApplicantFindCompany_to_companysssss"
+            app:destination="@+id/companysssss" />
+    </fragment>
     <fragment
-        android:id="@+id/historyFindStaff"
-        android:name="com.example.partpartparttime.ui.history_findstaff.historyFindStaff"
-        android:label="historyFindStaff" />
+        android:id="@+id/historyCompanyFindApplicant"
+        android:name="com.example.partpartparttime.ui.history_company.HistoryCompanyFindApplicant"
+        android:label="HistoryCompanyFindApplicant"
+        tools:layout="@layout/fragment_history_company_find_applicant">
+        <action
+            android:id="@+id/action_historyCompanyFindApplicant_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_historyCompanyFindApplicant_to_applicantssssss"
+            app:destination="@id/applicantssssss" />
+    </fragment>
+    <fragment
+        android:id="@+id/applicantssssss"
+        android:name="com.example.partpartparttime.ui.applicant_profile.Applicantssssss"
+        android:label="Applicantssssss"
+        tools:layout="@layout/fragment_applicantssssss">
+    <argument
+        android:name="user_id"
+        app:argType="string" />
+    </fragment>
 
 </navigation>

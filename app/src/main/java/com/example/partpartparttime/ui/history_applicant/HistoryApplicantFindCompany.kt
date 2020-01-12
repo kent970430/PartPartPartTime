@@ -17,6 +17,8 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.partpartparttime.R
 import com.example.partpartparttime.database.PartimeDatabase
 import com.example.partpartparttime.databinding.FragmentHistoryApplicantFindCompanyBinding
+import com.example.partpartparttime.ui.events.EventFragmentDirections
+import com.example.partpartparttime.ui.home.HomeFragmentDirections
 import kotlinx.android.synthetic.main.fragment_history_applicant_find_company.*
 
 
@@ -42,9 +44,9 @@ class HistoryApplicantFindCompany : Fragment() {
             ViewModelProviders.of(
                 this,viewModelFactory).get(HistoryApplicantFindCompanyViewModel::class.java)
 
-        val adapter = HistoryApplicantFindCompanyAdapter(HistoryListener { companyName ->
-            Toast.makeText(context,"${companyName}", Toast.LENGTH_LONG).show()
-            historyViewModel.onCompanyClicked(companyName)
+        val adapter = HistoryApplicantFindCompanyAdapter(HistoryListener { companyID ->
+            Toast.makeText(context,"${companyID}", Toast.LENGTH_LONG).show()
+            historyViewModel.onCompanyClicked(companyID)
         })
 
         historyViewModel.historyyy.observe(viewLifecycleOwner, Observer{
@@ -57,21 +59,22 @@ class HistoryApplicantFindCompany : Fragment() {
 
         binding.historyyList.adapter = adapter
 
-//        historyViewModel.navigateToCompany.observe(this,Observer{ iddd ->
-//            iddd?.let{
-//                this.findNavController().navigate{
-//
-//                }
-//            }
-//        })
+        historyViewModel.navigateToCompany.observe(this,Observer{ iddd ->
+            iddd?.let{
+                this.findNavController().navigate(
+                    HistoryApplicantFindCompanyDirections.actionHistoryApplicantFindCompanyToCompanysssss(iddd)
+                )
+                historyViewModel.onCompanyNavigated()
+            }
+        })
 
         val hihi = GridLayoutManager(activity,2)
 
         binding.historyyList.layoutManager = hihi
 
-//        binding.buttonCancelll.setOnClickListener { view ->
-//            view.findNavController().navigate(R.id.action_events_to_addEventsFragment)
-//        }
+        binding.buttonCancelll.setOnClickListener { view ->
+            view.findNavController().navigate(R.id.action_historyApplicantFindCompany_to_nav_home)
+        }
 
         return binding.root
 

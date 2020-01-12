@@ -10,9 +10,11 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import com.example.partpartparttime.MainActivity
 import com.example.partpartparttime.R
+import com.example.partpartparttime.database.HistoryApplicant
 import com.example.partpartparttime.database.Match
 import com.example.partpartparttime.database.PartimeDatabase
 import com.example.partpartparttime.databinding.FragmentSwapCompanyTemplateBinding
+import java.util.*
 
 /**
  * A simple [Fragment] subclass.
@@ -30,17 +32,18 @@ class SwapComapanyTemplate : Fragment() {
 
         val application = requireNotNull(this.activity).application
         val dataSource = PartimeDatabase.getInstance(application).matchDao
+        val dataSource1 = PartimeDatabase.getInstance(application).companyDao
+        val dataSource2 = PartimeDatabase.getInstance(application).historyApplicantDao
 
         val arguement = SwapComapanyTemplateArgs.fromBundle(arguments)
 
         var compid:String = arguement.compid
 
-        val application1 = requireNotNull(this.activity).application
-        val dataSource1 = PartimeDatabase.getInstance(application1).companyDao
+
 
         var company = dataSource1.getCompanyID(compid)
 
-        println(company)
+//        println(company)
 
         var user_id = MainActivity.loggedUser
 
@@ -55,7 +58,7 @@ class SwapComapanyTemplate : Fragment() {
 
             dataSource.insert(m)
 
-            view.findNavController().navigate(R.id.action_swapComapanyTemplate_to_historyFindJob)
+            view.findNavController().navigate(R.id.action_swapComapanyTemplate_to_historyApplicantFindCompany)
         }
 
 
@@ -71,7 +74,16 @@ class SwapComapanyTemplate : Fragment() {
 
             dataSource.insert(m)
 
-            view.findNavController().navigate(R.id.action_swapComapanyTemplate_to_historyFindJob)
+            var h:HistoryApplicant = HistoryApplicant()
+
+            h.companyID = compid
+            h.companyName = company!!.companyName
+            h.history_appID = UUID.randomUUID().toString()
+            h.status = "pending"
+
+            dataSource2.insert(h)
+
+            view.findNavController().navigate(R.id.action_swapComapanyTemplate_to_historyApplicantFindCompany)
 
         }
 
