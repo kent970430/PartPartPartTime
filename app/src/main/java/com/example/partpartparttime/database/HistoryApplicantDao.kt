@@ -32,7 +32,7 @@ interface HistoryApplicantDao {
     fun update(history_applicant: HistoryApplicant)
 
     @Query("SELECT * from history_applicant_table WHERE companyID = :key")
-    fun getUserId(key: String): HistoryApplicant?
+    fun getUserId(key: String): LiveData<List<HistoryApplicant>>
 
     @Query("SELECT * from history_applicant_table ORDER BY history_appID DESC ")
     fun getAllHistory(): LiveData<List<HistoryApplicant>>
