@@ -32,7 +32,7 @@ interface HistoryCompanyDao {
     fun update(history_company: HistoryCompany)
 
     @Query("SELECT * from history_company_table WHERE userID = :key")
-    fun getUserId(key: String): LiveData<List<HistoryCompany>>
+    fun getUserId(key: String): HistoryCompany?
 
     @Query("SELECT * from history_company_table ORDER BY history_comID DESC ")
     fun getAllHistory(): LiveData<List<HistoryCompany>>

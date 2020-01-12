@@ -17,7 +17,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.partpartparttime.R
 import com.example.partpartparttime.database.PartimeDatabase
 import com.example.partpartparttime.databinding.FragmentHistoryCompanyFindApplicantBinding
-import com.example.partpartparttime.ui.history_applicant.HistoryApplicantViewCompanySelectViewModel
 
 /**
  * A simple [Fragment] subclass.
@@ -37,25 +36,13 @@ class HistoryCompanyFindApplicant : Fragment() {
         val dataSource = PartimeDatabase.getInstance(application).historyCompanyDao
         val viewModelFactory = HistoryCompanyFindApplicantViewModelFactory(dataSource, application)
 
-        val dataSource22 = PartimeDatabase.getInstance(application).historyApplicantDao
-        val viewModelFactory22 = HistoryCompanyViewApplicantSelectViewModelFactory(dataSource22,application)
-
         val historycViewModel =
             ViewModelProviders.of(
                 this,viewModelFactory).get(HistoryCompanyFindApplicantViewModel::class.java)
 
-        val historyViewModel22 =
-            ViewModelProviders.of(
-                this,viewModelFactory22).get(HistoryCompanyViewApplicantSelectViewModel::class.java)
-
         val adapter = HistoryCompanyFindApplicantAdapter(HistoryCListener { userIDDDD ->
             Toast.makeText(context,"${userIDDDD}", Toast.LENGTH_LONG).show()
             historycViewModel.onApplicantClicked(userIDDDD)
-        })
-
-        val adapter22 = HistoryCompanyViewApplicantSelectAdapter(auuuListener{ applicantIDDDDD ->
-            Toast.makeText(context, "${applicantIDDDDD}", Toast.LENGTH_LONG).show()
-            historyViewModel22.onCompanyClicked(applicantIDDDDD)
         })
 
         historycViewModel.historyyy.observe(viewLifecycleOwner, Observer{
@@ -66,26 +53,9 @@ class HistoryCompanyFindApplicant : Fragment() {
             })
         })
 
-        historyViewModel22.historyyy.observe(viewLifecycleOwner, Observer{
-            historyViewModel22.historyyy.observe(viewLifecycleOwner, Observer{
-                it?.let{
-                    adapter22.submitList(it)
-                }
-            })
-        })
-
         binding.likedList.adapter = adapter
-        binding.historyyApplicantChooseUList.adapter = adapter22
 
 //        historycViewModel.navigateToCompany.observe(this,Observer{ iddd ->
-//            iddd?.let{
-//                this.findNavController().navigate{
-//
-//                }
-//            }
-//        })
-        
-//        historyViewModel22.navigateToCompany.observe(this,Observer{ iddd ->
 //            iddd?.let{
 //                this.findNavController().navigate{
 //
@@ -96,7 +66,6 @@ class HistoryCompanyFindApplicant : Fragment() {
         val lulu = GridLayoutManager(activity,2)
 
         binding.likedList.layoutManager = lulu
-        binding.historyyApplicantChooseUList.layoutManager = lulu
 
         binding.buttonCancelll.setOnClickListener{view->
 //            view.findNavController().navigate(R.id)

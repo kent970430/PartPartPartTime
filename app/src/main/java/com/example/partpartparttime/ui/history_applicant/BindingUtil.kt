@@ -6,7 +6,6 @@ import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
 import com.example.partpartparttime.R
 import com.example.partpartparttime.database.HistoryApplicant
-import com.example.partpartparttime.database.HistoryCompany
 
 @BindingAdapter("companyNameeString")
 fun TextView.setCompanyNameeString(item: HistoryApplicant?) {
@@ -18,21 +17,6 @@ fun TextView.setCompanyNameeString(item: HistoryApplicant?) {
 
 @BindingAdapter("matchImageString")
 fun ConstraintLayout.setMatchImageString(item: HistoryApplicant?) {
-    item?.let {
-        background = ContextCompat.getDrawable(context, R.drawable.recyclevieww)
-    }
-}
-
-@BindingAdapter("companyyyyNameeString")
-fun TextView.setCompanyNameeString(item: HistoryCompany?) {
-    item?.let {
-        text = item.history_comID.toString()
-    }
-}
-
-
-@BindingAdapter("ImageString")
-fun ConstraintLayout.setMatchImageString(item: HistoryCompany?) {
     item?.let {
         background = ContextCompat.getDrawable(context, R.drawable.recyclevieww)
     }
