@@ -34,8 +34,8 @@ interface HistoryCompanyDao {
     @Query("SELECT * from history_company_table WHERE userID = :key")
     fun getUserId(key: String): HistoryCompany?
 
-    @Query("SELECT * from history_company_table ORDER BY history_comID DESC ")
-    fun getAllHistory(): LiveData<List<HistoryCompany>>
+    @Query("SELECT * from history_company_table WHERE companyID = :key ORDER BY history_comID DESC ")
+    fun getAllHistory(key: String): LiveData<List<HistoryCompany>>
 
 
 }

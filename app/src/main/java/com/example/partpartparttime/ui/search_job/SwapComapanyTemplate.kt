@@ -76,6 +76,7 @@ class SwapComapanyTemplate : Fragment() {
 
             var h:HistoryApplicant = HistoryApplicant()
 
+            h.userID = user_id
             h.companyID = compid
             h.companyName = company!!.companyName
             h.history_appID = UUID.randomUUID().toString()

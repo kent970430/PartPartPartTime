@@ -34,6 +34,9 @@ data class HistoryApplicant(
     @ColumnInfo(name = "history_appID")
     var history_appID: String? = null,
 
+    @ColumnInfo(name = "userID")
+    var userID: String? = null,
+
     @ColumnInfo(name = "companyID")
     var companyID: String? = null,
 

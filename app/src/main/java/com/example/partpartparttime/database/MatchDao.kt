@@ -29,7 +29,7 @@ interface MatchDao {
     fun insert(match: Match)
 
     @Update
-    fun update(match: Match)
+    fun update(match: Match?)
 
     @Query("SELECT * from match_table WHERE companyID = :key")
     fun getUserId(key: String): Match?

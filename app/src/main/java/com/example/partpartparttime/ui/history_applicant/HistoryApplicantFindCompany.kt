@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.partpartparttime.MainActivity
 import com.example.partpartparttime.R
 import com.example.partpartparttime.database.PartimeDatabase
 import com.example.partpartparttime.databinding.FragmentHistoryApplicantFindCompanyBinding
@@ -38,11 +39,16 @@ class HistoryApplicantFindCompany : Fragment() {
 
         val application = requireNotNull(this.activity).application
         val dataSource = PartimeDatabase.getInstance(application).historyApplicantDao
-        val viewModelFactory = HistoryApplicantFindCompanyViewModelFactory(dataSource, application)
+
+        val user_id = MainActivity.loggedUser
+
+        val viewModelFactory = HistoryApplicantFindCompanyViewModelFactory(dataSource, application, user_id)
 
         val historyViewModel =
             ViewModelProviders.of(
                 this,viewModelFactory).get(HistoryApplicantFindCompanyViewModel::class.java)
+
+
 
         val adapter = HistoryApplicantFindCompanyAdapter(HistoryListener { companyID ->
             Toast.makeText(context,"${companyID}", Toast.LENGTH_LONG).show()

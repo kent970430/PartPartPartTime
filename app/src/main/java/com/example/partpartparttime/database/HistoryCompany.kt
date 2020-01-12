@@ -34,6 +34,9 @@ data class HistoryCompany(
     @ColumnInfo(name = "userID")
     var userID: String? = null,
 
+    @ColumnInfo(name = "companyID")
+    var companyID: String? = null,
+
     @ColumnInfo(name = "history_comID")
     var history_comID: String? = null,
 

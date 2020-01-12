@@ -14,9 +14,11 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.partpartparttime.MainActivity
 import com.example.partpartparttime.R
 import com.example.partpartparttime.database.PartimeDatabase
 import com.example.partpartparttime.databinding.FragmentHistoryCompanyFindApplicantBinding
+import com.example.partpartparttime.ui.history_applicant.HistoryApplicantFindCompanyDirections
 
 /**
  * A simple [Fragment] subclass.
@@ -34,7 +36,10 @@ class HistoryCompanyFindApplicant : Fragment() {
 
         val application = requireNotNull(this.activity).application
         val dataSource = PartimeDatabase.getInstance(application).historyCompanyDao
-        val viewModelFactory = HistoryCompanyFindApplicantViewModelFactory(dataSource, application)
+
+        val company_id = MainActivity.loggedUser
+
+        val viewModelFactory = HistoryCompanyFindApplicantViewModelFactory(dataSource, application, company_id)
 
         val historycViewModel =
             ViewModelProviders.of(
@@ -56,13 +61,14 @@ class HistoryCompanyFindApplicant : Fragment() {
         binding.likedList.adapter = adapter
 
 //for link to the page after u click on recycle view
-//        historycViewModel.navigateToCompany.observe(this,Observer{ iddd ->
-//            iddd?.let{
-//                this.findNavController().navigate{
-//
-//                }
-//            }
-//        })
+        historycViewModel.navigateToCompany.observe(this,Observer{ iddd ->
+            iddd?.let{
+                this.findNavController().navigate(
+                    HistoryCompanyFindApplicantDirections.actionHistoryCompanyFindApplicantToApplicantssssss(iddd)
+                )
+                historycViewModel.onApplicantNavigated()
+            }
+        })
 
         val lulu = GridLayoutManager(activity,2)
 
@@ -70,7 +76,8 @@ class HistoryCompanyFindApplicant : Fragment() {
 
 // for cancel button
         binding.buttonCancelll.setOnClickListener{view->
-//            view.findNavController().navigate(R.id)
+            view.findNavController().navigate(R.id.action_historyCompanyFindApplicant_to_nav_home)
+
         }
 
         return binding.root
