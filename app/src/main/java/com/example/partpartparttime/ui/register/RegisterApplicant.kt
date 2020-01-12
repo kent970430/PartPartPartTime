@@ -58,37 +58,27 @@ class RegisterApplicant : Fragment() {
 
 
         binding.buttonSignUp.setOnClickListener {view ->
-            if(binding.textUserName.text.toString() == ""){
-                Toast.makeText(activity, "Please key in User Name!!!", Toast.LENGTH_SHORT).show()
-            }else if(binding.textPassword.text.toString() == ""){
-                Toast.makeText(activity, "Please key in Password!!!", Toast.LENGTH_SHORT).show()
-            }else if(binding.textFirstName.text.toString() == "") {
-                Toast.makeText(activity, "Please key in First Name!!!", Toast.LENGTH_SHORT).show()
-            }else if(binding.textLastName.text.toString() == "") {
-                Toast.makeText(activity, "Please key in Last Name!!!", Toast.LENGTH_SHORT).show()
-            }else if(binding.textEmail.text.toString() == "") {
-                Toast.makeText(activity, "Please key in Email!!!", Toast.LENGTH_SHORT).show()
-            }else {
-                username = binding.textUserName.text.toString()
-                password = binding.textPassword.text.toString()
-                firstname = binding.textFirstName.text.toString()
-                lastname = binding.textLastName.text.toString()
-                email = binding.textEmail.text.toString()
+            username = binding.textUserName.text.toString()
+            password = binding.textPassword.text.toString()
+            firstname = binding.textFirstName.text.toString()
+            lastname = binding.textLastName.text.toString()
+            email = binding.textEmail.text.toString()
 
 
-                var appl = Applicant()
+
+            var appl = Applicant()
 
 
-                appl.userName = username
-                appl.password = password
-                appl.email = email
-                appl.firstName = firstname
-                appl.lastName = lastname
-                appl.userID = UUID.randomUUID().toString()
-                appl.category = binding.spinnerCategory.selectedItem.toString()
+            appl.userName = username
+            appl.password = password
+            appl.email = email
+            appl.firstName = firstname
+            appl.lastName = lastname
+            appl.userID = UUID.randomUUID().toString()
+            appl.category = binding.spinnerCategory.selectedItem.toString()
 
-                dataSource.insert(appl)
-            }
+            dataSource.insert(appl)
+
             Toast.makeText(activity, "Successfully Register!!", Toast.LENGTH_SHORT).show()
             view.findNavController().navigate(R.id.action_register_applicant_to_login_applicant)
         }

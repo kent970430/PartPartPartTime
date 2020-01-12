@@ -57,33 +57,25 @@ class RegisterCompany : Fragment() {
 
 
         binding.buttonSignUp.setOnClickListener {view ->
-            if(binding.textUserName.text.toString() == ""){
-                Toast.makeText(activity, "Please key in User Name!!!", Toast.LENGTH_SHORT).show()
-            }else if(binding.textPassword.text.toString() == ""){
-                Toast.makeText(activity, "Please key in Password!!!", Toast.LENGTH_SHORT).show()
-            }else if(binding.textCompanyName.text.toString() == "") {
-                Toast.makeText(activity, "Please key in Company Name!!!", Toast.LENGTH_SHORT).show()
-            }else if(binding.textEmail.text.toString() == "") {
-                Toast.makeText(activity, "Please key in Email!!!", Toast.LENGTH_SHORT).show()
-            }else {
-                username = binding.textUserName.text.toString()
-                password = binding.textPassword.text.toString()
-                companyname = binding.textCompanyName.text.toString()
-                email = binding.textEmail.text.toString()
+            username = binding.textUserName.text.toString()
+            password = binding.textPassword.text.toString()
+            companyname = binding.textCompanyName.text.toString()
+            email = binding.textEmail.text.toString()
 
 
-                var comp = Company()
+
+            var comp = Company()
 
 
-                comp.userName = username
-                comp.password = password
-                comp.email = email
-                comp.companyName = companyname
-                comp.companyID = UUID.randomUUID().toString()
-                comp.category = binding.spinnerCategory.selectedItem.toString()
+            comp.userName = username
+            comp.password = password
+            comp.email = email
+            comp.companyName = companyname
+            comp.companyID = UUID.randomUUID().toString()
+            comp.category = binding.spinnerCategory.selectedItem.toString()
 
-                dataSource.insert(comp)
-            }
+            dataSource.insert(comp)
+
             Toast.makeText(activity, "Successfully Register!!", Toast.LENGTH_SHORT).show()
             view.findNavController().navigate(R.id.action_registerCompany_to_login_company)
         }
