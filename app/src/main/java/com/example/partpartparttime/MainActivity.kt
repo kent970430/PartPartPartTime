@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
     companion object {
         var loggedUser = ""
         var name = ""
+        var role = ""
 //        var IMAGE_DIRECTORY = "/DCIM/"
         var imagePath: String? = ""
         var imageview: ImageView? = null
