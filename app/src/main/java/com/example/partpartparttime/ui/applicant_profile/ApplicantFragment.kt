@@ -22,6 +22,7 @@ import com.example.partpartparttime.MainActivity.Companion.imagePath
 import com.example.partpartparttime.MainActivity.Companion.imageview
 import com.example.partpartparttime.MainActivity.Companion.loggedUser
 import com.example.partpartparttime.MainActivity.Companion.name
+import com.example.partpartparttime.MainActivity.Companion.role
 import com.example.partpartparttime.R
 import com.example.partpartparttime.database.Applicant
 import com.example.partpartparttime.database.PartimeDatabase
@@ -108,6 +109,7 @@ class ApplicantFragment : Fragment() {
 
             loggedUser = ""
             name = ""
+            role = ""
 
             val headName: TextView = this.getActivity()!!.findViewById(R.id.head_name)
             headName.setText(R.string.nav_header_title)

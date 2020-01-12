@@ -34,6 +34,12 @@
         <action
             android:id="@+id/action_nav_home_to_searchApplicant"
             app:destination="@id/searchApplicant" />
+        <action
+            android:id="@+id/action_nav_home_to_historyApplicantFindCompany"
+            app:destination="@id/historyApplicantFindCompany" />
+        <action
+            android:id="@+id/action_nav_home_to_historyCompanyFindApplicant"
+            app:destination="@id/historyCompanyFindApplicant" />
     </fragment>
     <fragment
         android:id="@+id/login_applicant"

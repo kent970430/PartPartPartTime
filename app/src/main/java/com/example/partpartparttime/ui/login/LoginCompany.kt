@@ -16,6 +16,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import com.example.partpartparttime.MainActivity.Companion.loggedUser
 import com.example.partpartparttime.MainActivity.Companion.name
+import com.example.partpartparttime.MainActivity.Companion.role
 import com.example.partpartparttime.database.Applicant
 import com.example.partpartparttime.database.Company
 import com.example.partpartparttime.databinding.FragmentLoginApplicantBinding
@@ -59,6 +60,7 @@ class LoginCompany : Fragment() {
 
                     loggedUser = comp.companyID.toString()
                     name = comp.companyName.toString()
+                    role = "Comp"
 
                     Log.i("Result","Successfully logged in")
 

@@ -22,6 +22,7 @@ import androidx.navigation.findNavController
 import com.example.partpartparttime.MainActivity
 import com.example.partpartparttime.MainActivity.Companion.loggedUser
 import com.example.partpartparttime.MainActivity.Companion.name
+import com.example.partpartparttime.MainActivity.Companion.role
 import com.example.partpartparttime.database.Applicant
 import com.example.partpartparttime.databinding.FragmentLoginApplicantBinding
 import com.google.android.material.navigation.NavigationView
@@ -69,6 +70,7 @@ class LoginApplicant : Fragment() {
 
                     loggedUser = appl.userID.toString()
                     name = appl.firstName+appl.lastName
+                    role = "Appl"
 //                    loginViewModel.nav_header_title = name
 //                    loginViewModel.nav_header_subtitle = appl.email
 
