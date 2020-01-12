@@ -83,9 +83,10 @@ class RegisterCompany : Fragment() {
                 comp.category = binding.spinnerCategory.selectedItem.toString()
 
                 dataSource.insert(comp)
+                Toast.makeText(activity, "Successfully Register!!", Toast.LENGTH_SHORT).show()
+                view.findNavController().navigate(R.id.action_registerCompany_to_login_company)
             }
-            Toast.makeText(activity, "Successfully Register!!", Toast.LENGTH_SHORT).show()
-            view.findNavController().navigate(R.id.action_registerCompany_to_login_company)
+
         }
 
         binding.buttonCancel.setOnClickListener { view ->
