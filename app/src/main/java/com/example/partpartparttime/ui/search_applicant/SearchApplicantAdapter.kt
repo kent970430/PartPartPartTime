@@ -2,14 +2,11 @@ package com.example.partpartparttime.ui.search_applicant
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.ListAdapter
-import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.partpartparttime.R
-import com.example.partpartparttime.TextItemViewHolder
 import com.example.partpartparttime.database.Applicant
-import com.example.partpartparttime.databinding.ListCompanyBinding
+import com.example.partpartparttime.databinding.ListApplicantBinding
 
 class SearchApplicantAdapter(val clickListener: MatchListener):
     ListAdapter<Applicant, SearchApplicantAdapter.ViewHolder>(MatchDiffCallBack()) {
@@ -24,21 +21,21 @@ class SearchApplicantAdapter(val clickListener: MatchListener):
         )
     }
 
-    class ViewHolder private constructor(val binding: ListCompanyBinding): RecyclerView.ViewHolder(binding.root){
+    class ViewHolder private constructor(val binding: ListApplicantBinding): RecyclerView.ViewHolder(binding.root){
         fun bind(
             item: Applicant,
             clickListener: MatchListener
         ){
-            binding.companyy = item
+            binding.applicantt = item
             binding.clickListener = clickListener
             binding.executePendingBindings()
         }
         companion object{
-            fun from (parent:ViewGroup): ViewHolder{
+            fun from (parent: ViewGroup): ViewHolder{
                 val layoutInflater=
                     LayoutInflater.from(parent.context)
                 val binding =
-                    ListCompanyBinding.inflate(layoutInflater,parent,false)
+                    ListApplicantBinding.inflate(layoutInflater,parent,false)
                 return ViewHolder(
                     binding
                 )

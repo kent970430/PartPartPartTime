@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
 //        var IMAGE_DIRECTORY = "/DCIM/"
         var imagePath: String? = ""
         var imageview: ImageView? = null
+        var categoryyyyy : String = ""
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -3,8 +3,8 @@ package com.example.partpartparttime.ui.search_job
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import com.example.partpartparttime.MainActivity.Companion.categoryyyyy
 import com.example.partpartparttime.database.CompanyDao
-import com.example.partpartparttime.ui.search_job.SearchCompany.Companion.categoryyyyy
 
 class SearchCompanyViewModel(val database: CompanyDao,
                              application: Application,categoryyy : String = categoryyyyy

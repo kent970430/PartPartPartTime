@@ -1,6 +1,7 @@
-package com.example.partpartparttime.ui.search_job
+package com.example.partpartparttime.ui.search_applicant
 
-
+import android.content.Context
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -11,22 +12,20 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import com.example.partpartparttime.R
-import com.example.partpartparttime.database.PartimeDatabase
-import com.example.partpartparttime.databinding.FragmentSearchCompanyBinding
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import com.example.partpartparttime.MainActivity.Companion.categoryyyyy
 
+import com.example.partpartparttime.R
+import com.example.partpartparttime.database.PartimeDatabase
+import com.example.partpartparttime.databinding.FragmentSearchApplicantBinding
+import com.example.partpartparttime.databinding.FragmentSwapApplicantTemplateBinding
+import com.example.partpartparttime.ui.search_job.MatchListener
 
-/**
- * A simple [Fragment] subclass.
- */
-class SearchCompany : Fragment() {
-
+class SearchApplicantFragment : Fragment() {
     companion object {
-//        var categoryyyyy : String = ""
+
     }
     var x : Int = 0
 
@@ -36,13 +35,13 @@ class SearchCompany : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val binding: FragmentSearchCompanyBinding = DataBindingUtil.inflate(
+        val binding:FragmentSearchApplicantBinding = DataBindingUtil.inflate(
             inflater,
-            R.layout.fragment_search_company, container, false
+            R.layout.fragment_search_applicant, container, false
         )
 
         val application = requireNotNull(this.activity).application
-        val dataSource = PartimeDatabase.getInstance(application).companyDao
+        val dataSource = PartimeDatabase.getInstance(application).applicantDao
         var category: Array<String> =
             arrayOf("IT", "Marketing", "Business", "Interior Design", "Finance")
         var adapterCategory = ArrayAdapter(this.context!!,android.R.layout.simple_list_item_1,category)
@@ -64,38 +63,38 @@ class SearchCompany : Fragment() {
                     println("clicked: " + categoryyyyy)
                 }
             }
-        val viewModelFactory = SearchCompanyViewModelFactory(dataSource, application, categoryyyyy)
+        val viewModelFactory = SearchApplicantViewModelFactory(dataSource, application, categoryyyyy)
 
-        val serchCompanyViewModel =
+        val serchApplicantViewModel =
             ViewModelProviders.of(
                 this, viewModelFactory
-            ).get(SearchCompanyViewModel::class.java)
+            ).get(SearchApplicantViewModel::class.java)
 
-        val adapter = SearchCompanyAdapter(MatchListener{company_id ->
-            Toast.makeText(context,"${company_id}",Toast.LENGTH_LONG).show()
-            serchCompanyViewModel.onEventClicked(company_id)
+        val adapter = SearchApplicantAdapter(com.example.partpartparttime.ui.search_applicant.MatchListener{ user_id ->
+            Toast.makeText(context,"${user_id}",Toast.LENGTH_LONG).show()
+            serchApplicantViewModel.onEventClicked(user_id)
         })
 
-        serchCompanyViewModel.companies.observe(viewLifecycleOwner, Observer {
-            serchCompanyViewModel.companies.observe(viewLifecycleOwner, Observer{
+        serchApplicantViewModel.applicants.observe(viewLifecycleOwner, Observer {
+            serchApplicantViewModel.applicants.observe(viewLifecycleOwner, Observer{
                 it?.let {
                     adapter.submitList(it)
                 }
             })
         })
 
-        binding.companyList.adapter = adapter
+        binding.applicantList.adapter = adapter
 
 
 
 
         binding.buttonSearch.setOnClickListener {
 
-//           val category = binding.spinnerCategory.selectedItem.toString()
+            //           val category = binding.spinnerCategory.selectedItem.toString()
 //            categoryyyyy = category
 
-            serchCompanyViewModel.company_category.observe(viewLifecycleOwner, Observer {
-                serchCompanyViewModel.company_category.observe(viewLifecycleOwner, Observer{
+            serchApplicantViewModel.applicant_category.observe(viewLifecycleOwner, Observer {
+                serchApplicantViewModel.applicant_category.observe(viewLifecycleOwner, Observer{
                     it?.let {
                         adapter.submitList(it)
                     }
@@ -104,13 +103,13 @@ class SearchCompany : Fragment() {
 
         }
 
-        serchCompanyViewModel.navigateToCompany.observe(this, Observer { iddd ->
+        serchApplicantViewModel.navigateToApplicant.observe(this, Observer { iddd ->
             iddd?.let {
 
                 this.findNavController().navigate(
-                    SearchCompanyDirections
-                        .actionSearchCompanyToSwapComapanyTemplate(iddd))
-                serchCompanyViewModel.onEventNavigated()
+                    SearchApplicantFragmentDirections
+                        .actionSearchApplicantToSwapApplicantTemplate(iddd))
+                serchApplicantViewModel.onEventNavigated()
 
                 Log.i("idddd",iddd)
 
@@ -119,6 +118,4 @@ class SearchCompany : Fragment() {
 
         return binding.root
     }
-
-
 }

@@ -55,6 +55,7 @@ class HistoryCompanyFindApplicant : Fragment() {
 
         binding.likedList.adapter = adapter
 
+//for link to the page after u click on recycle view
 //        historycViewModel.navigateToCompany.observe(this,Observer{ iddd ->
 //            iddd?.let{
 //                this.findNavController().navigate{
@@ -67,6 +68,7 @@ class HistoryCompanyFindApplicant : Fragment() {
 
         binding.likedList.layoutManager = lulu
 
+// for cancel button
         binding.buttonCancelll.setOnClickListener{view->
 //            view.findNavController().navigate(R.id)
         }
