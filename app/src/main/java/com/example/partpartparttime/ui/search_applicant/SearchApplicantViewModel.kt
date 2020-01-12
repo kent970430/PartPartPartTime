@@ -3,10 +3,11 @@ package com.example.partpartparttime.ui.search_applicant
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import com.example.partpartparttime.MainActivity
 import com.example.partpartparttime.database.ApplicantDao
 
 class SearchApplicantViewModel(val database: ApplicantDao,
-                               application: Application
+                               application: Application, categoryy : String= MainActivity.categoryyyyy
 ): AndroidViewModel(application)  {
 
     val applicants = database.getAllApplicants()
