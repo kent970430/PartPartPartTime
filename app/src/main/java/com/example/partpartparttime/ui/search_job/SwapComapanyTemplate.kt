@@ -55,13 +55,25 @@ class SwapComapanyTemplate : Fragment() {
         binding.btndislike.setOnClickListener { view ->
 
 
-            var m:Match = Match()
+            var abc = dataSource.getAppliedCompany1(compid,user_id,"FALSE")
 
-            m.companyID = compid
-            m.userID = user_id
-            m.usermatchcompany = "FALSE"
+            if (abc != null){
 
-            dataSource.insert(m)
+                abc?.usermatchcompany="FALSE"
+
+                dataSource.update(abc)
+
+            } else {
+
+                var m: Match = Match()
+
+                m.companyID = compid
+                m.userID = user_id
+                m.usermatchcompany = "FALSE"
+
+                dataSource.insert(m)
+
+            }
 
             view.findNavController().navigate(R.id.action_swapComapanyTemplate_to_historyApplicantFindCompany)
         }
@@ -69,6 +81,25 @@ class SwapComapanyTemplate : Fragment() {
 
         binding.btnlike.setOnClickListener { view ->
 
+            var abc = dataSource.getAppliedCompany1(compid,user_id,"TRUE")
+
+            if (abc != null){
+
+                abc?.usermatchcompany="TRUE"
+
+                dataSource.update(abc)
+
+            } else {
+
+                var m: Match = Match()
+
+                m.companyID = compid
+                m.userID = user_id
+                m.usermatchcompany = "TRUE"
+
+                dataSource.insert(m)
+
+            }
 
 
             var m:Match = Match()

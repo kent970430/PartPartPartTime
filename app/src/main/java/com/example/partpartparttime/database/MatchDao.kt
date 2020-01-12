@@ -40,6 +40,9 @@ interface MatchDao {
     @Query("SELECT * from match_table WHERE companyID = :key AND userID = :key1 AND usermatchcompany = :key2")
     fun getAppliedApplicant1(key: String, key1: String, key2: String): Match?
 
+    @Query("SELECT * from match_table WHERE companyID = :key AND userID = :key1 AND companymatchuser = :key2")
+    fun getAppliedCompany1(key: String, key1: String, key2: String): Match?
+
 //    @Query("SELECT * from match_table WHERE companyID = :key AND userID = :key1 AND companymatchuser = :key2 AND usermatchcompany = :key3 ")
 //    fun getMatchedCompanyandUser(key: String, key1: String, key2: String, key3: String): Match?
 

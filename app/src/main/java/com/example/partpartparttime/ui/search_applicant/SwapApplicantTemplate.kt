@@ -12,6 +12,7 @@ import com.example.partpartparttime.MainActivity
 import com.example.partpartparttime.R
 import com.example.partpartparttime.database.HistoryApplicant
 import com.example.partpartparttime.database.HistoryCompany
+import com.example.partpartparttime.database.Match
 import com.example.partpartparttime.database.PartimeDatabase
 import com.example.partpartparttime.databinding.FragmentSwapApplicantTemplateBinding
 import java.util.*
@@ -50,11 +51,25 @@ class SwapApplicantTemplate : Fragment() {
 
         binding.btndislike.setOnClickListener { view ->
 
-            val abc= dataSource.getAppliedApplicant1(company_id,userid,"TRUE")
+            var abc = dataSource.getAppliedApplicant1(company_id,userid,"FALSE")
 
-            abc?.companymatchuser = "FALSE"
+            if (abc != null){
 
-            dataSource.update(abc)
+                abc?.companymatchuser="FALSE"
+
+                dataSource.update(abc)
+
+            } else {
+
+                var m: Match = Match()
+
+                m.companyID = company_id
+                m.userID = userid
+                m.companymatchuser = "FALSE"
+
+                dataSource.insert(m)
+
+            }
 
             view.findNavController().navigate(R.id.action_swapApplicantTemplate_to_historyCompanyFindApplicant)
 
@@ -63,11 +78,29 @@ class SwapApplicantTemplate : Fragment() {
 
         binding.btnlike.setOnClickListener { view ->
 
+
+
             var abc = dataSource.getAppliedApplicant1(company_id,userid,"TRUE")
 
-            abc?.companymatchuser="TRUE"
+            if (abc != null){
 
-            dataSource.update(abc)
+                abc?.companymatchuser="TRUE"
+
+                dataSource.update(abc)
+
+            } else {
+
+                var m: Match = Match()
+
+                m.companyID = company_id
+                m.userID = userid
+                m.companymatchuser = "TRUE"
+
+                dataSource.insert(m)
+
+            }
+
+
 
 
             var h: HistoryCompany = HistoryCompany()
