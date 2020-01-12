@@ -20,11 +20,11 @@ import java.util.*
 class RegisterApplicant : Fragment() {
     private lateinit var registerApplicantViewModel: RegisterApplicantViewModel
 
-    private var username: String = ""
-    private var password: String = ""
-    private var firstname: String = ""
-    private var lastname: String = ""
-    private var email: String = ""
+    private var username: String? = null
+    private var password: String? = null
+    private var firstname: String? = null
+    private var lastname: String? = null
+    private var email: String? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -58,6 +58,7 @@ class RegisterApplicant : Fragment() {
 
 
         binding.buttonSignUp.setOnClickListener {view ->
+
             if(binding.textUserName.text.toString() == ""){
                 Toast.makeText(activity, "Please key in User Name!!!", Toast.LENGTH_SHORT).show()
             }else if(binding.textPassword.text.toString() == ""){
@@ -88,9 +89,10 @@ class RegisterApplicant : Fragment() {
                 appl.category = binding.spinnerCategory.selectedItem.toString()
 
                 dataSource.insert(appl)
+                Toast.makeText(activity, "Successfully Register!!", Toast.LENGTH_SHORT).show()
+                view.findNavController().navigate(R.id.action_register_applicant_to_login_applicant)
             }
-            Toast.makeText(activity, "Successfully Register!!", Toast.LENGTH_SHORT).show()
-            view.findNavController().navigate(R.id.action_register_applicant_to_login_applicant)
+
         }
 
         binding.buttonCancel.setOnClickListener { view ->
