@@ -1,6 +1,8 @@
 
 package com.example.partpartparttime
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
@@ -22,11 +24,13 @@ import android.widget.ImageView
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
+    lateinit var sharedPreferences: SharedPreferences
 //    private lateinit var binding: ActivityMainBinding
 
     companion object {
         var loggedUser = ""
         var name = ""
+        var role = ""
 //        var IMAGE_DIRECTORY = "/DCIM/"
         var imagePath: String? = ""
         var imageview: ImageView? = null
@@ -39,11 +43,12 @@ class MainActivity : AppCompatActivity() {
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
-        val fab: FloatingActionButton = findViewById(R.id.fab)
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
+        sharedPreferences = getPreferences(Context.MODE_PRIVATE)
+
+        loggedUser = sharedPreferences.getString("loggedUser","")!!
+        role = sharedPreferences.getString("role","")!!
+        name = sharedPreferences.getString("user_namename","")!!
+
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
         val navController = findNavController(R.id.nav_host_fragment)
@@ -71,5 +76,33 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+    override fun onResume() {
+        loggedUser = sharedPreferences.getString("loggedUser","")!!
+        role = sharedPreferences.getString("role","")!!
+        name = sharedPreferences.getString("user_namename","")!!
+
+        super.onResume()
+    }
+
+    override fun onPause() {
+        with(sharedPreferences.edit()){
+            putString("loggedUser", loggedUser)
+            putString("role", role)
+            putString("user_namename", name)
+            commit()
+        }
+        super.onPause()
+    }
+
+    override fun onStop() {
+        with(sharedPreferences.edit()){
+            putString("loggedUser", loggedUser)
+            putString("role", role)
+            putString("name", name)
+            commit()
+        }
+        super.onStop()
     }
 }
