@@ -44,25 +44,25 @@ class SearchApplicantFragment : Fragment() {
         val dataSource = PartimeDatabase.getInstance(application).applicantDao
         var category: Array<String> =
             arrayOf("IT", "Marketing", "Business", "Interior Design", "Finance")
-        var adapterCategory = ArrayAdapter(this.context!!,android.R.layout.simple_list_item_1,category)
-        binding.spinnerCategory.adapter = adapterCategory
-        binding.spinnerCategory.onItemSelectedListener =
-            object : AdapterView.OnItemSelectedListener {
-                override fun onNothingSelected(parent: AdapterView<*>?) {
-                }
-
-                override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?,
-                    position: Int,
-                    id: Long
-                ) {
-                    x = position
-                    val categories = category[x]
-                    categoryyyyy = categories
-                    println("clicked: " + categoryyyyy)
-                }
-            }
+//        var adapterCategory = ArrayAdapter(this.context!!,android.R.layout.simple_list_item_1,category)
+//        binding.spinnerCategory.adapter = adapterCategory
+//        binding.spinnerCategory.onItemSelectedListener =
+//            object : AdapterView.OnItemSelectedListener {
+//                override fun onNothingSelected(parent: AdapterView<*>?) {
+//                }
+//
+//                override fun onItemSelected(
+//                    parent: AdapterView<*>?,
+//                    view: View?,
+//                    position: Int,
+//                    id: Long
+//                ) {
+//                    x = position
+//                    val categories = category[x]
+//                    categoryyyyy = categories
+//                    println("clicked: " + categoryyyyy)
+//                }
+//            }
         val viewModelFactory = SearchApplicantViewModelFactory(dataSource, application, categoryyyyy)
 
         val serchApplicantViewModel =
@@ -88,20 +88,20 @@ class SearchApplicantFragment : Fragment() {
 
 
 
-        binding.buttonSearch.setOnClickListener {
-
-            //           val category = binding.spinnerCategory.selectedItem.toString()
-//            categoryyyyy = category
-
-            serchApplicantViewModel.applicant_category.observe(viewLifecycleOwner, Observer {
-                serchApplicantViewModel.applicant_category.observe(viewLifecycleOwner, Observer{
-                    it?.let {
-                        adapter.submitList(it)
-                    }
-                })
-            })
-
-        }
+//        binding.buttonSearch.setOnClickListener {
+//
+//            //           val category = binding.spinnerCategory.selectedItem.toString()
+////            categoryyyyy = category
+//
+//            serchApplicantViewModel.applicant_category.observe(viewLifecycleOwner, Observer {
+//                serchApplicantViewModel.applicant_category.observe(viewLifecycleOwner, Observer{
+//                    it?.let {
+//                        adapter.submitList(it)
+//                    }
+//                })
+//            })
+//
+//        }
 
         serchApplicantViewModel.navigateToApplicant.observe(this, Observer { iddd ->
             iddd?.let {
