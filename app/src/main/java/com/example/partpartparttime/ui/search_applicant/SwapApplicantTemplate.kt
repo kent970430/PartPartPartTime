@@ -36,6 +36,7 @@ class SwapApplicantTemplate : Fragment() {
         val dataSource = PartimeDatabase.getInstance(application).matchDao
         val dataSource1 = PartimeDatabase.getInstance(application).historyCompanyDao
         val dataSource2 = PartimeDatabase.getInstance(application).applicantDao
+        val dataSourceeee = PartimeDatabase.getInstance(application).companyDao
 
         val arguement = SwapApplicantTemplateArgs.fromBundle(arguments)
 
@@ -48,6 +49,10 @@ class SwapApplicantTemplate : Fragment() {
         var firstname = username?.firstName
 
         var lastname = username?.lastName
+
+        var companyName = dataSourceeee.getCompanyID(company_id)
+
+
 
         binding.btndislike.setOnClickListener { view ->
 
@@ -110,6 +115,7 @@ class SwapApplicantTemplate : Fragment() {
             h.firstName = firstname
             h.lastName = lastname
             h.history_comID = UUID.randomUUID().toString()
+            h.companyName = companyName?.companyName.toString()
             h.status = "pending"
 
             dataSource1.insert(h)

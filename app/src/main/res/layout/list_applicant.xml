@@ -14,7 +14,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="125dp"
         android:background="@drawable/recyclevieww"
         android:layout_marginTop="30dp"
         android:layout_marginStart="30dp"
@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:textColor="#FFFFFF"
+            android:textColor="#07000000"
             app:userIDString="@{applicantt}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -40,39 +40,39 @@
             android:id="@+id/user_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="44dp"
+            android:layout_marginTop="16dp"
             android:textColor="#FFFFFF"
-            app:userNameString="@{applicantt}"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.508"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:userNameString="@{applicantt}"
             tools:text="User Name" />
 
         <TextView
             android:id="@+id/education"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="52dp"
             android:textColor="#FFFFFF"
-            app:userEducationString="@{applicantt}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:userEducationString="@{applicantt}"
             tools:text="Education" />
 
         <TextView
             android:id="@+id/user_category"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="112dp"
+            android:layout_marginTop="84dp"
             android:textColor="#FFFFFF"
-            app:userCategoryString="@{applicantt}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:userCategoryString="@{applicantt}"
             tools:text="category" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

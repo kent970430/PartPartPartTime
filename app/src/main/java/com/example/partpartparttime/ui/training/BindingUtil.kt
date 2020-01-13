@@ -38,7 +38,7 @@ fun TextView.setTrainingWebString(item: Training?){
 @BindingAdapter("eventImageString")
 fun ConstraintLayout.setEventImageString(item: Training?) {
     item?.let {
-        background = ContextCompat.getDrawable(context, R.drawable.recyclevieww)
+        background = ContextCompat.getDrawable(context, R.drawable.recycler3)
     }
 }
 

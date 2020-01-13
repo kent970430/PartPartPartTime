@@ -32,7 +32,7 @@ fun TextView.setStatusString(item: HistoryCompany?) {
 @BindingAdapter("matchImageString")
 fun ConstraintLayout.msetMtchImageString(item: HistoryCompany?) {
     item?.let {
-        background = ContextCompat.getDrawable(context, R.drawable.recyclevieww)
+        background = ContextCompat.getDrawable(context, R.drawable.recycler3)
     }
 }
 
@@ -53,6 +53,6 @@ fun TextView.setStatusString(item: HistoryApplicant?) {
 @BindingAdapter("appImageString")
 fun ConstraintLayout.setAppImageString(item: HistoryApplicant?) {
     item?.let {
-        background = ContextCompat.getDrawable(context, R.drawable.recyclevieww)
+        background = ContextCompat.getDrawable(context, R.drawable.recycler4)
     }
 }

@@ -17,7 +17,7 @@ fun TextView.setCompanyIDString(item: Applicant?) {
 @BindingAdapter("userNameString")
 fun TextView.setUserIDDString(item: Applicant?) {
     item?.let {
-        text = item.firstName + item.lastName
+        text = item.firstName + " " + item.lastName
     }
 }
 
@@ -38,6 +38,6 @@ fun TextView.setUserCategorytring(item: Applicant?) {
 @BindingAdapter("matchImageString")
 fun ConstraintLayout.setEventImage(item: Applicant?) {
     item?.let {
-        background = ContextCompat.getDrawable(context, R.drawable.recyclevieww)
+        background = ContextCompat.getDrawable(context, R.drawable.recycler2)
     }
 }

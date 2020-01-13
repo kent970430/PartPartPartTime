@@ -39,6 +39,6 @@ fun TextView.setjob_categoryString(item: Company?) {
 @BindingAdapter("matchImageString")
 fun ConstraintLayout.setEventImage(item: Company?) {
     item?.let {
-        background = ContextCompat.getDrawable(context, R.drawable.recyclevieww)
+        background = ContextCompat.getDrawable(context, R.drawable.recycler2)
     }
 }

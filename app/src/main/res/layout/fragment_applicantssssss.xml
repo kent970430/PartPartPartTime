@@ -11,7 +11,7 @@
 
         <EditText
             android:id="@+id/textEmaill"
-            android:layout_width="wrap_content"
+            android:layout_width="146dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:enabled="false"
@@ -19,66 +19,66 @@
             android:inputType="textEmailAddress"
             android:textSize="17dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.209"
+            app:layout_constraintHorizontal_bias="0.561"
             app:layout_constraintStart_toEndOf="@+id/imageViewPreview2"
             app:layout_constraintTop_toBottomOf="@+id/textDescription" />
 
         <EditText
             android:id="@+id/textDescription2"
-            android:layout_width="289dp"
+            android:layout_width="355dp"
             android:layout_height="36dp"
-            android:layout_marginTop="44dp"
+            android:layout_marginTop="40dp"
             android:enabled="false"
             android:hint="@string/skill"
             android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.27"
+            app:layout_constraintHorizontal_bias="0.589"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textDescription1" />
 
+
         <EditText
             android:id="@+id/textDescription3"
-            android:layout_width="289dp"
+            android:layout_width="355dp"
             android:layout_height="36dp"
-            android:layout_marginTop="44dp"
+            android:layout_marginTop="40dp"
             android:enabled="false"
             android:hint="@string/education"
             android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.27"
+            app:layout_constraintHorizontal_bias="0.589"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textDescription2" />
 
-
         <EditText
             android:id="@+id/textDescription1"
-            android:layout_width="289dp"
+            android:layout_width="355dp"
             android:layout_height="36dp"
             android:layout_marginTop="224dp"
             android:enabled="false"
             android:hint="@string/experience"
             android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.245"
+            app:layout_constraintHorizontal_bias="0.589"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/textDescription"
-            android:layout_width="wrap_content"
+            android:layout_width="146dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:enabled="false"
             android:hint="@string/contact"
             android:textSize="17dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.238"
+            app:layout_constraintHorizontal_bias="0.561"
             app:layout_constraintStart_toEndOf="@+id/imageViewPreview2"
             app:layout_constraintTop_toBottomOf="@+id/textName" />
 
         <EditText
             android:id="@+id/textName"
-            android:layout_width="wrap_content"
+            android:layout_width="146dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:enabled="false"

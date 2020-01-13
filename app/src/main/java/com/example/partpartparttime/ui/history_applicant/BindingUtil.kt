@@ -25,7 +25,7 @@ fun TextView.setStatusString(item: HistoryApplicant?) {
 @BindingAdapter("matchImageString")
 fun ConstraintLayout.setMatchImageString(item: HistoryApplicant?) {
     item?.let {
-        background = ContextCompat.getDrawable(context, R.drawable.recyclevieww)
+        background = ContextCompat.getDrawable(context, R.drawable.recycler3)
     }
 }
 
@@ -47,6 +47,6 @@ fun TextView.setStatusString(item: HistoryCompany?) {
 @BindingAdapter("ImageString")
 fun ConstraintLayout.setMatchImageString(item: HistoryCompany?) {
     item?.let {
-        background = ContextCompat.getDrawable(context, R.drawable.recyclevieww)
+        background = ContextCompat.getDrawable(context, R.drawable.recycler4)
     }
 }
