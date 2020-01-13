@@ -52,7 +52,7 @@ class HistoryCompanyViewApplicantSelectAdapter (val clickListener: ClickListener
 
 class HistoryyyyCompanyViewApplicantDiffCallback: DiffUtil.ItemCallback<HistoryApplicant>(){
     override fun areItemsTheSame(oldItem: HistoryApplicant, newItem: HistoryApplicant): Boolean {
-        return oldItem.history_appID == newItem.history_appID
+        return oldItem.userID == newItem.userID
     }
 
     override fun areContentsTheSame(oldItem: HistoryApplicant, newItem: HistoryApplicant): Boolean {
@@ -62,5 +62,5 @@ class HistoryyyyCompanyViewApplicantDiffCallback: DiffUtil.ItemCallback<HistoryA
 }
 
 class ClickListenerrrr(val clickListener: (applicantIDDDDD: String?) -> Unit) {
-    fun onClick(eventt: HistoryApplicant) = clickListener(eventt.history_appID)
+    fun onClick(eventt: HistoryApplicant) = clickListener(eventt.userID)
 }

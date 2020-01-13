@@ -95,7 +95,7 @@ class HistoryCompanyFindApplicant : Fragment() {
         historyViewModel22.navigateToCompany.observe(this,Observer{ iddd ->
             iddd?.let{
                 this.findNavController().navigate(
-                    HistoryCompanyFindApplicantDirections.actionHistoryCompanyFindApplicantToApplicantssssss(iddd)
+                    HistoryCompanyFindApplicantDirections.actionHistoryCompanyFindApplicantToSwapApplicantttTemplate(iddd)
                 )
             }
         })

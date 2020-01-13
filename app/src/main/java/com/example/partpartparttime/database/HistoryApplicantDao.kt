@@ -39,4 +39,8 @@ interface HistoryApplicantDao {
 
     @Query("SELECT * from history_applicant_table WHERE companyID = :key ORDER BY history_appID DESC ")
     fun getAllHistorys(key: String): LiveData<List<HistoryApplicant>>
+
+    @Query("SELECT * from history_applicant_table WHERE userID = :key  ")
+    fun getAllHistoryss(key: String): HistoryApplicant?
+
 }

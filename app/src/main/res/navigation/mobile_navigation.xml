@@ -232,6 +232,9 @@
         <action
             android:id="@+id/action_historyApplicantFindCompany_to_swapComapanyTemplate"
             app:destination="@id/swapComapanyTemplate" />
+        <action
+            android:id="@+id/action_historyApplicantFindCompany_to_swapCompanyTemplate"
+            app:destination="@id/swapCompanyTemplate" />
     </fragment>
     <fragment
         android:id="@+id/historyCompanyFindApplicant"
@@ -248,8 +251,8 @@
             android:id="@+id/action_historyCompanyFindApplicant_to_nav_home2"
             app:destination="@id/nav_home" />
         <action
-            android:id="@+id/action_historyCompanyFindApplicant_to_swapApplicantTemplate"
-            app:destination="@id/swapApplicantTemplate" />
+            android:id="@+id/action_historyCompanyFindApplicant_to_swapApplicantttTemplate"
+            app:destination="@id/swapApplicantttTemplate" />
     </fragment>
     <fragment
         android:id="@+id/applicantssssss"
@@ -259,6 +262,29 @@
     <argument
         android:name="user_id"
         app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/swapApplicantttTemplate"
+        android:name="com.example.partpartparttime.ui.search_job.SwapApplicantttTemplate"
+        android:label="SwapApplicantttTemplate"
+        tools:layout="@layout/fragment_swap_applicant_template">
+        <argument
+            android:name="userid"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_swapApplicantttTemplate_to_historyCompanyFindApplicant"
+            app:destination="@id/historyCompanyFindApplicant" />
+    </fragment>
+    <fragment
+        android:id="@+id/swapCompanyTemplate"
+        android:name="com.example.partpartparttime.ui.search_applicant.SwapCompanyTemplate"
+        android:label="SwapCompanyTemplate" >
+        <argument
+            android:name="compid"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_swapCompanyTemplate_to_historyApplicantFindCompany"
+            app:destination="@id/historyApplicantFindCompany" />
     </fragment>
 
 </navigation>

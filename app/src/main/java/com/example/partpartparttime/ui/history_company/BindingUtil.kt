@@ -43,6 +43,13 @@ fun TextView.setApplicantIDDDString(item: HistoryApplicant?) {
     }
 }
 
+@BindingAdapter("statusString")
+fun TextView.setStatusString(item: HistoryApplicant?) {
+    item?.let {
+        text = item.status
+    }
+}
+
 @BindingAdapter("appImageString")
 fun ConstraintLayout.setAppImageString(item: HistoryApplicant?) {
     item?.let {

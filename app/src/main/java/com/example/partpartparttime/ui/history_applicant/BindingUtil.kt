@@ -36,6 +36,13 @@ fun TextView.setCompanyNameeString(item: HistoryCompany?) {
     }
 }
 
+@BindingAdapter("statusString")
+fun TextView.setStatusString(item: HistoryCompany?) {
+    item?.let {
+        text = item.status
+    }
+}
+
 
 @BindingAdapter("ImageString")
 fun ConstraintLayout.setMatchImageString(item: HistoryCompany?) {

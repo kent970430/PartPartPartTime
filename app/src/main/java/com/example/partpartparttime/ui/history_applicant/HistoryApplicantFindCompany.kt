@@ -102,7 +102,7 @@ class HistoryApplicantFindCompany : Fragment() {
         historyViewModel11.navigateToCompany.observe(this,Observer{ iii ->
             iii?.let{
                 this.findNavController().navigate(
-                    HistoryApplicantFindCompanyDirections.actionHistoryApplicantFindCompanyToSwapComapanyTemplate(iii)
+                    HistoryApplicantFindCompanyDirections.actionHistoryApplicantFindCompanyToSwapCompanyTemplate(iii)
                 )
             }
         })
