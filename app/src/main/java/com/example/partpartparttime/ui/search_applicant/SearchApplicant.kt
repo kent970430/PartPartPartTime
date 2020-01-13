@@ -39,7 +39,6 @@ class SearchApplicantFragment : Fragment() {
             inflater,
             R.layout.fragment_search_applicant, container, false
         )
-
         val application = requireNotNull(this.activity).application
         val dataSource = PartimeDatabase.getInstance(application).applicantDao
         var category: Array<String> =

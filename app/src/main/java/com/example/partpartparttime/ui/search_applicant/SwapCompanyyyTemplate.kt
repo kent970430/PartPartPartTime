@@ -23,7 +23,7 @@ import java.util.*
 /**
  * A simple [Fragment] subclass.
  */
-class SwapCompanyTemplate : Fragment() {
+class SwapCompanyyyTemplate : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,19 +40,19 @@ class SwapCompanyTemplate : Fragment() {
         val dataSource2 = PartimeDatabase.getInstance(application).historyCompanyDao
         val dataSource3 = PartimeDatabase.getInstance(application).applicantDao
 
-        val arguement = SwapCompanyTemplateArgs.fromBundle(arguments)
+        val arguement = SwapCompanyyyTemplateArgs.fromBundle(arguments)
 
         var compid:String = arguement.compid
 
-
+        println(compid)
+        println(loggedUser)
 
         var company = dataSource1.getCompanyID(compid)
 
         var user_id = loggedUser
 
         var applicant = dataSource1.getCompanyID(user_id)
-        println(compid)
-        println(loggedUser)
+
 
         binding.btndislike.setOnClickListener { view ->
 
@@ -77,7 +77,7 @@ class SwapCompanyTemplate : Fragment() {
 
             }
 
-            view.findNavController().navigate(R.id.action_swapCompanyTemplate_to_historyApplicantFindCompany)
+            view.findNavController().navigate(R.id.action_swapCompanyyyTemplate_to_historyApplicantFindCompany)
         }
 
 
@@ -93,15 +93,15 @@ class SwapCompanyTemplate : Fragment() {
 
                 var h: HistoryCompany? = dataSource2.getAllHistoryss(compid)
 
-                if (h != null){
+                if (h == null) {
+                    
+                }else{
                     h.status = "Interview"
 
                     dataSource2.update(h)
 
                     view.findNavController()
-                        .navigate(R.id.action_swapCompanyTemplate_to_historyApplicantFindCompany)
-                }else{
-                    println("error")
+                        .navigate(R.id.action_swapCompanyyyTemplate_to_historyApplicantFindCompany)
                 }
             }
 

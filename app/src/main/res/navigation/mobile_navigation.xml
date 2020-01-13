@@ -233,8 +233,8 @@
             android:id="@+id/action_historyApplicantFindCompany_to_swapComapanyTemplate"
             app:destination="@id/swapComapanyTemplate" />
         <action
-            android:id="@+id/action_historyApplicantFindCompany_to_swapCompanyTemplate"
-            app:destination="@id/swapCompanyTemplate" />
+            android:id="@+id/action_historyApplicantFindCompany_to_swapCompanyyyTemplate"
+            app:destination="@id/swapCompanyyyTemplate" />
     </fragment>
     <fragment
         android:id="@+id/historyCompanyFindApplicant"
@@ -276,14 +276,14 @@
             app:destination="@id/historyCompanyFindApplicant" />
     </fragment>
     <fragment
-        android:id="@+id/swapCompanyTemplate"
-        android:name="com.example.partpartparttime.ui.search_applicant.SwapCompanyTemplate"
-        android:label="SwapCompanyTemplate" >
-        <argument
-            android:name="compid"
-            app:argType="string" />
+        android:id="@+id/swapCompanyyyTemplate"
+        android:name="com.example.partpartparttime.ui.search_applicant.SwapCompanyyyTemplate"
+        android:label="SwapCompanyyyTemplate">
+    <argument
+        android:name="compid"
+        app:argType="string" />
         <action
-            android:id="@+id/action_swapCompanyTemplate_to_historyApplicantFindCompany"
+            android:id="@+id/action_swapCompanyyyTemplate_to_historyApplicantFindCompany"
             app:destination="@id/historyApplicantFindCompany" />
     </fragment>
 
