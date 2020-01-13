@@ -59,11 +59,22 @@ class SwapCompanyyyTemplate : Fragment() {
 
             var abc = dataSource.getAppliedCompany1(compid,user_id,"FALSE")
 
+            var h: HistoryCompany? = dataSource2.getAllHistoryss(compid)
+
             if (abc != null){
 
                 abc?.usermatchcompany="FALSE"
 
                 dataSource.update(abc)
+
+                if(h != null){
+                    h.status = "Cancel"
+
+                    dataSource2.update(h)
+
+                    view.findNavController()
+                        .navigate(R.id.action_swapCompanyyyTemplate_to_historyApplicantFindCompany)
+                }
 
             } else {
 
@@ -74,10 +85,10 @@ class SwapCompanyyyTemplate : Fragment() {
                 m.usermatchcompany = "FALSE"
 
                 dataSource.insert(m)
-
+                view.findNavController().navigate(R.id.action_swapCompanyyyTemplate_to_historyApplicantFindCompany)
             }
 
-            view.findNavController().navigate(R.id.action_swapCompanyyyTemplate_to_historyApplicantFindCompany)
+
         }
 
 
