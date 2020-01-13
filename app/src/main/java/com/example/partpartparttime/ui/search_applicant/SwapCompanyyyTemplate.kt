@@ -94,7 +94,7 @@ class SwapCompanyyyTemplate : Fragment() {
                 var h: HistoryCompany? = dataSource2.getAllHistoryss(compid)
 
                 if (h == null) {
-                    
+
                 }else{
                     h.status = "Interview"
 
