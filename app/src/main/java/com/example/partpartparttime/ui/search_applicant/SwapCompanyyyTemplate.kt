@@ -6,6 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.core.net.toUri
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import com.example.partpartparttime.MainActivity
@@ -44,14 +47,18 @@ class SwapCompanyyyTemplate : Fragment() {
 
         var compid: String = arguement.compid
 
-        println(compid)
-        println(loggedUser)
 
         var company = dataSource1.getCompanyID(compid)
 
         var user_id = loggedUser
 
         var applicant = dataSource1.getCompanyID(user_id)
+
+        val imageView : ImageView = binding.root.findViewById(R.id.ApplicantImageView1)
+        imageView.setImageURI(company?.image?.toUri())
+
+        val applicantname: TextView = binding.root.findViewById(R.id.ApplicantNameTxtView)
+        applicantname.setText(company?.companyName)
 
 
         binding.btndislike.setOnClickListener { view ->
@@ -69,7 +76,7 @@ class SwapCompanyyyTemplate : Fragment() {
 
                 if (h == null) {
                 } else {
-                    h.status = "Cancel"
+                    h.status = "Reject"
 
                     dataSource2.update(h)
 

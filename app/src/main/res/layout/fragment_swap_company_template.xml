@@ -10,7 +10,7 @@
         tools:context=".ui.SwapCompanyTemplate">
 
         <ImageView
-            android:id="@+id/ApplicantImageView"
+            android:id="@+id/ApplicantImageView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -32,7 +32,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/btndislike"
-            app:layout_constraintTop_toBottomOf="@+id/ApplicantImageView" />
+            app:layout_constraintTop_toBottomOf="@+id/ApplicantImageView1" />
 
         <Button
             android:id="@+id/btndislike"
@@ -46,16 +46,17 @@
             app:layout_constraintEnd_toStartOf="@+id/btnlike"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ApplicantImageView" />
+            app:layout_constraintTop_toBottomOf="@+id/ApplicantImageView1" />
 
         <TextView
             android:id="@+id/ApplicantNameTxtView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="208dp"
             android:text="@string/comname"
             app:layout_constraintBottom_toTopOf="@+id/ApplicantImageView"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>

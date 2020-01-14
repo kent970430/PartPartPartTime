@@ -6,6 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.core.net.toUri
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import com.example.partpartparttime.MainActivity
@@ -45,12 +48,15 @@ class SwapComapanyTemplate : Fragment() {
 
         var company = dataSource1.getCompanyID(compid)
 
-
-//        println(company)
-
         var user_id = MainActivity.loggedUser
 
         var applicant = dataSource3.getApplicantID(user_id)
+
+        val imageView : ImageView = binding.root.findViewById(R.id.ApplicantImageView1)
+        imageView.setImageURI(company?.image?.toUri())
+
+        val applicantname: TextView = binding.root.findViewById(R.id.ApplicantNameTxtView)
+        applicantname.setText(company?.companyName)
 
         binding.btndislike.setOnClickListener { view ->
 

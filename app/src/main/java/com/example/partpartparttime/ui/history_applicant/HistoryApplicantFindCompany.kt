@@ -109,7 +109,7 @@ class HistoryApplicantFindCompany : Fragment() {
 
         historyViewModel11.navigateToCompany.observe(this, Observer { iii ->
             iii?.let {
-                val a: TextView = activity!!.findViewById(R.id.applselectcompanystatus)
+                val a: TextView = activity!!.findViewById(R.id.compselectapplstatus)
                 if (a.text == "pending") {
                     this.findNavController().navigate(
                         HistoryApplicantFindCompanyDirections.actionHistoryApplicantFindCompanyToSwapCompanyyyTemplate(
