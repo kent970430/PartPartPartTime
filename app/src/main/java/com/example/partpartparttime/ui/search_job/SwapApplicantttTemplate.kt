@@ -12,6 +12,7 @@ import com.example.partpartparttime.MainActivity
 import com.example.partpartparttime.R
 import com.example.partpartparttime.database.HistoryApplicant
 import com.example.partpartparttime.database.HistoryCompany
+import com.example.partpartparttime.database.Match
 import com.example.partpartparttime.database.PartimeDatabase
 import com.example.partpartparttime.databinding.FragmentSwapApplicantTemplateBinding
 import com.example.partpartparttime.databinding.FragmentSwapApplicantttttTemplateBinding
@@ -39,7 +40,7 @@ class SwapApplicantttTemplate : Fragment() {
 
         val arguement = SwapApplicantttTemplateArgs.fromBundle(arguments)
 
-        var userid:String = arguement.userid
+        var userid: String = arguement.userid
 
         var company_id = MainActivity.loggedUser
 
@@ -53,20 +54,42 @@ class SwapApplicantttTemplate : Fragment() {
 
         binding.btndislike.setOnClickListener { view ->
 
-            val abc= dataSource.getAppliedApplicant1(company_id,userid,"TRUE")
+            val abc = dataSource.getAppliedApplicant1(company_id, userid, "TRUE")
 
-            abc?.companymatchuser = "FALSE"
+            var h: HistoryApplicant? = dataSource1.getAllHistoryss(userid)
 
-            dataSource.update(abc)
+            if (abc != null) {
+                abc?.companymatchuser = "FALSE"
 
-            view.findNavController().navigate(R.id.action_swapApplicantttTemplate_to_historyCompanyFindApplicant)
+                dataSource.update(abc)
 
+                if (h == null) {
+                } else {
+                    h.status = "Cancel"
+
+                    dataSource1.update(h)
+
+                    view.findNavController()
+                        .navigate(R.id.action_swapApplicantttTemplate_to_historyCompanyFindApplicant)
+                }
+            } else {
+
+                var m: Match = Match()
+
+                m.companyID = company_id
+                m.userID = userid
+                m.usermatchcompany = "FALSE"
+
+                dataSource.insert(m)
+                view.findNavController()
+                    .navigate(R.id.action_swapApplicantttTemplate_to_historyCompanyFindApplicant)
+            }
         }
 
 
         binding.btnlike.setOnClickListener { view ->
 
-            var abc = dataSource.getAppliedApplicant1(company_id,userid,"TRUE")
+            var abc = dataSource.getAppliedApplicant1(company_id, userid, "TRUE")
 
             if (abc != null) {
                 abc.companymatchuser = "TRUE"
@@ -74,11 +97,11 @@ class SwapApplicantttTemplate : Fragment() {
                 dataSource.update(abc)
 
 
-                var h : HistoryApplicant? = dataSource1.getAllHistoryss(userid)
+                var h: HistoryApplicant? = dataSource1.getAllHistoryss(userid)
 
                 if (h == null) {
 
-                }else {
+                } else {
                     h.status = "Interview"
 
                     dataSource1.update(h)
