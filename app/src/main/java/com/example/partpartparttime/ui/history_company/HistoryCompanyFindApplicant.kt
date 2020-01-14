@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -94,9 +95,19 @@ class HistoryCompanyFindApplicant : Fragment() {
 
         historyViewModel22.navigateToCompany.observe(this,Observer{ iddd ->
             iddd?.let{
-                this.findNavController().navigate(
-                    HistoryCompanyFindApplicantDirections.actionHistoryCompanyFindApplicantToSwapApplicantttTemplate(iddd)
-                )
+                val a : TextView = activity!!.findViewById(R.id.applselectcompanystatus)
+                if(a.text == "pending") {
+                    this.findNavController().navigate(
+                        HistoryCompanyFindApplicantDirections.actionHistoryCompanyFindApplicantToSwapApplicantttTemplate(
+                            iddd
+                        )
+                    )
+                }else{
+                    this.findNavController().navigate(
+                        HistoryCompanyFindApplicantDirections.actionHistoryCompanyFindApplicantToApplicantssssss(
+                            iddd)
+                    )
+                }
             }
         })
 
