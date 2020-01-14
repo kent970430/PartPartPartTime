@@ -42,7 +42,7 @@ class SwapCompanyyyTemplate : Fragment() {
 
         val arguement = SwapCompanyyyTemplateArgs.fromBundle(arguments)
 
-        var compid:String = arguement.compid
+        var compid: String = arguement.compid
 
         println(compid)
         println(loggedUser)
@@ -57,17 +57,18 @@ class SwapCompanyyyTemplate : Fragment() {
         binding.btndislike.setOnClickListener { view ->
 
 
-            var abc = dataSource.getAppliedCompany1(compid,user_id,"FALSE")
+            var abc = dataSource.getAppliedCompany1(compid, user_id, "TRUE")
 
             var h: HistoryCompany? = dataSource2.getAllHistoryss(compid)
 
-            if (abc != null){
+            if (abc != null) {
 
-                abc?.usermatchcompany="FALSE"
+                abc?.usermatchcompany = "FALSE"
 
                 dataSource.update(abc)
 
-                if(h != null){
+                if (h == null) {
+                } else {
                     h.status = "Cancel"
 
                     dataSource2.update(h)
@@ -85,7 +86,8 @@ class SwapCompanyyyTemplate : Fragment() {
                 m.usermatchcompany = "FALSE"
 
                 dataSource.insert(m)
-                view.findNavController().navigate(R.id.action_swapCompanyyyTemplate_to_historyApplicantFindCompany)
+                view.findNavController()
+                    .navigate(R.id.action_swapCompanyyyTemplate_to_historyApplicantFindCompany)
             }
 
 
@@ -94,7 +96,7 @@ class SwapCompanyyyTemplate : Fragment() {
 
         binding.btnlike.setOnClickListener { view ->
 
-            var abc = dataSource.getAppliedCompany1(compid,user_id,"TRUE")
+            var abc = dataSource.getAppliedCompany1(compid, user_id, "TRUE")
 
             if (abc != null) {
 
@@ -106,7 +108,7 @@ class SwapCompanyyyTemplate : Fragment() {
 
                 if (h == null) {
 
-                }else{
+                } else {
                     h.status = "Interview"
 
                     dataSource2.update(h)
