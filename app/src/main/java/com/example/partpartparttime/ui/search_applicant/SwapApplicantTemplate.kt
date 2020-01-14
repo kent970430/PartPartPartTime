@@ -76,6 +76,18 @@ class SwapApplicantTemplate : Fragment() {
 
             }
 
+            var h: HistoryCompany = HistoryCompany()
+
+            h.userID = userid
+            h.companyID = company_id
+            h.firstName = firstname
+            h.lastName = lastname
+            h.history_comID = UUID.randomUUID().toString()
+            h.companyName = companyName?.companyName.toString()
+            h.status = "dislike"
+
+            dataSource1.insert(h)
+
             view.findNavController().navigate(R.id.action_swapApplicantTemplate_to_historyCompanyFindApplicant)
 
         }

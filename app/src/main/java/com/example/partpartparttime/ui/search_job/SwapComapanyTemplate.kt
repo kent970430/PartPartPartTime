@@ -75,6 +75,18 @@ class SwapComapanyTemplate : Fragment() {
 
             }
 
+            var h:HistoryApplicant = HistoryApplicant()
+
+            h.userID = user_id
+            h.companyID = compid
+            h.companyName = company!!.companyName
+            h.fisrtName = applicant!!.firstName
+            h.lastName = applicant!!.lastName
+            h.history_appID = UUID.randomUUID().toString()
+            h.status = "dislike"
+
+            dataSource2.insert(h)
+
             view.findNavController().navigate(R.id.action_swapComapanyTemplate_to_historyApplicantFindCompany)
         }
 
@@ -102,13 +114,13 @@ class SwapComapanyTemplate : Fragment() {
             }
 
 
-            var m:Match = Match()
-
-            m.companyID = compid
-            m.userID = user_id
-            m.usermatchcompany = "TRUE"
-
-            dataSource.insert(m)
+//            var m:Match = Match()
+//
+//            m.companyID = compid
+//            m.userID = user_id
+//            m.usermatchcompany = "TRUE"
+//
+//            dataSource.insert(m)
 
             var h:HistoryApplicant = HistoryApplicant()
 

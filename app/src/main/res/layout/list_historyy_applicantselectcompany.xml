@@ -39,7 +39,7 @@
             tools:text="user ID" />
 
         <TextView
-            android:id="@+id/status"
+            android:id="@+id/applselectcompanystatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#000000"
